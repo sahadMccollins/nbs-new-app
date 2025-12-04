@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -15,7 +15,9 @@ export default headerStyle = StyleSheet.create({
     fontFamily: appFonts.LatoMedium,
   },
   image: {
-    height: windowHeight(20),
+    // height: windowHeight(20),
+    // width: windowWidth(140),
+    height: windowHeight(40),
     width: windowWidth(140),
   },
 });

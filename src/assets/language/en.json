@@ -10,7 +10,7 @@
       "startShopping": "START SHOPPING"
     },
     "login": {
-      "usernameOrEmail": "Username or Email",
+      "usernameOrEmail": "Email",
       "signIn": "SIGN IN",
       "orSignInWith": "Or sign in with",
       "ifNew": "If you are new,",
@@ -139,11 +139,11 @@
       "arabic": "Arabic"
     },
     "homePage": {
-      "welcomeToMultikart": "Welcome To Multikart",
+      "welcomeToMultikart": "Welcome To NBS",
       "flatOFF": "Flat 50% OFF",
       "freeShipping": "Free Shipping Till Mid Night",
       "shopNow": "SHOP NOW",
-      "dealsOfDay": "Deals of the Day",
+      "dealsOfDay": "Best Sellers",
       "seeAll": "See All",
       "findYourStyle": "Find your Style",
       "superSummerSale": "Super Summer Sale",

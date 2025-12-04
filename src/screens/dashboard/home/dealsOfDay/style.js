@@ -15,7 +15,7 @@ export default dealOfDayStyles = StyleSheet.create({
     marginBottom: windowHeight(8),
   },
   seeAll: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT16,
     fontFamily: appFonts.LatoMedium,
     color: appColors.primary,
   },

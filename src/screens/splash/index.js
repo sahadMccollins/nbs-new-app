@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Animated, View } from 'react-native';
-import { logo, darkLogo } from '@utils/images/images';
+import { logo, darkLogo, logo2, logo3 } from '@utils/images/images';
 import { useValues } from '@App';
 import styles from './styles';
 import { getValue, setValue } from '@utils/localStorage';
@@ -68,7 +68,8 @@ export default function Splash({ navigation }) {
             navigation.replace('onBoarding');
             setValue('isFirstLaunch', true.toString());
         } else {
-            navigation.replace('Drawer');
+            // navigation.replace('Drawer');
+            navigation.replace('onBoarding');
         }
     };
 
@@ -90,7 +91,8 @@ export default function Splash({ navigation }) {
     return (
         <View style={styles.mainContainer}>
             <Animated.Image
-                source={isDark ? darkLogo : logo}
+                // source={isDark ? darkLogo : logo}
+                source={logo3}
                 style={{ width: width, height: height, resizeMode: 'contain' }}
             />
         </View>

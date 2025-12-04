@@ -10,6 +10,7 @@ module.exports = {
   logo: require('@assets/images/logo/logo.png'),
   darkLogo: require('@assets/images/logo/darkLogo.png'),
   logo2: require('@assets/images/logo/nbs-logo.png'),
+  logo3: require('@assets/images/logo/nbs-logo-3.png'),
   divider: require('@assets/images/divider.png'),
   darkDivider: require('@assets/images/darkDivider.png'),
   user: require('@assets/images/image/user.png'),
