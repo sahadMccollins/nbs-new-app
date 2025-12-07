@@ -8,8 +8,10 @@ export default categoryStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   column: {
-    justifyContent: 'space-evenly',
+    // justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     marginHorizontal: windowWidth(16),
+    // marginHorizontal: windowWidth(25),
     marginTop: windowHeight(20),
   },
   seperator: {

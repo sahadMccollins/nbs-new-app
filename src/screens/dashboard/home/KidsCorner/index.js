@@ -1,33 +1,38 @@
 import React from 'react';
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 import styles from './style';
 import Data from '@utils/json';
-import {Product} from '@commonComponents';
-import {useValues} from '@App';
+import { Product } from '@commonComponents';
+import { useValues } from '@App';
 
 export default kidsCorner = props => {
   const kidsCorner = Data.kidsCorner;
-  const {textRTLStyle, viewRTLStyle} = useValues();
+  const { textRTLStyle, viewRTLStyle } = useValues();
+  const screenWidth = Dimensions.get('window').width;
+  const itemWidth = screenWidth / 2;
 
   return (
     <View style={styles.mainView}>
       <Text
         style={[
           styles.kidsCorner,
-          {color: props.colors.text, textAlign: textRTLStyle},
+          { color: props.colors.text, textAlign: textRTLStyle },
         ]}>
-        {props.t('homePage.theKidsCorner')}
+        {props.t('homePage.newArrivals')}
       </Text>
-      <Text style={[styles.clothing, {textAlign: textRTLStyle}]}>
-        {props.t('homePage.clothingFor')}
-      </Text>
-      <FlatList
+      <View style={{ flexDirection: 'row', justifyContent: "space-between"}} >
+        <Text style={[styles.clothing, { textAlign: textRTLStyle }]}>
+          {props.t('homePage.newArrivalsDesc')}
+        </Text>
+        <Text style={styles.seeAll}>{props.t('homePage.seeAll')}</Text>
+      </View>
+      {/* <FlatList
         horizontal
-        data={kidsCorner}
+        data={props.collection ? props.collection.products : []}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{flexDirection: viewRTLStyle}}
+        contentContainerStyle={{ flexDirection: viewRTLStyle }}
         ItemSeparatorComponent={() => <View style={styles.itemSeprator} />}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <Product
             image={item.image}
             title={item.title}
@@ -37,9 +42,54 @@ export default kidsCorner = props => {
             t={props.t}
             disc
             navigation={props.navigation}
+            width={"50%"}
           />
         )}
+      /> */}
+
+      <FlatList
+        horizontal
+        data={props.collection ? props.collection.products : []}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ flexDirection: viewRTLStyle }}
+        ItemSeparatorComponent={() => <View style={styles.itemSeprator} />}
+        renderItem={({ item }) => (
+          <Product
+            image={item.image}
+            title={item.title}
+            discountPrice={item.price}
+            price={item.oldPrice}
+            discount={item.discount}
+            t={props.t}
+            disc
+            navigation={props.navigation}
+            width={itemWidth}
+            productTags={item.productTags}
+          />
+        )}
+        snapToInterval={itemWidth}
+        decelerationRate="fast"
       />
+
+      {/* <FlatList
+        data={props.collection ? props.collection.products : []}
+        ItemSeparatorComponent={() => <View style={styles.seperator} />}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <Product
+            image={item.image}
+            title={item.title}
+            discountPrice={item.price}
+            price={item.oldPrice}
+            discount={item.discount}
+            t={props.t}
+            disc
+            width={"50%"}
+            productTags={item.productTags}
+            navigation={props.navigation}
+          />
+        )}
+      /> */}
     </View>
   );
 };

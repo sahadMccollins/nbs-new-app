@@ -12,7 +12,7 @@ export default findYourStyleStyles = StyleSheet.create({
     fontFamily: appFonts.LatoBold,
   },
   superSale: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT17,
     fontFamily: appFonts.LatoMedium,
     color: appColors.grey,
   },
@@ -60,5 +60,12 @@ export default findYourStyleStyles = StyleSheet.create({
     color: appColors.primary,
     fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoMedium,
+  },
+  seeAll: {
+    textAlign: 'center',
+    fontSize: fontSizes.FONT19,
+    fontFamily: appFonts.LatoMedium,
+    color: appColors.primary,
+    marginTop: windowWidth(10),
   },
 });

@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-// import {Button} from '@commonComponents';
+import { View, Text } from 'react-native';
+import { Button } from '@commonComponents';
 import styles from './style';
-import {fontSizes} from '@theme/appConstant';
+import { fontSizes } from '@theme/appConstant';
 
 export default startShopping = props => {
   const t = props.t;
@@ -10,14 +10,14 @@ export default startShopping = props => {
     props.navigation.replace('LoginScreen');
   };
   return (
-    <View>
-      {/* <Button
+    <View style={styles.customContainer} >
+      <Button
         text={'onBoarding.startShopping'}
         style={styles.buttonStyle}
         fontSize={fontSizes.FONT20}
         onPress={goToHome}
         t={t}
-      /> */}
+      />
       <View style={styles.createNewMainView}>
         <Text style={styles.createNewText}>
           {t('authComman.alreadyHaveAccount')}

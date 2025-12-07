@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -8,7 +8,7 @@ export default authStyles = StyleSheet.create({
     backgroundColor: appColors.white,
     width: '92%',
     alignSelf: 'center',
-    paddingBottom: windowHeight(50),
+    // paddingBottom: windowHeight(50),
   },
   titleText: {
     fontFamily: appFonts.LatoBold,
@@ -58,13 +58,31 @@ export default authStyles = StyleSheet.create({
   },
   subView: {
     height: '80%',
+    // height: '98%',
   },
   loaderStyle: {
+    // flex: 1,
     height: '100%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     position: 'absolute',
+  },
+
+  createNewMainView: {
+    flexDirection: 'row',
+    marginTop: windowHeight(20),
+    alignSelf: 'center',
+  },
+  createNewText: {
+    color: appColors.grey,
+    fontSize: fontSizes.FONT18,
+    fontFamily: appFonts.LatoMedium,
+    marginHorizontal: windowWidth(4),
+  },
+  createNewUnderlineText: {
+    marginStart: windowWidth(5),
+    textDecorationLine: 'underline',
   },
 });

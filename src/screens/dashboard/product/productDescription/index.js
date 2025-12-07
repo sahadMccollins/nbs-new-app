@@ -1,46 +1,165 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import StarRating from '@commonComponents/starRating';
 import styles from './styles';
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 export default productDescription = props => {
-  const {t} = props;
-  const {viewRTLStyle, textRTLStyle,currSymbol, currValue} = useValues();
+  const { t, product } = props;
+  console.log("Product Description Props:", product);
+  const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
+
+  let featuresArray = [];
+
+  try {
+    const rawFeatures = product?.features ?? "[]"; // default to empty array string
+    featuresArray = JSON.parse(rawFeatures);
+  } catch (error) {
+    console.error("Error parsing features JSON:", error);
+    featuresArray = [];
+  }
+
   return (
     <View style={styles.container}>
       <Text
         style={[
           styles.name,
-          {color: props.colors.text, textAlign: textRTLStyle},
+          { color: props.colors.text, textAlign: textRTLStyle },
         ]}>
-        {t('product.discription')}
+        {product?.title}
       </Text>
-      <Text
+      <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>
+        <Text style={[styles.discountPrice, { color: props.colors.text }]}>
+          {currSymbol}{(product?.variants[0]?.price * currValue).toFixed(2)}
+        </Text>
+        {product?.variants[0]?.oldPrice && product?.variants[0]?.oldPrice > product?.variants[0]?.price && (
+          <>
+            <Text style={[styles.price, { color: props.colors.subText }]}>
+              {currSymbol}{(product?.variants[0]?.oldPrice * currValue).toFixed(2)}
+            </Text>
+            <Text style={styles.discount}>
+              {product?.variants[0]?.oldPrice && product?.variants[0]?.price && product?.variants[0]?.oldPrice > product?.variants[0]?.price
+                ? `(${Math.round(((product?.variants[0]?.oldPrice - product?.variants[0]?.price) / product?.variants[0]?.oldPrice) * 100)}% OFF)`
+                : ''}
+            </Text>
+
+          </>
+        )}
+      </View>
+      <Text style={[styles.text, { textAlign: textRTLStyle }]}>
+        {t('product.inclusive')}
+      </Text>
+
+      <Text style={[styles.highlightText, { textAlign: textRTLStyle }]}>
+        {t('product.highlights')}
+      </Text>
+
+      <FlatList
+        data={featuresArray}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.featureItem}>
+            <Text style={styles.bullet}>▸</Text>
+            <Text
+              style={[
+                styles.discription,
+                { color: props.colors.subText, textAlign: textRTLStyle },
+              ]}>
+              {item}
+            </Text>
+          </View>
+        )}
+      />
+      {/* <Text
         style={[
           styles.content,
-          {color: props.colors.subText, textAlign: textRTLStyle},
+          { color: props.colors.subText, textAlign: textRTLStyle },
         ]}>
-        {t('product.content')}
-      </Text>
-      <View style={[styles.row, {flexDirection: viewRTLStyle}]}>
+        {product?.descriptionHtml}
+      </Text> */}
+      {/* <View style={[styles.row, {flexDirection: viewRTLStyle}]}>
         <StarRating />
         <Text style={[styles.rating, {color: props.colors.subText}]}>
           {t('product.ratings')}
         </Text>
-      </View>
-      <View style={[styles.priceView, {flexDirection: viewRTLStyle}]}>
-        <Text style={[styles.discountPrice, {color: props.colors.text}]}>
-          {currSymbol}{(currValue * 32.00).toFixed(2)}
-        </Text>
-        <Text style={[styles.price, {color: props.colors.subText}]}>
-        {currSymbol}{(currValue * 35.00).toFixed(2)}
-        </Text>
-        <Text style={styles.discount}>(20 % {t('product.off')})</Text>
-      </View>
-      <Text style={[styles.text, {textAlign: textRTLStyle}]}>
-        {t('product.inclusive')}
-      </Text>
+      </View> */}
     </View>
   );
 };
+
+
+// import React from 'react';
+// import { View, Text } from 'react-native';
+// import styles from './styles';
+// import { useValues } from '@App';
+
+// export default function ProductDescription(props) {
+//   const { t, product } = props;
+//   const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
+
+//   // avoid undefined crashes
+//   const variant = product?.variants?.[0];
+
+//   if (!variant) {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={[styles.name, { color: props.colors.text }]}>
+//           {product?.title || ""}
+//         </Text>
+//       </View>
+//     );
+//   }
+
+//   const price = (variant.price * currValue).toFixed(2);
+//   const oldPrice = variant.oldPrice
+//     ? (variant.oldPrice * currValue).toFixed(2)
+//     : null;
+
+//   const discount =
+//     variant.oldPrice && variant.oldPrice > variant.price
+//       ? Math.round(((variant.oldPrice - variant.price) / variant.oldPrice) * 100)
+//       : null;
+
+//   return (
+//     <View style={styles.container}>
+//       <Text
+//         style={[
+//           styles.name,
+//           { color: props.colors.text, textAlign: textRTLStyle },
+//         ]}
+//       >
+//         {product?.title}
+//       </Text>
+
+//       <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>
+//         <Text style={[styles.discountPrice, { color: props.colors.text }]}>
+//           {currSymbol}{price}
+//         </Text>
+
+//         {oldPrice && (
+//           <>
+//             <Text style={[styles.price, { color: props.colors.subText }]}>
+//               {currSymbol}{oldPrice}
+//             </Text>
+//             <Text style={styles.discount}>
+//               ({discount}% OFF)
+//             </Text>
+//           </>
+//         )}
+//       </View>
+
+//       <Text style={[styles.text, { textAlign: textRTLStyle }]}>
+//         {t('product.inclusive')}
+//       </Text>
+
+//       <Text
+//         style={[
+//           styles.content,
+//           { color: props.colors.subText, textAlign: textRTLStyle },
+//         ]}
+//       >
+//         {product?.descriptionHtml}
+//       </Text>
+//     </View>
+//   );
+// }

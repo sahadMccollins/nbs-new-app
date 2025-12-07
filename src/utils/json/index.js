@@ -224,11 +224,10 @@ module.exports = {
   ],
 
   findYourStyleFilter: [
-    {title: 'findYourStyleArr.trendingNow'},
-    {title: 'findYourStyleArr.topPicks'},
-    {title: 'findYourStyleArr.featuredProducts'},
-    {title: 'findYourStyleArr.topRated'},
-    {title: 'findYourStyleArr.readyToShip'},
+    {title: 'ourProductsArr.generators'},
+    {title: 'ourProductsArr.waterpumps'},
+    {title: 'ourProductsArr.powerstations'},
+    {title: 'ourProductsArr.batteries'},
   ],
 
   findYourStyle: [
@@ -331,9 +330,9 @@ module.exports = {
     {brand: images.biggestDeal4, darkBrand: images.biggestDealDark4},
     {brand: images.biggestDeal5, darkBrand: images.biggestDealDark5},
     {brand: images.biggestDeal6, darkBrand: images.biggestDealDark6},
-    {brand: images.biggestDeal7, darkBrand: images.biggestDealDark3},
-    {brand: images.biggestDeal8, darkBrand: images.biggestDealDark2},
-    {brand: images.biggestDeal9, darkBrand: images.biggestDealDark1},
+    {brand: images.biggestDeal7, darkBrand: images.biggestDealDark7},
+    // {brand: images.biggestDeal8, darkBrand: images.biggestDealDark2},
+    // {brand: images.biggestDeal9, darkBrand: images.biggestDealDark1},
   ],
 
   offerCorner: [

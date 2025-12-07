@@ -17,7 +17,7 @@ export default headerStyle = StyleSheet.create({
   image: {
     // height: windowHeight(20),
     // width: windowWidth(140),
-    height: windowHeight(40),
+    height: windowHeight(35),
     width: windowWidth(140),
   },
 });

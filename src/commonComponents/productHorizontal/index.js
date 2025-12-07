@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import Price from './withPrice';
 import AddToCart from './withAddToCart';
@@ -22,7 +22,7 @@ export function ProductHorizontal(props) {
         contentContainerStyle={props.style}
         showsVerticalScrollIndicator={false}>
         {products.map((item, key) => (
-          <View key={key}>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Product', { productId: item.id })} key={key}>
             <View
               style={[
                 styles.dealsView,
@@ -36,7 +36,7 @@ export function ProductHorizontal(props) {
               ]}>
               <Image
                 style={[styles.image, props.productStyle]}
-                source={item.image}
+                source={{ uri: item.image }}
               />
               <View
                 style={[
@@ -44,16 +44,17 @@ export function ProductHorizontal(props) {
                   { flexDirection: viewRTLStyle, width: isRTL ? '60%' : '70%' },
                 ]}>
                 <View>
-                  <Text style={[styles.title, { color: props.colors.text }]}>
+                  <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title, { color: props.colors.text }]}>
                     {props.t(item.title)}
                   </Text>
                   {props.showPrice && (
                     <Price
-                      brandName={t(item.brandName)}
+                      brandName={item.vendor}
                       colors={props.colors}
-                      discountPrice={t(item.discountPrice)}
-                      price={t(item.price)}
+                      discountPrice={item.price}
+                      price={item.oldPrice}
                       discount={t(item.discount)}
+                      t={t}
                     />
                   )}
                   {props.showCart && (
@@ -78,7 +79,7 @@ export function ProductHorizontal(props) {
               </View>
             </View>
             {props.showDivider && <Divider />}
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>

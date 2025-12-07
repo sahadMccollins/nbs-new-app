@@ -1,12 +1,12 @@
 {
   "translation": {
     "onBoarding": {
-      "sliderText1": "Welcome to Biggest Online Store",
-      "sliderDescription1": "Latest trends in clothing for women, men & kids at Multikart. Find new arrivals​, fashion catalogs, collections & lookbooks every week.",
-      "sliderText2": "Perfect Pair for Everyone",
-      "sliderDescription2": "500+ Brands and more than 1,00,000+  apparel and accessories. Discover what works best for you with  30 Days Return policy.",
-      "sliderText3": "Find all New Favourites",
-      "sliderDescription3": "New arrivals, fashion catalogs & collections every week. Premium Brands. Free Shipping Available. Hassle Free Installations. Secure Payments.",
+      "sliderText1": "Welcome to NBS Energy Store",
+      "sliderDescription1": "Explore solar panels, inverters, batteries and power systems at NBS. Find new energy solutions, top brands and reliable products every week.",
+      "sliderText2": "Energy Solutions for Every Need",
+      "sliderDescription2": "20+ trusted brands and over 2,000+ energy products. Discover the best power solution for your needs with easy support and return options.",
+      "sliderText3": "Sustainable. Reliable. Affordable.",
+      "sliderDescription3": "Latest solar systems, power backups and water pumps every week. Premium quality. Fast delivery available. Hassle-free installation and secure service.",
       "startShopping": "START SHOPPING"
     },
     "login": {
@@ -18,8 +18,9 @@
       "loginNow": "Login Now"
     },
     "register": {
-      "name": "Name",
-      "emailPhone": "Email/Phone",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
       "signUp": "SIGN UP",
       "orSignUpWith": "Or sign up with",
       "signUpNow": "Sign Up"
@@ -64,7 +65,7 @@
       "profile": "PROFILE"
     },
     "drawerArr": {
-      "name": " Hello, Paige Turner",
+      "name": " Hello, Guest User",
       "mode": "Mode",
       "rtl": "RTL",
       "home": "Home",
@@ -145,7 +146,8 @@
       "shopNow": "SHOP NOW",
       "dealsOfDay": "Best Sellers",
       "seeAll": "See All",
-      "findYourStyle": "Find your Style",
+      "ourProducts": "Our Products",
+      "ourProductsDesc": "Explore our wide range of energy products",
       "superSummerSale": "Super Summer Sale",
       "denimWear": "Denim Wear",
       "salesStartsIn": "Sales Starts In",
@@ -156,7 +158,9 @@
       "biggestDeals": "Biggest Deals on Top Brands",
       "theKidsCorner": "The Kids Corner",
       "clothingFor": "Clothing for your Li'l One's ",
-      "offerCorner": "Offer Corner"
+      "offerCorner": "Offer Corner",
+      "newArrivals": "New Arrivals",
+      "newArrivalsDesc": "Power. Precision. Performance."
     },
     "category": {
       "categories": "Categories"
@@ -176,14 +180,15 @@
       "viewDetails": "View Details",
       "placeOrder": "PLACE ORDER"
     },
-    "findYourStyleArr": {
-      "trendingNow": "Trending Now",
-      "topPicks": "Top Picks",
-      "featuredProducts": "Featured Products",
-      "topRated": "Top Rated",
-      "readyToShip": "Ready To Ship"
+    "ourProductsArr": {
+      "generators": "Generator",
+      "waterpumps": "Water Pumps",
+      "powerstations": "Power Stations",
+      "batteries": "Batteries"
     },
     "products": {
+      "priceOnRequest": "Price On Request",
+      "by": "by",
       "productName1": "Pink Hoodie t-shirt full",
       "productBrand1": "by Mango",
       "productDiscountPrice1": 32.00,
@@ -244,7 +249,7 @@
     },
     "profile": {
       "profile": "Profile",
-      "userName": "Paige Turner",
+      "userName": "Guest User",
       "userEmail": "paigeturner@gmail.com",
       "edit": "Edit",
       "payment": "Payment",
@@ -352,11 +357,14 @@
       "content": "Black, off-white and peach-coloured printed flared skirt, has zip closure, attached lining",
       "ratings": "(20 ratings)",
       "off": "off",
-      "inclusive": "inclusive of all taxes",
+      "inclusive": "Exclusive of all taxes",
+      "highlights": "Highlights",
       "selectSize": "Select Size",
       "sizeChart": "Size Chart",
       "selectColor": "Select Color",
-      "quantity": "Quantity"
+      "quantity": "Quantity",
+      "catalogue": "Product Catalogue",
+      "openCatalogue": "See Catalogue"
     },
     "OffersForYou": {
       "OffersForYou": "Offers for You",
@@ -542,7 +550,7 @@
     },
     "shopPage": {
       "womenCollection": "Women Collection",
-      "numProducts": "2050 products",
+      "numProducts": "Explore all products",
       "newProduct": "NEW",
       "filters": "Filters",
       "sortBy": "Sort By:",
@@ -588,6 +596,8 @@
       "addNewCard": "Add New Card"
     },
     "authError": {
+      "firstName": "Please Enter First Name",
+      "lastName": "Please Enter Last Name",
       "email": "Please Enter email",
       "validEmail": "Please enter Valid email",
       "password": "Please enter Password",

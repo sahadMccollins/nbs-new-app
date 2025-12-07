@@ -33,14 +33,23 @@ const input = ({
         {t('register.signUpNow')}
       </Text>
       <Input
-        placeholder={t('register.name')}
+        placeholder={t('register.firstName')}
         value={form.name}
         onChangeText={value => {
-          onChange({name: 'name', value});
+          onChange({name: 'firstName', value});
         }}
+        error={errors.firstName}
       />
       <Input
-        placeholder={t('register.emailPhone')}
+        placeholder={t('register.lastName')}
+        value={form.name}
+        onChangeText={value => {
+          onChange({name: 'lastName', value});
+        }}
+        error={errors.lastName}
+      />
+      <Input
+        placeholder={t('register.email')}
         value={form.email}
         onChangeText={value => {
           onChange({name: 'email', value});
@@ -63,7 +72,7 @@ const input = ({
         fontSize={fontSizes.FONT22}
         onPress={onSignUp}
       />
-      <SocialLogin t={t} setLoading={setLoading} colors={colors} />
+      {/* <SocialLogin t={t} setLoading={setLoading} colors={colors} /> */}
       <View style={[styles.createNewMainView, {flexDirection: viewRTLStyle}]}>
         <Text style={styles.createNewText}>
           {t('authComman.alreadyHaveAccount')}

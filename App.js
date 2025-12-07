@@ -54,7 +54,10 @@ import {
   imageRTLStyle,
   viewSelfRTLStyle,
 } from './src/style/rtlStyle';
-import {logo} from "@utils/images/images";
+import { logo } from "@utils/images/images";
+import { CustomerProvider } from './src/context/customerContext';
+import { CollectionsProvider } from './src/context/collectionContext';
+
 
 LogBox.ignoreAllLogs();
 export const CommonContext = createContext();
@@ -62,7 +65,7 @@ export const CommonContext = createContext();
 function App() {
   const [isRTL, setIsRTL] = useState(false);
   const [isDark, setIsDark] = useState(false);
-  const [currSymbol, setCurrSymbol] = useState('$');
+  const [currSymbol, setCurrSymbol] = useState('AED ');
   const [currValue, setCurrValue] = useState(1);
   const [isFirstLaunch, setIsFirstLaunch] = useState(false);
 
@@ -100,14 +103,11 @@ function App() {
 
   return (
     <CommonContext.Provider value={contextValues}>
-      <Navigator />
-      {/* <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ color: "black" }}>Multikart is an eCommerce mobile app with full integration with your existing Shopify website. It offers app developers a fast and expressive way to build native apps on both iOS and Android using a single codebase. This app comes with around 30+ screens and will work on both Android and iOS platforms. Multikart has some additional features like shimmer effect, multi-currency, multi-language, RTL support. This UI enables you to develop beautiful and feature-rich apps. You can add any part of the code. You like and apply it to your code. Our code is well organized with all folders, file names, class names variables and functions under 70 lines. This code is well named to make it easy to reuse and customize. This app has features like light and dark mode.</Text>
-      </View> */}
-      {/* <Animated.Image
-        source={logo}
-        style={{width: 100, height: 100, resizeMode: 'contain'}}
-      /> */}
+      <CustomerProvider>
+        <CollectionsProvider>
+          <Navigator />
+        </CollectionsProvider>
+      </CustomerProvider>
     </CommonContext.Provider>
   );
 }

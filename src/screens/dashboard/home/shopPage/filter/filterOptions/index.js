@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import ColorSection from '../../../../product/colorSection';
-import RangeSlider from '../rangeSlider';
+// import RangeSlider from '../rangeSlider';
 import Sizes from '../sizes';
 import Data from '@utils/json';
 import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
@@ -21,7 +21,7 @@ export default function filterOptions(props) {
   // };
   return (
     <View>
-      <RangeSlider colors={colors} />
+      {/* <RangeSlider colors={colors} /> */}
       <View style={{height: windowHeight(18)}}></View>
       <Text
         style={[styles.title, {color: colors.text, textAlign: textRTLStyle}]}>

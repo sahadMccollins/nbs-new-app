@@ -25,8 +25,9 @@ export default productHorizontalStyles = StyleSheet.create({
     width: '70%',
   },
   title: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoBold,
+    maxWidth: windowWidth(260),
   },
   brand: {
     color: appColors.grey,

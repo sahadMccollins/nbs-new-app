@@ -21,12 +21,16 @@ export default biggestDealStyles = StyleSheet.create({
   imageView: {
     marginLeft: windowWidth(10),
     backgroundColor: appColors.divider,
-    padding: windowWidth(14),
+    // padding: windowWidth(14),
+    padding: windowWidth(8),
     borderRadius: windowWidth(4),
   },
   image: {
-    width: windowWidth(100),
-    height: windowHeight(20),
-    resizeMode: 'contain',
+    // width: windowWidth(100),
+    // height: windowHeight(20),
+    // resizeMode: 'contain',
+    width: windowWidth(200),
+    height: windowHeight(80),
+    resizeMode: 'contain'
   },
 });

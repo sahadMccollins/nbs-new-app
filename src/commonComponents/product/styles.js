@@ -14,16 +14,19 @@ export default productStyles = StyleSheet.create({
   priceView: {
     flexDirection: 'row',
     marginTop: windowHeight(4),
+    // justifyContent: 'space-between',
+    alignItems: 'baseline'
   },
   discountPrice: {
-    fontSize: fontSizes.FONT19,
+    fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoBold,
   },
   price: {
     color: appColors.grey,
-    fontSize: fontSizes.FONT18,
+    fontSize: fontSizes.FONT16,
     fontFamily: appFonts.LatoMedium,
-    marginHorizontal: windowWidth(10),
+    marginHorizontal: windowWidth(20),
+    // marginRight: windowWidth(20),
     textDecorationLine: 'line-through',
   },
   discount: {
@@ -52,8 +55,9 @@ export default productStyles = StyleSheet.create({
     height: windowHeight(17),
   },
   title: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoBold,
+    marginRight: windowWidth(10),
   },
   like: {
     width: windowWidth(256),

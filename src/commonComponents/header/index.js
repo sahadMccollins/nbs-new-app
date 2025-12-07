@@ -31,6 +31,8 @@ export function Header(props) {
         </TouchableOpacity>
         <View style={styles.text}>
           <Text
+          numberOfLines={1}
+          ellipsizeMode='clip'
             style={[
               styles.text1,
               {

@@ -65,23 +65,25 @@ import appColors from "@theme/appColors";
 import appFonts from "@theme/appFonts";
 
 export const SLIDER_WIDTH = Dimensions.get('window').width
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH )
 
 export default carouselItemStyles = StyleSheet.create({
     imageContainer: {
         width: ITEM_WIDTH,
     },
     image: {
-        height: '60%'
+        height: '100%'
     },
     sliderImage: {
         width: ITEM_WIDTH,
-        height: windowHeight(390),
+        // height: windowHeight(390),
+        height: windowHeight(350),
     },
     titleMainView: {
         alignSelf: 'center',
         width: windowWidth(420),
-        marginBottom: windowHeight(10)
+        marginBottom: windowHeight(10),
+        marginTop: windowHeight(20)
     },
     header: {
         color: appColors.darkGray,
@@ -101,6 +103,6 @@ export default carouselItemStyles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     view: {
-        height: '78%'
+        height: '60%',
     },
 });

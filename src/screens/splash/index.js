@@ -68,8 +68,7 @@ export default function Splash({ navigation }) {
             navigation.replace('onBoarding');
             setValue('isFirstLaunch', true.toString());
         } else {
-            // navigation.replace('Drawer');
-            navigation.replace('onBoarding');
+            navigation.replace('Drawer');
         }
     };
 

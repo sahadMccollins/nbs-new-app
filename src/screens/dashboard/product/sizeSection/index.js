@@ -1,36 +1,27 @@
-import React, {useState} from 'react';
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
 import styles from './styles';
 import appColors from '@theme/appColors';
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 export default sizeSection = props => {
   const colors = props.colors;
-  const sizes = props.sizes;
-  const {viewRTLStyle, textRTLStyle, isRTL} = useValues();
+  const { viewRTLStyle, textRTLStyle, isRTL } = useValues();
   const t = props.t;
-  const [selectedSize, setSelectedSize] = useState('');
 
-  const onSelectSize = val => {
-    sizes.map(item => {
-      if (val == item.id) {
-        setSelectedSize(val);
-      }
-    });
-  };
   return (
     <View style={styles.container}>
-      <View style={[styles.row, {flexDirection: viewRTLStyle}]}>
+      <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
         <Text
-          style={[styles.title, {color: colors.text, textAlign: textRTLStyle}]}>
-          {t('product.selectSize')}:
+          style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
+          {t('product.catalogue')}:
         </Text>
-        <Text style={[styles.text, {textAlign: textRTLStyle}]}>
+        {/* <Text style={[styles.text, {textAlign: textRTLStyle}]}>
           {t('product.sizeChart')}
-        </Text>
+        </Text> */}
       </View>
 
-      <FlatList
+      {/* <FlatList
         data={sizes}
         style={[styles.sizeList, {flexDirection: viewRTLStyle}]}
         numColumns={4}
@@ -62,7 +53,34 @@ export default sizeSection = props => {
             </Text>
           </TouchableOpacity>
         )}
-      />
+      /> */}
+
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() => {
+          if (props.link) {
+            Linking.openURL(props.link);
+          }
+        }}
+        style={[
+          styles.size,
+          {
+            backgroundColor: appColors.primary,
+            marginTop: 20,
+            width: '80%',
+            alignSelf: 'center'
+          },
+        ]}>
+        <Text
+          style={[
+            styles.name,
+            {
+              color: appColors.white,
+            },
+          ]}>
+          {t('product.openCatalogue')}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -8,10 +8,12 @@ import { MultiLangauge, CommonModal, CurrencyConverter } from '../';
 import styles from './styles';
 import { DrawerArrow } from '@utils/icons';
 import LogOut from '../logoutButton';
+import { useCustomer } from '../../context/customerContext';
 
 export default drawerComponent = props => {
   const [showModal, setShowModal] = useState(false);
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
+  const { customer } = useCustomer();
   const { colors } = useTheme();
   const t = props.t;
 
@@ -83,9 +85,9 @@ export default drawerComponent = props => {
         <View style={[styles.imageView, { borderBottomColor: colors.line }]}>
           <Image source={Images.user} resizeMode="contain" style={styles.img} />
           <Text style={[styles.name, { color: colors.text }]}>
-            {t('drawerArr.name')}
+            {customer ? `${customer.firstName} ${customer.lastName}` : t('drawerArr.name')}
           </Text>
-          <DrawerArrow />
+          {/* <DrawerArrow /> */}
         </View>
         <View style={[styles.menuItem, { backgroundColor: colors.background }]}>
           {Data.drawerItems.map((items, key) => (

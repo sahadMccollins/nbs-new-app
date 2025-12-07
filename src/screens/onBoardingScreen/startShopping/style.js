@@ -11,7 +11,8 @@ import appColors from "@theme/appColors";
 import appFonts from "@theme/appFonts";
 
 export const SLIDER_WIDTH = Dimensions.get('window').width
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
+// export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH)
 
 export default startShoppingStyles = StyleSheet.create({
     container: {
@@ -68,7 +69,7 @@ export default startShoppingStyles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: windowHeight(5),
         alignSelf: 'center',
-        marginBottom: windowHeight(10)
+        // marginBottom: windowHeight(10)
     },
     createNewText: {
         color: appColors.grey,
@@ -86,4 +87,9 @@ export default startShoppingStyles = StyleSheet.create({
         height: windowHeight(40),
         marginHorizontal:windowWidth(45)
     },
+    customContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginTop: windowHeight(100)
+    }
 });

@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -16,5 +16,11 @@ export default kidsCornerStyles = StyleSheet.create({
     fontFamily: appFonts.LatoMedium,
     color: appColors.grey,
     marginBottom: windowHeight(20),
+  },
+  seeAll: {
+    fontSize: fontSizes.FONT16,
+    fontFamily: appFonts.LatoMedium,
+    color: appColors.primary,
+    marginRight: windowWidth(5),
   },
 });
