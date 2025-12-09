@@ -69,8 +69,6 @@ export const shopifyProductService = {
                 })),
             }));
 
-            console.log("Fetched collections:", collections);
-
             return collections
         } catch (error) {
             console.error("Error fetching collection products:", error);

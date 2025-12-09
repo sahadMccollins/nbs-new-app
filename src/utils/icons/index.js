@@ -27,6 +27,7 @@ export * from '@assets/icons/share';
 export * from '@assets/icons/sideArrow';
 export * from '@assets/icons/support';
 export * from '@assets/icons/wishlist';
+export * from '@assets/icons/wishlistFilled';
 export * from '@assets/icons/drawerIcon/arabic';
 export * from '@assets/icons/drawerIcon/australianDollar';
 export * from '@assets/icons/drawerIcon/currencyConverter';

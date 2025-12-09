@@ -25,7 +25,7 @@ import {
   Wallet,
 } from '@utils/icons';
 import images from '../images/images';
-import {windowHeight, windowWidth} from '@theme/appConstant';
+import { windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import Check from '../../assets/icons/check';
 
@@ -49,89 +49,97 @@ module.exports = {
   ],
 
   drawerItems: [
-    {
-      name: 'drawerArr.mode',
-      icons: <DarkMode />,
-      description: '',
-      showSwitch: true,
-    },
-    {
-      name: 'drawerArr.rtl',
-      icons: <Rtl />,
-      description: '',
-      showSwitch: true,
-    },
-    {
-      name: 'profile.pages',
-      icons: <Orders />,
-      description: 'profile.pagesProfile',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'drawerArr.mode',
+    //   icons: <DarkMode />,
+    //   description: '',
+    //   showSwitch: true,
+    // },
+    // {
+    //   name: 'drawerArr.rtl',
+    //   icons: <Rtl />,
+    //   description: '',
+    //   showSwitch: true,
+    // },
+    // {
+    //   name: 'profile.pages',
+    //   icons: <Orders />,
+    //   description: 'profile.pagesProfile',
+    //   showSwitch: false,
+    // },
     {
       name: 'drawerArr.home',
       icons: <Home />,
       description: 'drawerArr.homeDrawer',
       showSwitch: false,
+      path: 'Home'
     },
     {
       name: 'drawerArr.shopByCategory',
       icons: <Category />,
       description: 'drawerArr.categoryDrawer',
       showSwitch: false,
+      path: 'CategoryStackScreen'
     },
     {
       name: 'drawerArr.orders',
       icons: <Orders />,
       description: 'drawerArr.orderDrawer',
       showSwitch: false,
+      path: 'OrderHistory'
     },
     {
       name: 'drawerArr.wishlist',
       icons: <Wishlist />,
       description: 'drawerArr.wishlistDrawer',
       showSwitch: false,
+      path: 'wishList'
     },
     {
       name: 'drawerArr.account',
       icons: <Profile />,
       description: 'drawerArr.accountDrawer',
       showSwitch: false,
+      path: 'profile'
     },
-    {
-      name: 'drawerArr.language',
-      icons: <Language />,
-      description: 'drawerArr.languageDrawer',
-      showSwitch: false,
-    },
-    {
-      name: 'drawerArr.currencyConverter',
-      icons: <CurrencyConverter />,
-      description: 'drawerArr.currencyConverterDrawer',
-      showSwitch: false,
-    },
-    {
-      name: 'drawerArr.notification',
-      icons: <Notification />,
-      description: 'drawerArr.notificationDrawer',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'drawerArr.language',
+    //   icons: <Language />,
+    //   description: 'drawerArr.languageDrawer',
+    //   showSwitch: false,
+    //   path: 'visibleModal'
+    // },
+    // {
+    //   name: 'drawerArr.currencyConverter',
+    //   icons: <CurrencyConverter />,
+    //   description: 'drawerArr.currencyConverterDrawer',
+    //   showSwitch: false,
+    // },
+    // {
+    //   name: 'drawerArr.notification',
+    //   icons: <Notification />,
+    //   description: 'drawerArr.notificationDrawer',
+    //   showSwitch: false,
+    // },
     {
       name: 'drawerArr.settings',
       icons: <Settings />,
       description: 'drawerArr.settingsDrawer',
       showSwitch: false,
+      path: 'Settings'
     },
-    {
-      name: 'drawerArr.aboutUs',
-      icons: <AboutUs />,
-      description: 'drawerArr.aboutUsDrawer',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'drawerArr.aboutUs',
+    //   icons: <AboutUs />,
+    //   description: 'drawerArr.aboutUsDrawer',
+    //   showSwitch: false,
+    // },
     {
       name: 'drawerArr.help',
       icons: <Help />,
       description: 'drawerArr.helpDrawer',
       showSwitch: false,
+      path: 'HelpCenter'
     },
   ],
 
@@ -194,7 +202,7 @@ module.exports = {
     },
   ],
 
-  bannerSection: [{image: images.banner1Image}, {image: images.banner2Image}, {image: images.banner3Image}, {image: images.banner4Image}],
+  bannerSection: [{ image: images.banner1Image }, { image: images.banner2Image }, { image: images.banner3Image }, { image: images.banner4Image }],
 
   dealsOfDaySection: [
     {
@@ -224,10 +232,10 @@ module.exports = {
   ],
 
   findYourStyleFilter: [
-    {title: 'ourProductsArr.generators'},
-    {title: 'ourProductsArr.waterpumps'},
-    {title: 'ourProductsArr.powerstations'},
-    {title: 'ourProductsArr.batteries'},
+    { title: 'ourProductsArr.generators' },
+    { title: 'ourProductsArr.waterpumps' },
+    { title: 'ourProductsArr.powerstations' },
+    { title: 'ourProductsArr.batteries' },
   ],
 
   findYourStyle: [
@@ -324,13 +332,14 @@ module.exports = {
   ],
 
   biggestDeal: [
-    {brand: images.biggestDeal1, darkBrand: images.biggestDealDark1},
-    {brand: images.biggestDeal2, darkBrand: images.biggestDealDark2},
-    {brand: images.biggestDeal3, darkBrand: images.biggestDealDark3},
-    {brand: images.biggestDeal4, darkBrand: images.biggestDealDark4},
-    {brand: images.biggestDeal5, darkBrand: images.biggestDealDark5},
-    {brand: images.biggestDeal6, darkBrand: images.biggestDealDark6},
-    {brand: images.biggestDeal7, darkBrand: images.biggestDealDark7},
+    { brand: images.biggestDeal1, darkBrand: images.biggestDealDark1, id: "gid://shopify/Collection/444978364628" },
+    { brand: images.biggestDeal2, darkBrand: images.biggestDealDark2, id: "gid://shopify/Collection/444937601236" },
+    { brand: images.biggestDeal3, darkBrand: images.biggestDealDark3, id: "gid://shopify/Collection/443622785236" },
+    { brand: images.biggestDeal4, darkBrand: images.biggestDealDark4, id: "gid://shopify/Collection/444978331860" },
+    { brand: images.biggestDeal5, darkBrand: images.biggestDealDark5, id: "gid://shopify/Collection/444978266324" },
+    { brand: images.biggestDeal6, darkBrand: images.biggestDealDark6, id: "gid://shopify/Collection/444937666772" },
+    { brand: images.biggestDeal7, darkBrand: images.biggestDealDark7, id: "gid://shopify/Collection/444937568468" },
+    { brand: images.biggestDeal8, darkBrand: images.biggestDealDark8, id: "gid://shopify/Collection/444937502932" },
     // {brand: images.biggestDeal8, darkBrand: images.biggestDealDark2},
     // {brand: images.biggestDeal9, darkBrand: images.biggestDealDark1},
   ],
@@ -378,14 +387,14 @@ module.exports = {
   ],
 
   langauges: [
-    {key: 'hi', name: 'langaugesArr.hindi', icons: <Hindi />},
+    { key: 'hi', name: 'langaugesArr.hindi', icons: <Hindi /> },
     {
       key: 'en',
       name: 'langaugesArr.english',
       icons: <Language width={windowWidth(34)} height={windowHeight(34)} />,
     },
-    {key: 'kr', name: 'langaugesArr.korean', icons: <Korea />},
-    {key: 'ar', name: 'langaugesArr.arabic', icons: <Arabic />},
+    { key: 'kr', name: 'langaugesArr.korean', icons: <Korea /> },
+    { key: 'ar', name: 'langaugesArr.arabic', icons: <Arabic /> },
   ],
 
   currencys: [
@@ -427,107 +436,107 @@ module.exports = {
     {
       name: 'subCategoryArr.funsionWear',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
-        {name: 'innerCategoryArr.spaghettiKurtas'},
-        {name: 'innerCategoryArr.capes'},
-        {name: 'innerCategoryArr.fusionGowns'},
-        {name: 'innerCategoryArr.nightwear'},
-        {name: 'innerCategoryArr.handbags'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
+        { name: 'innerCategoryArr.spaghettiKurtas' },
+        { name: 'innerCategoryArr.capes' },
+        { name: 'innerCategoryArr.fusionGowns' },
+        { name: 'innerCategoryArr.nightwear' },
+        { name: 'innerCategoryArr.handbags' },
       ],
     },
     {
       name: 'subCategoryArr.westernWear',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
-        {name: 'innerCategoryArr.spaghettiKurtas'},
-        {name: 'innerCategoryArr.capes'},
-        {name: 'innerCategoryArr.fusionGowns'},
-        {name: 'innerCategoryArr.nightwear'},
-        {name: 'innerCategoryArr.handbags'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
+        { name: 'innerCategoryArr.spaghettiKurtas' },
+        { name: 'innerCategoryArr.capes' },
+        { name: 'innerCategoryArr.fusionGowns' },
+        { name: 'innerCategoryArr.nightwear' },
+        { name: 'innerCategoryArr.handbags' },
       ],
     },
     {
       name: 'subCategoryArr.lingerieSleepwear',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
-        {name: 'innerCategoryArr.spaghettiKurtas'},
-        {name: 'innerCategoryArr.capes'},
-        {name: 'innerCategoryArr.fusionGowns'},
-        {name: 'innerCategoryArr.nightwear'},
-        {name: 'innerCategoryArr.handbags'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
+        { name: 'innerCategoryArr.spaghettiKurtas' },
+        { name: 'innerCategoryArr.capes' },
+        { name: 'innerCategoryArr.fusionGowns' },
+        { name: 'innerCategoryArr.nightwear' },
+        { name: 'innerCategoryArr.handbags' },
       ],
     },
     {
       name: 'subCategoryArr.footWear',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
       ],
     },
     {
       name: 'subCategoryArr.sportsAndActive',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
       ],
     },
     {
       name: 'subCategoryArr.beautyAndCare',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
-        {name: 'innerCategoryArr.spaghettiKurtas'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
+        { name: 'innerCategoryArr.spaghettiKurtas' },
       ],
     },
     {
       name: 'subCategoryArr.jewellery',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
-        {name: 'innerCategoryArr.halterTops'},
-        {name: 'innerCategoryArr.spaghettiKurtas'},
-        {name: 'innerCategoryArr.capes'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
+        { name: 'innerCategoryArr.halterTops' },
+        { name: 'innerCategoryArr.spaghettiKurtas' },
+        { name: 'innerCategoryArr.capes' },
       ],
     },
     {
       name: 'subCategoryArr.gadgets',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.tunics'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.tunics' },
       ],
     },
     {
       name: 'subCategoryArr.plusSize',
       innerCat: [
-        {name: 'innerCategoryArr.maxiDresses'},
-        {name: 'innerCategoryArr.skirts'},
-        {name: 'innerCategoryArr.cropTops'},
-        {name: 'innerCategoryArr.fusionGowns'},
-        {name: 'innerCategoryArr.nightwear'},
-        {name: 'innerCategoryArr.handbags'},
+        { name: 'innerCategoryArr.maxiDresses' },
+        { name: 'innerCategoryArr.skirts' },
+        { name: 'innerCategoryArr.cropTops' },
+        { name: 'innerCategoryArr.fusionGowns' },
+        { name: 'innerCategoryArr.nightwear' },
+        { name: 'innerCategoryArr.handbags' },
       ],
     },
   ],
@@ -638,119 +647,126 @@ module.exports = {
   ],
 
   profileItems: [
-    {
-      name: 'drawerArr.mode',
-      icons: <DarkMode />,
-      description: '',
-      showSwitch: true,
-    },
-    {
-      name: 'drawerArr.rtl',
-      icons: <Rtl />,
-      description: '',
-      showSwitch: true,
-    },
-    {
-      name: 'profile.pages',
-      icons: <Orders />,
-      description: 'profile.pagesProfile',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'drawerArr.mode',
+    //   icons: <DarkMode />,
+    //   description: '',
+    //   showSwitch: true,
+    // },
+    // {
+    //   name: 'drawerArr.rtl',
+    //   icons: <Rtl />,
+    //   description: '',
+    //   showSwitch: true,
+    // },
+    // {
+    //   name: 'profile.pages',
+    //   icons: <Orders />,
+    //   description: 'profile.pagesProfile',
+    //   showSwitch: false,
+    // },
     {
       name: 'drawerArr.orders',
       icons: <Orders />,
       description: 'drawerArr.orderDrawer',
       showSwitch: false,
+      path: 'OrderHistory'
     },
     {
       name: 'drawerArr.wishlist',
       icons: <Wishlist />,
       description: 'drawerArr.wishlistDrawer',
       showSwitch: false,
+      path: 'wishList'
     },
-    {
-      name: 'profile.payment',
-      icons: <Wallet />,
-      description: 'profile.paymentProfile',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'profile.payment',
+    //   icons: <Wallet />,
+    //   description: 'profile.paymentProfile',
+    //   showSwitch: false,
+    // },
     {
       name: 'profile.savedAddress',
       icons: <Location />,
       description: 'profile.addProfile',
       showSwitch: false,
+      path: 'SavedAddress'
     },
-    {
-      name: 'drawerArr.language',
-      icons: <Language />,
-      description: 'drawerArr.languageDrawer',
-      showSwitch: false,
-    },
-    {
-      name: 'drawerArr.currencyConverter',
-      icons: <CurrencyConverter />,
-      description: 'drawerArr.currencyConverterDrawer',
-      showSwitch: false,
-    },
-    {
-      name: 'drawerArr.notification',
-      icons: <Notification />,
-      description: 'drawerArr.notificationDrawer',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'drawerArr.language',
+    //   icons: <Language />,
+    //   description: 'drawerArr.languageDrawer',
+    //   showSwitch: false,
+    //   path: 'visibleModal'
+    // },
+    // {
+    //   name: 'drawerArr.currencyConverter',
+    //   icons: <CurrencyConverter />,
+    //   description: 'drawerArr.currencyConverterDrawer',
+    //   showSwitch: false,
+    // },
+    // {
+    //   name: 'drawerArr.notification',
+    //   icons: <Notification />,
+    //   description: 'drawerArr.notificationDrawer',
+    //   showSwitch: false,
+    // },
     {
       name: 'drawerArr.settings',
       icons: <Settings />,
       description: 'drawerArr.settingsDrawer',
       showSwitch: false,
+      path: 'Settings'
     },
-    {
-      name: 'profile.profileSetting',
-      icons: <AboutUs />,
-      description: 'profile.profileSettings',
-      showSwitch: false,
-    },
+    // {
+    //   name: 'profile.profileSetting',
+    //   icons: <AboutUs />,
+    //   description: 'profile.profileSettings',
+    //   showSwitch: false,
+    // },
     {
       name: 'profile.termsConditions',
       icons: <AboutUs />,
       description: 'profile.termsProfile',
       showSwitch: false,
+      path: 'TermsCondition'
     },
     {
       name: 'drawerArr.help',
       icons: <Help />,
       description: 'drawerArr.helpDrawer',
       showSwitch: false,
+      path: 'HelpCenter'
     },
   ],
 
   recentSearch: [
-    {result: 'products.productName1'},
-    {result: 'products.productName2'},
-    {result: 'products.productName3'},
+    { result: 'products.productName1' },
+    { result: 'products.productName2' },
+    { result: 'products.productName3' },
   ],
 
   recommended: [
-    {id: 0, name: 'recommendedArr.denim'},
-    {id: 1, name: 'recommendedArr.skirts'},
-    {id: 2, name: 'recommendedArr.flowerprint'},
-    {id: 3, name: 'recommendedArr.jeans'},
-    {id: 4, name: 'recommendedArr.jumpsuit'},
+    { id: 0, name: 'recommendedArr.denim' },
+    { id: 1, name: 'recommendedArr.skirts' },
+    { id: 2, name: 'recommendedArr.flowerprint' },
+    { id: 3, name: 'recommendedArr.jeans' },
+    { id: 4, name: 'recommendedArr.jumpsuit' },
   ],
 
   trendingCategory: [
-    {name: 'recommendedArr.flowerprint', category: images.flowerprint},
-    {name: 'recommendedArr.denim', category: images.denim},
-    {name: 'recommendedArr.skirts', category: images.skirts},
+    { name: 'recommendedArr.flowerprint', category: images.flowerprint },
+    { name: 'recommendedArr.denim', category: images.denim },
+    { name: 'recommendedArr.skirts', category: images.skirts },
   ],
 
   topBrands: [
-    {brand: images.brand1, darkBrand: images.biggestDealDark1},
-    {brand: images.brand2, darkBrand: images.biggestDealDark2},
-    {brand: images.brand3, darkBrand: images.biggestDealDark3},
-    {brand: images.brand4, darkBrand: images.biggestDealDark4},
-    {brand: images.brand5, darkBrand: images.biggestDealDark5},
-    {brand: images.brand6, darkBrand: images.biggestDealDark6},
+    { brand: images.brand1, darkBrand: images.biggestDealDark1 },
+    { brand: images.brand2, darkBrand: images.biggestDealDark2 },
+    { brand: images.brand3, darkBrand: images.biggestDealDark3 },
+    { brand: images.brand4, darkBrand: images.biggestDealDark4 },
+    { brand: images.brand5, darkBrand: images.biggestDealDark5 },
+    { brand: images.brand6, darkBrand: images.biggestDealDark6 },
   ],
   order: [
     {
@@ -813,38 +829,38 @@ module.exports = {
       title: 'Out For Delivery',
       description: 'expected delivery on monday',
     },
-    {title: 'In Transit', description: '10.00 am, 21/05/2020', icon: <Check />},
+    { title: 'In Transit', description: '10.00 am, 21/05/2020', icon: <Check /> },
     {
       title: 'Ready To Ship',
       description: '12.00 am, 20/05/2020',
       icon: <Check />,
     },
-    {title: 'Ordered', description: '20/05/2020', icon: <Check />},
+    { title: 'Ordered', description: '20/05/2020', icon: <Check /> },
   ],
   productSection: [
-    {id: 0, image: images.product1},
-    {id: 0, image: images.product2},
-    {id: 0, image: images.product4},
-    {id: 1, image: images.product5},
-    {id: 1, image: images.product6},
-    {id: 1, image: images.product7},
-    {id: 2, image: images.noData},
+    { id: 0, image: images.product1 },
+    { id: 0, image: images.product2 },
+    { id: 0, image: images.product4 },
+    { id: 1, image: images.product5 },
+    { id: 1, image: images.product6 },
+    { id: 1, image: images.product7 },
+    { id: 2, image: images.noData },
   ],
   sizes: [
-    {id: 0, name: 'sizes.small'},
-    {id: 1, name: 'sizes.midium'},
-    {id: 2, name: 'sizes.large'},
-    {id: 3, name: 'sizes.xlarge'},
+    { id: 0, name: 'sizes.small' },
+    { id: 1, name: 'sizes.midium' },
+    { id: 2, name: 'sizes.large' },
+    { id: 3, name: 'sizes.xlarge' },
   ],
   selectColors: [
-    {id: 0, color: '#E6E6FA'},
-    {id: 1, color: '#F5F5F5'},
-    {id: 2, color: '#B0C4DE'},
+    { id: 0, color: '#E6E6FA' },
+    { id: 1, color: '#F5F5F5' },
+    { id: 2, color: '#B0C4DE' },
   ],
   productDetails: [
-    {name: 'productDetail.product', content: 'productDetail.content'},
-    {name: 'productDetail.product1', content: 'productDetail.content1'},
-    {name: 'productDetail.product2', content: 'productDetail.content2'},
+    { name: 'productDetail.product', content: 'productDetail.content' },
+    { name: 'productDetail.product1', content: 'productDetail.content1' },
+    { name: 'productDetail.product2', content: 'productDetail.content2' },
   ],
   customerReview: [
     {
@@ -1046,27 +1062,27 @@ module.exports = {
   paymentOption: [
     {
       image: images.cash,
-      name: 'paymentDetails.cashDelivery',     
-       darkImg: images.cashDark,
-       selected:true
+      name: 'paymentDetails.cashDelivery',
+      darkImg: images.cashDark,
+      selected: true
     },
     {
       image: images.credit,
       name: 'paymentDetails.debit/credit',
       darkImg: images.creditDark,
-      selected:false
+      selected: false
     },
     {
       image: images.wallets,
       name: 'paymentDetails.wallets',
       darkImg: images.walletsDark,
-      selected:false
+      selected: false
     },
     {
       image: images.netBanking,
       name: 'paymentDetails.netBanking',
       darkImg: images.netBankingDark,
-      selected:false
+      selected: false
     },
   ],
   paymentwallets: [
@@ -1159,21 +1175,37 @@ module.exports = {
   states: [
     {
       id: 0,
-      name: 'addNewAddress.Selectstate',
+      name: 'addNewAddress.abudhabi',
     },
     {
       id: 1,
-      name: 'addNewAddress.gujarat',
+      name: 'addNewAddress.dubai',
     },
     {
       id: 2,
-      name: 'addNewAddress.punjab',
+      name: 'addNewAddress.sharjah',
+    },
+    {
+      id: 3,
+      name: 'addNewAddress.ajman',
+    },
+    {
+      id: 4,
+      name: 'addNewAddress.rasalkhaima',
+    },
+    {
+      id: 5,
+      name: 'addNewAddress.fujairah',
+    },
+    {
+      id: 6,
+      name: 'addNewAddress.ummalquwain',
     },
   ],
   addressTypes: [
-    {id: 0, name: 'addNewAddress.home', selected: true},
-    {id: 1, name: 'addNewAddress.office', selected: false},
-    {id: 2, name: 'addNewAddress.others', selected: false},
+    { id: 0, name: 'addNewAddress.home', selected: true },
+    { id: 1, name: 'addNewAddress.office', selected: false },
+    { id: 2, name: 'addNewAddress.others', selected: false },
   ],
   deliveryDetails: [
     {
@@ -1223,26 +1255,26 @@ module.exports = {
     },
     {
       quetion: 'helpCenter.unsubscribeSms',
-  
+
     },
     {
       quetion: 'helpCenter.refunds',
     },
   ],
   termsConditions: [
-    {content: 'termsCondition.restrictionContent'},
-    {content: 'termsCondition.restrictionContent1'},
-    {content: 'termsCondition.restrictionContent2'},
-    {content: 'termsCondition.restrictionContent3'},
-    {content: 'termsCondition.restrictionContent4'},
-    {content: 'termsCondition.restrictionContent5'},
-    {content: 'termsCondition.restrictionContent6'},
-    {content: 'termsCondition.restrictionContent7'},
+    { content: 'termsCondition.restrictionContent' },
+    { content: 'termsCondition.restrictionContent1' },
+    { content: 'termsCondition.restrictionContent2' },
+    { content: 'termsCondition.restrictionContent3' },
+    { content: 'termsCondition.restrictionContent4' },
+    { content: 'termsCondition.restrictionContent5' },
+    { content: 'termsCondition.restrictionContent6' },
+    { content: 'termsCondition.restrictionContent7' },
   ],
   gender: [
-    {id: 0, name: 'profileSettings.male'},
-    {id: 1, name: 'profileSettings.female'},
-    {id: 2, name: 'profileSettings.other'},
+    { id: 0, name: 'profileSettings.male' },
+    { id: 1, name: 'profileSettings.female' },
+    { id: 2, name: 'profileSettings.other' },
   ],
 
   categorys: [
@@ -1398,17 +1430,17 @@ module.exports = {
     },
   ],
   Colors: [
-    {id: 0, color: '#E6E6FA'},
-    {id: 1, color: '#F5F5F5'},
-    {id: 2, color: '#B0C4DE'},
-    {id: 3, color: '#EBACA2'},
-    {id: 4, color: '#FFC0CB'},
-    {id: 5, color: '#ADD8E6'},
-    {id: 6, color: '#BED3C3'},
-    {id: 7, color: '#9FD9F2'},
-    {id: 8, color: '#F5DEB3'},
-    {id: 9, color: '#FFE4E1'},
-    {id: 10, color: '#E6E6FA'},
+    { id: 0, color: '#E6E6FA' },
+    { id: 1, color: '#F5F5F5' },
+    { id: 2, color: '#B0C4DE' },
+    { id: 3, color: '#EBACA2' },
+    { id: 4, color: '#FFC0CB' },
+    { id: 5, color: '#ADD8E6' },
+    { id: 6, color: '#BED3C3' },
+    { id: 7, color: '#9FD9F2' },
+    { id: 8, color: '#F5DEB3' },
+    { id: 9, color: '#FFE4E1' },
+    { id: 10, color: '#E6E6FA' },
   ],
   Occasions: [
     {
@@ -1482,58 +1514,58 @@ module.exports = {
       title: 'pages.onBoarding',
       subtitle: 'pages.onBoardingDesc',
       innerPages: [
-        {screen: 'onBoarding', title: 'pages.onBoarding'},
-        {screen: 'LoginScreen', title: 'pages.login'},
-        {screen: 'RegistrationScreen', title: 'register.signUp'},
-        {screen: 'ForgotPasswordScreen', title: 'authComman.forgotPassword'},
-        {screen: 'ResetpasswordScreen', title: 'resetPassword.resetPassword'},
-        {screen: 'onBoarding', title: 'pages.otp'},
+        { screen: 'onBoarding', title: 'pages.onBoarding' },
+        { screen: 'LoginScreen', title: 'pages.login' },
+        { screen: 'RegistrationScreen', title: 'register.signUp' },
+        { screen: 'ForgotPasswordScreen', title: 'authComman.forgotPassword' },
+        { screen: 'ResetpasswordScreen', title: 'resetPassword.resetPassword' },
+        { screen: 'onBoarding', title: 'pages.otp' },
       ],
     },
     {
       title: 'pages.homeProduct',
       subtitle: 'pages.homeProductDesc',
       innerPages: [
-        {screen: 'Drawer', title: 'tabBar.home'},
-        {screen: 'CategoryStackScreen', title: 'category.categories'},
-        {screen: 'innerCategory', title: 'pages.innerCategory'},
-        {screen: 'Search', title: 'search.search'},
-        {screen: 'ShopPage', title: 'pages.shop'},
-        {screen: 'Product', title: 'pages.products'},
+        { screen: 'Drawer', title: 'tabBar.home' },
+        { screen: 'CategoryStackScreen', title: 'category.categories' },
+        { screen: 'innerCategory', title: 'pages.innerCategory' },
+        { screen: 'Search', title: 'search.search' },
+        { screen: 'ShopPage', title: 'pages.shop' },
+        { screen: 'Product', title: 'pages.products' },
       ],
     },
     {
       title: 'pages.cartOrderPayment',
       subtitle: 'pages.cartOrderDesc',
       innerPages: [
-        {screen: 'cart', title: 'tabBar.cart'},
-        {screen: 'EmptyCart', title: 'pages.emptyCart'},
-        {screen: 'ApplyCoupon', title: 'cart.applyCoupons'},
-        {screen: 'wishList', title: 'tabBar.wishList'},
-        {screen: 'AddNewAddress', title: 'addNewAddress.addNewAddress'},
-        {screen: 'Payment', title: 'notification.payment'},
-        {screen: 'OrderSuccessful', title: 'pages.orderSuccess'},
+        { screen: 'cart', title: 'tabBar.cart' },
+        { screen: 'EmptyCart', title: 'pages.emptyCart' },
+        { screen: 'ApplyCoupon', title: 'cart.applyCoupons' },
+        { screen: 'wishList', title: 'tabBar.wishList' },
+        { screen: 'AddNewAddress', title: 'addNewAddress.addNewAddress' },
+        { screen: 'Payment', title: 'notification.payment' },
+        { screen: 'OrderSuccessful', title: 'pages.orderSuccess' },
       ],
     },
     {
       title: 'profile.profileSetting',
       subtitle: 'pages.profileDesc',
       innerPages: [
-        {screen: 'profile', title: 'profile.profile'},
-        {screen: 'ProfileSettings', title: 'profile.profileSetting'},
-        {screen: 'OrderHistory', title: 'orderHistory.orderHistory'},
-        {screen: 'orderScreen', title: 'pages.ordertrack'},
-        {screen: 'EmptyCart', title: 'pages.noOrder'},
+        { screen: 'profile', title: 'profile.profile' },
+        { screen: 'ProfileSettings', title: 'profile.profileSetting' },
+        { screen: 'OrderHistory', title: 'orderHistory.orderHistory' },
+        { screen: 'orderScreen', title: 'pages.ordertrack' },
+        { screen: 'EmptyCart', title: 'pages.noOrder' },
       ],
     },
     {
       title: 'pages.otherPages',
       subtitle: 'pages.otherPageDesc',
       innerPages: [
-        {screen: 'TermsCondition', title: 'profile.termsConditions'},
-        {screen: 'HelpCenter', title: 'pages.help'},
-        {screen: 'AboutUs', title: 'drawerArr.aboutUs'},
-        {screen: 'Notification', title: 'drawerArr.notification'},
+        { screen: 'TermsCondition', title: 'profile.termsConditions' },
+        { screen: 'HelpCenter', title: 'pages.help' },
+        { screen: 'AboutUs', title: 'drawerArr.aboutUs' },
+        { screen: 'Notification', title: 'drawerArr.notification' },
       ],
     },
   ],
@@ -1543,17 +1575,17 @@ module.exports = {
       name: 'drawerArr.mode',
       switchType: 'darkMode',
     },
-    {
-      id: 1,
-      name: 'drawerArr.rtl',
-      switchType: 'rtl',
-    },
-    {
-      id: 2,
-      name: 'drawerArr.notification',
-      discription: 'drawerArr.notificationDrawer',
-      switchType: 'notification',
-    },
+    // {
+    //   id: 1,
+    //   name: 'drawerArr.rtl',
+    //   switchType: 'rtl',
+    // },
+    // {
+    //   id: 2,
+    //   name: 'drawerArr.notification',
+    //   discription: 'drawerArr.notificationDrawer',
+    //   switchType: 'notification',
+    // },
   ],
   orderFilters: [
     {

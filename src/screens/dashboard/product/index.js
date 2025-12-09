@@ -90,7 +90,7 @@ export default function product({ navigation }) {
           marginVertical={windowHeight(20)}
         /> */}
 
-        <QuantitySection t={t} colors={colors} />
+        {/* <QuantitySection t={t} colors={colors} /> */}
         <Divider />
 
         {/* <OfferSection t={t} colors={colors} /> */}
@@ -115,13 +115,13 @@ export default function product({ navigation }) {
         <YouMayLike
           t={t}
           colors={colors}
-          mayLike={Data.mayLike}
           title={t('checkDelivery.similarProducts')}
           navigation={navigation}
+          recommendedProducts={recommendedProducts}
         />
       </ScrollView>
 
-      <ButtonContainer navigation={navigation} t={t} colors={colors} />
+      <ButtonContainer item={product} navigation={navigation} t={t} colors={colors} />
     </SafeAreaView>
   );
 }

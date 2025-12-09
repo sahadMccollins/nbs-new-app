@@ -1,19 +1,19 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Data from '@utils/json';
 import styles from './style';
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 export default biggestDeals = props => {
   const biggestDeal = Data.biggestDeal;
-  const {isDark, textRTLStyle, viewRTLStyle} = useValues();
+  const { isDark, textRTLStyle, viewRTLStyle } = useValues();
 
   return (
     <View style={styles.mainView}>
       <Text
         style={[
           styles.biggestDeals,
-          {color: props.colors.text, textAlign: textRTLStyle},
+          { color: props.colors.text, textAlign: textRTLStyle },
         ]}>
         {props.t('homePage.biggestDeals')}
       </Text>
@@ -22,13 +22,18 @@ export default biggestDeals = props => {
         horizontal
         contentContainerStyle={[
           styles.container,
-          {flexDirection: viewRTLStyle},
+          { flexDirection: viewRTLStyle },
         ]}>
         {biggestDeal.map((item, key) => (
           <TouchableOpacity
             activeOpacity={1}
-            onPress={() => props.navigation.navigate('ShopPage')}
-            style={[styles.imageView, {backgroundColor: props.colors.product}]}
+            // onPress={() => props.navigation.navigate('ShopPage')}
+            onPress={() => {
+              props.navigation.navigate('ShopPageCollection', {
+                collectionId: item.id,
+              });
+            }}
+            style={[styles.imageView, { backgroundColor: props.colors.product }]}
             key={key}>
             {isDark ? (
               <Image source={item.darkBrand} style={styles.image} />

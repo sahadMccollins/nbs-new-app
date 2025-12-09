@@ -7,8 +7,6 @@ import appFonts from '@theme/appFonts';
 export default buttonContainer = props => {
   const {t, navigation} = props;
 
-  console.log('Props is', navigation.navigate);
-
   return (
     <TouchableOpacity
       onPress={() => {

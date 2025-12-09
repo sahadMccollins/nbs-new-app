@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -47,5 +47,32 @@ export default withWishlistStyles = StyleSheet.create({
     width: windowWidth(2),
     height: windowHeight(14),
     marginRight: windowWidth(10),
+  },
+
+
+  mainView: {
+    // margin: windowHeight(8),
+    // marginVertical: windowHeight(10),
+    height: windowHeight(22),
+    width: windowWidth(29),
+    // borderColor: appColors.black,
+    // borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: windowHeight(2.5),
+  },
+  text: {
+    fontSize: fontSizes.FONT18,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    color: appColors.black,
+  },
+  row: {
+    flexDirection: 'row',
+    // backgroundColor: appColors.styleBackground,
+    // marginVertical: windowHeight(12),
+    width: '40%',
+    justifyContent: 'space-around',
+    borderRadius: windowHeight(2.5),
   },
 });

@@ -22,34 +22,42 @@ export function profile({ navigation }) {
   const { viewRTLStyle, viewSelfRTLStyle } = useValues();
   const { customer } = useCustomer();
 
-  const goToScreen = key => {
-    if (key == 0) {
-    } else if (key == 1) {
-    }
-    if (key == 2) {
-      navigation.navigate('Pages');
-    } else if (key == 3) {
-      navigation.navigate('OrderHistory');
-    } else if (key == 4) {
-      navigation.navigate('wishList');
-    } else if (key == 5) {
-      navigation.navigate('PaymentCard');
-    } else if (key == 6) {
-      navigation.navigate('SavedAddress');
-    } else if (key == 7) {
-      visibleModal();
-    } else if (key == 8) {
-      visibleCurrencyModal();
-    } else if (key == 9) {
-      navigation.navigate('Notification');
-    } else if (key == 10) {
-      navigation.navigate('Settings');
-    } else if (key == 11) {
-      navigation.navigate('ProfileSettings');
-    } else if (key == 12) {
-      navigation.navigate('TermsCondition');
-    } else if (key == 13) {
-      navigation.navigate('HelpCenter');
+  // const goToScreen = key => {
+  //   if (key == 0) {
+  //   } else if (key == 1) {
+  //   }
+  //   if (key == 2) {
+  //     navigation.navigate('Pages');
+  //   } else if (key == 3) {
+  //     navigation.navigate('OrderHistory');
+  //   } else if (key == 4) {
+  //     navigation.navigate('wishList');
+  //   } else if (key == 5) {
+  //     navigation.navigate('PaymentCard');
+  //   } else if (key == 6) {
+  //     navigation.navigate('SavedAddress');
+  //   } else if (key == 7) {
+  //     visibleModal();
+  //   } else if (key == 8) {
+  //     visibleCurrencyModal();
+  //   } else if (key == 9) {
+  //     navigation.navigate('Notification');
+  //   } else if (key == 10) {
+  //     navigation.navigate('Settings');
+  //   } else if (key == 11) {
+  //     navigation.navigate('ProfileSettings');
+  //   } else if (key == 12) {
+  //     navigation.navigate('TermsCondition');
+  //   } else if (key == 13) {
+  //     navigation.navigate('HelpCenter');
+  //   }
+  // };
+
+  const goToScreen = path => {
+    if (path === 'visibleModal') {
+      setShowModal(!showModal);
+    } else {
+      navigation.navigate(path);
     }
   };
 
@@ -99,7 +107,7 @@ export function profile({ navigation }) {
               showLine={key == 13 ? false : true}
               description={items.description}
               showSwitch={items.showSwitch}
-              onPress={() => goToScreen(key)}
+              onPress={() => goToScreen(items.path)}
               showBg
               t={t}
               darkModeSwitch={key == 0 ? true : false}

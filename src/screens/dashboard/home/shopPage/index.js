@@ -103,6 +103,7 @@ const fetchProductsFromShopify = async (
           description
           tags
           productType
+          vendor
           availableForSale
           priceRange { minVariantPrice { amount } }
           compareAtPriceRange { maxVariantPrice { amount } }
@@ -127,6 +128,7 @@ const fetchProductsFromShopify = async (
       description: edge.node.description,
       tags: edge.node.tags,
       productType: edge.node.productType,
+      vendor: edge.node.vendor,
       price: edge.node.priceRange.minVariantPrice.amount,
       oldPrice: edge.node.compareAtPriceRange.maxVariantPrice.amount,
       image: edge.node.images.edges[0]?.node.transformedSrc,

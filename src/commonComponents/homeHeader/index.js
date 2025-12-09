@@ -56,12 +56,12 @@ export function HomeHeader(props) {
         onPress={props.searchPress}>
         <Search />
       </TouchableOpacity>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.mainLogoView}
         activeOpacity={0.8}
         onPress={props.notificationPress}>
         <Notification />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity
         style={styles.mainLogoView}
         activeOpacity={0.8}

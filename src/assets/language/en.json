@@ -66,7 +66,7 @@
     },
     "drawerArr": {
       "name": " Hello, Guest User",
-      "mode": "Mode",
+      "mode": "Dark Mode",
       "rtl": "RTL",
       "home": "Home",
       "shopByCategory": "Shop by Category",
@@ -167,6 +167,8 @@
     },
     "cart": {
       "shoppingCart": "Shopping Cart",
+      "emptyCart": "Empty Cart",
+      "emptyCartDesc": "Your cart is currently empty. Add items to place an order.",
       "steps": "Step 1 Of 3",
       "moveTowishlist": "Move to wishlist",
       "remove": "Remove",
@@ -189,6 +191,7 @@
     "products": {
       "priceOnRequest": "Price On Request",
       "by": "by",
+      "outOfStock": "OUT OF STOCK",
       "productName1": "Pink Hoodie t-shirt full",
       "productBrand1": "by Mango",
       "productDiscountPrice1": 32.00,
@@ -236,16 +239,18 @@
     },
     "orderDetails": {
       "orderDetail": "Order Details",
-      "bagTotal": "Bag total",
-      "bagSavings": "Bag savings",
+      "bagTotal": "Cart total",
+      "bagSavings": "Cart savings",
       "couponDiscount": "Coupon Discount",
       "delivery": "Delivery",
       "totalAmount": "Total Amount",
       "applyCoupon": "Apply Coupon"
     },
     "wishList": {
-      "yourWishlist": "Your Wishlist (3)",
-      "addToCart": "Add to Cart"
+      "yourWishlist": "Your Wishlist",
+      "addToCart": "Add to Cart",
+      "emptyWishlist": " Empty Wishlist",
+      "emptyWishlistDesc": "You haven't added any items to your wishlist yet."
     },
     "profile": {
       "profile": "Profile",
@@ -364,7 +369,7 @@
       "selectColor": "Select Color",
       "quantity": "Quantity",
       "catalogue": "Product Catalogue",
-      "openCatalogue": "See Catalogue"
+      "openCatalogue": "Data Sheet"
     },
     "OffersForYou": {
       "OffersForYou": "Offers for You",
@@ -375,7 +380,11 @@
     },
     "policySection": {
       "name": "Return & Exchange Policy",
-      "content": "This product is eligible for returns and size replacements. Please initiate returns/replacements from the 'My Orders' section in the App within 7 days of delivery. Please ensure the product is in its original condition with all tags attached."
+      "content": "This product is eligible for returns. Please initiate returns from the 'My Orders' section in the App within 7 days of delivery. Please ensure the product is in its original condition with all tags attached."
+    },
+    "checkout": {
+      "title": "Checkout",
+      "subTitle": "Step 3 of 3"
     },
     "productDetail": {
       "productDetails": "Product Details",
@@ -405,7 +414,7 @@
       "discription1": "Cash On delivery Available",
       "discription2": "Easy 21 days returns and exchanges",
       "similarProducts": "Similar Products",
-      "addToBag": "ADD TO BAG"
+      "addToBag": "ADD TO CART"
     },
     "cupons": {
       "save": "Save",
@@ -467,6 +476,8 @@
     },
     "addNewAddress": {
       "addNewAddress": "Add  a new address ",
+      "firstName": "First Name",
+      "lastName": "Last Name",
       "newZealand": "New Zealand",
       "australia": "Australia",
       "india": "India",
@@ -474,11 +485,16 @@
       "address": "Flat, House No., Building..",
       "area": "Area, Colony, Street",
       "landmark": "Landmark",
-      "town/city": "Town/City",
+      "city/district": "City/District",
+      "emirate": "Emirate",
       "state/province/region": "State/Province/Region",
-      "Selectstate": "Select state",
-      "gujarat": "Gujarat",
-      "punjab": "Punjab",
+      "abudhabi": "Abu Dhabi",
+      "dubai": "Dubai",
+      "sharjah": "Sharjah",
+      "ajman": "Ajman",
+      "rasalkhaima": "Ras Al Khaimah",
+      "fujairah": "Fujairah",
+      "ummalquwain": "Umm Al Quwain",
       "typeOfAddress": "Type Of Address",
       "home": "Home",
       "office": "Office",
@@ -495,7 +511,7 @@
       "addNewAddress": "Add New Address ",
       "expectedDelivery": "Expected Delivery",
       "deliveryBy": "Delivery by",
-      "ProceedPayment": "Proceed to payment"
+      "ProceedPayment": "Proceed to Checkout"
     },
     "aboutUs": {
       "introduction": "Introduction",
@@ -551,6 +567,8 @@
     "shopPage": {
       "womenCollection": "Women Collection",
       "numProducts": "Explore all products",
+      "emptyCollection": "Empty Collection",
+      "emptyCollectionDesc": "This collection does not contain any products.",
       "newProduct": "NEW",
       "filters": "Filters",
       "sortBy": "Sort By:",

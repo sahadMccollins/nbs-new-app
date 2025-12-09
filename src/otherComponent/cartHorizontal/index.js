@@ -1,35 +1,43 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './styles';
-import {t} from 'i18next';
-import {useTheme} from '@react-navigation/native';
-import {windowHeight} from '@theme/appConstant';
+import { t } from 'i18next';
+import { useTheme } from '@react-navigation/native';
+import { windowHeight } from '@theme/appConstant';
 import Price from '../../commonComponents/productHorizontal/withPrice';
 import WithWishlist from '../../commonComponents/productHorizontal/withWishlist';
-import {Divider} from '@commonComponents';
-import {Wishlist} from '@utils/icons';
+import { Divider } from '@commonComponents';
+import { Wishlist } from '@utils/icons';
 import AddToCart from '../../commonComponents/productHorizontal/withAddToCart';
-import {useValues} from '@App';
+import { useValues } from '@App';
+import { useShopifyWishlist } from '../../hooks/useShopifyWishlist';
+import { useShopifyCart } from '../../hooks/useShopifyCart';
 
 export default function CartHorizontal(props) {
   const products = props.products;
   const {
-    onPressAddToCart,
-    onPressRemove,
-    onPressmoveToWishlist,
     containerStyle,
   } = props;
-  const {colors} = useTheme();
-  const {viewRTLStyle, textRTLStyle} = useValues();
+  const { colors } = useTheme();
+  const { viewRTLStyle, textRTLStyle } = useValues();
+  const { removeFromWishlist, addToWishlist } = useShopifyWishlist();
+  const { addToCart, removeFromCart } = useShopifyCart();
+
+  const onPressmoveToWishlist = (item) => {
+    addToWishlist(item);
+    removeFromCart(item.id);
+  }
+
   return (
     <View>
       <ScrollView
-        contentContainerStyle={{paddingBottom: containerStyle}}
+        contentContainerStyle={{ paddingBottom: containerStyle }}
         showsVerticalScrollIndicator={false}>
         {products.map((item, key) => (
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => props.navigation.navigate('Product')}>
+            onPress={() => props.navigation.navigate('Product', { productId: item.id })}
+          >
             <View key={key}>
               <View
                 style={[
@@ -41,30 +49,34 @@ export default function CartHorizontal(props) {
                 ]}>
                 <Image
                   style={[styles.image, props.productStyle]}
-                  source={item.image}
+                  source={{ uri: item.image }}
                 />
-                <View style={[styles.txtView, {flexDirection: viewRTLStyle}]}>
+                <View style={[styles.txtView, { flexDirection: viewRTLStyle }]}>
                   <View>
                     <Text
+                      numberOfLines={2}
+                      ellipsizeMode='tail'
                       style={[
                         styles.title,
-                        {color: props.colors.text, textAlign: textRTLStyle},
+                        { color: props.colors.text, textAlign: textRTLStyle },
                       ]}>
                       {props.t(item.title)}
                     </Text>
                     {props.showPrice && (
                       <Price
-                        brandName={t(item.brandName)}
+                        brandName={t(item.vendor)}
                         colors={props.colors}
-                        discountPrice={t(item.discountPrice)}
-                        price={t(item.price)}
+                        discountPrice={t(item.price)}
+                        price={t(item.oldPrice)}
                         discount={t(item.discount)}
+                        t={props.t}
                       />
                     )}
                     {props.showWishlist && (
                       <WithWishlist
                         colors={props.colors}
                         onPressmoveToWishlist={onPressmoveToWishlist}
+                        item={item}
                         t={t}
                         icon={
                           <Wishlist
@@ -78,8 +90,13 @@ export default function CartHorizontal(props) {
                       <AddToCart
                         colors={props.colors}
                         t={t}
-                        onPressAddToCart={onPressAddToCart}
-                        onPressRemove={onPressRemove}
+                        onPressAddToCart={() => {
+                          addToCart(item);
+                          removeFromWishlist(item.id);
+                        }}
+                        onPressRemove={() => {
+                          removeFromWishlist(item.id);
+                        }}
                       />
                     )}
                   </View>

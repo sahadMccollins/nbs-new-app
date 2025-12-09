@@ -10,13 +10,25 @@ export default dealOfDay = props => {
   return (
     <TouchableOpacity
       activeOpacity={1}
-      // onPress={() => props.navigation.navigate('Product', { productId: props.id })}
-      >
+    // onPress={() => props.navigation.navigate('Product', { productId: props.id })}
+    >
       <View style={[styles.headerView, { flexDirection: viewRTLStyle }]}>
         <Text style={[styles.dealOfDay, { color: props.colors.text }]}>
           {props.t('homePage.dealsOfDay')}
         </Text>
-        <Text style={styles.seeAll}>{props.t('homePage.seeAll')}</Text>
+        {/* <Text style={styles.seeAll}>{props.t('homePage.seeAll')}</Text> */}
+        <Text
+          style={styles.seeAll}
+          onPress={() => {
+            props.navigation.navigate('ShopPageCollection', {
+              collectionId: 'gid://shopify/Collection/439668539604',
+              sortKey: 'BEST_SELLING',
+              reverse: false
+            });
+          }}
+        >
+          {props.t('homePage.seeAll')}
+        </Text>
       </View>
       <ProductHorizontal
         products={props.collection ? props.collection.products : []}

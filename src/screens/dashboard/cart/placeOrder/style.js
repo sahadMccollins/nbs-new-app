@@ -10,14 +10,15 @@ import appFonts from "@theme/appFonts";
 export default placeOrderStyles = StyleSheet.create({
     mainView: {
         position: 'absolute',
-        bottom: windowHeight(40),
+        // bottom: windowHeight(40),
+         bottom: windowHeight(5),
         width: '100%',
         paddingVertical: windowHeight(10),
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: windowWidth(20),
         alignItems: 'center',
-        elevation: 10,
+        // elevation: 10,
     },
     price: {
         fontFamily: appFonts.LatoMedium,

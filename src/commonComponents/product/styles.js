@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -34,16 +34,26 @@ export default productStyles = StyleSheet.create({
     fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoMedium,
   },
+  // wishlist: {
+  //   height: windowHeight(20),
+  //   width: windowWidth(29),
+  //   borderRadius: windowWidth(16),
+  //   position: 'absolute',
+  //   top: windowHeight(10),
+  //   right: windowWidth(20),
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   paddingTop: windowHeight(2),
+  // },s
   wishlist: {
-    height: windowHeight(20),
-    width: windowWidth(29),
+    height: windowHeight(22),
+    width: windowWidth(32),
     borderRadius: windowWidth(16),
-    position: 'absolute',
+    position: "absolute",
     top: windowHeight(10),
-    right: windowWidth(20),
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: windowHeight(2),
+    right: windowWidth(10),
+    alignItems: "center",
+    justifyContent: "center",
   },
   ratingsView: {
     marginTop: windowHeight(10),

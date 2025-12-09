@@ -72,7 +72,7 @@ export default menuItem = props => {
             )}
           </View>
         </View>
-        {props.darkModeSwitch && (
+        {/* {props.darkModeSwitch && (
           <SwitchContainer
             toggleDarkSwitch={toggleDarkSwitch}
             switchOn={isDark}
@@ -80,7 +80,7 @@ export default menuItem = props => {
         )}
         {props.rtlSwitch && (
           <SwitchContainer toggleDarkSwitch={toggleRtl} switchOn={isRTL} />
-        )}
+        )} */}
       </View>
       <View
         style={[

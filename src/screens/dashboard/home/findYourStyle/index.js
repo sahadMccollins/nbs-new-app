@@ -218,22 +218,25 @@ export default findYourStyle = props => {
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <Product
-            id={item.id}
-            image={item.image}
-            title={item.title}
-            discountPrice={item.price}
-            price={item.oldPrice}
-            discount={item.discount}
+            product={item}
             t={props.t}
             disc
             width={"50%"}
-            productTags={item.productTags}
             navigation={props.navigation}
           />
         )}
       />
+      <Text
+        style={styles.seeAll}
+        onPress={() => {
+          props.navigation.navigate('ShopPageCollection', {
+            collectionId: COLLECTION_IDS[select],
+          });
+        }}
+      >
+        {props.t('homePage.seeAll')}
+      </Text>
 
-      <Text style={styles.seeAll}>{props.t('homePage.seeAll')}</Text>
     </View>
   );
 };

@@ -67,7 +67,7 @@ export default sizeSection = props => {
           {
             backgroundColor: appColors.primary,
             marginTop: 20,
-            width: '80%',
+            width: '90%',
             alignSelf: 'center'
           },
         ]}>

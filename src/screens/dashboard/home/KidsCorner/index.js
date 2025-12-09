@@ -20,11 +20,22 @@ export default kidsCorner = props => {
         ]}>
         {props.t('homePage.newArrivals')}
       </Text>
-      <View style={{ flexDirection: 'row', justifyContent: "space-between"}} >
+      <View style={{ flexDirection: 'row', justifyContent: "space-between" }} >
         <Text style={[styles.clothing, { textAlign: textRTLStyle }]}>
           {props.t('homePage.newArrivalsDesc')}
         </Text>
-        <Text style={styles.seeAll}>{props.t('homePage.seeAll')}</Text>
+        <Text
+          style={styles.seeAll}
+          onPress={() => {
+            props.navigation.navigate('ShopPageCollection', {
+              collectionId: 'gid://shopify/Collection/439668572372',
+              sortKey: 'CREATED',
+              reverse: true
+            });
+          }}
+        >
+          {props.t('homePage.seeAll')}
+        </Text>
       </View>
       {/* <FlatList
         horizontal
@@ -55,16 +66,11 @@ export default kidsCorner = props => {
         ItemSeparatorComponent={() => <View style={styles.itemSeprator} />}
         renderItem={({ item }) => (
           <Product
-            image={item.image}
-            title={item.title}
-            discountPrice={item.price}
-            price={item.oldPrice}
-            discount={item.discount}
+            product={item}
             t={props.t}
             disc
             navigation={props.navigation}
             width={itemWidth}
-            productTags={item.productTags}
           />
         )}
         snapToInterval={itemWidth}

@@ -1,16 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
-import {Picker} from '@react-native-picker/picker';
-import {useTranslation} from 'react-i18next';
-import {windowWidth, windowHeight, fontSizes} from '@theme/appConstant';
-import {useTheme} from '@react-navigation/native';
-import {useValues} from '@App';
+import { Picker } from '@react-native-picker/picker';
+import { useTranslation } from 'react-i18next';
+import { windowWidth, windowHeight, fontSizes } from '@theme/appConstant';
+import { useTheme } from '@react-navigation/native';
+import { useValues } from '@App';
 
 export default dropDown = props => {
-  const {isRTL} = useValues();
-  const {t} = useTranslation();
-  const {colors} = useTheme();
+  const { isRTL } = useValues();
+  const { t } = useTranslation();
+  const { colors } = useTheme();
   const {
     SelectedItem,
     data,
@@ -21,6 +21,8 @@ export default dropDown = props => {
     height,
     fontSize,
   } = props;
+
+  console.log("selec", selectedItem)
   return (
     <View
       style={[
@@ -41,11 +43,11 @@ export default dropDown = props => {
             },
             isRTL
               ? {
-                  right: props.right ? props.right : windowWidth(16),
-                }
+                right: props.right ? props.right : windowWidth(16),
+              }
               : {
-                  left: props.left ? props.left : windowWidth(16),
-                },
+                left: props.left ? props.left : windowWidth(16),
+              },
           ]}>
           {name}
         </Text>
@@ -53,7 +55,7 @@ export default dropDown = props => {
         <View style={styles.inputView}></View>
       )}
 
-      <Picker
+      {/* <Picker
         mode={'dropdown'}
         style={[
           styles.dropdown,
@@ -70,6 +72,19 @@ export default dropDown = props => {
             <Picker.Item label={t(item.name)} value={t(item.name)} key={key} />
           );
         })}
+      </Picker> */}
+      <Picker
+        selectedValue={selectedItem}
+        onValueChange={(itemValue, itemIndex) =>
+          SelectedItem(itemValue)
+        }>
+        {data.map((item, key) => (
+          <Picker.Item
+            key={key}
+            label={t(item.name)}
+            value={t(item.name)}
+          />
+        ))}
       </Picker>
     </View>
   );

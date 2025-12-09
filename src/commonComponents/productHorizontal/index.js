@@ -10,12 +10,15 @@ import { useTheme } from '@react-navigation/native';
 import { windowHeight } from '@theme/appConstant';
 import LikeAnimation from '../likeAnimation';
 import { useValues } from '@App';
+import { useShopifyWishlist } from '../../hooks/useShopifyWishlist';
 
 export function ProductHorizontal(props) {
   const products = props.products;
-  const { onPressAddToCart, onPressRemove, onPressmoveToWishlist } = props;
+  const { addToWishlist, removeFromWishlist, toggleProduct, isInWishlist } = useShopifyWishlist();
   const { colors } = useTheme();
   const { isRTL, viewRTLStyle } = useValues();
+
+  // console.log('props',props.)
   return (
     <View>
       <ScrollView
@@ -66,15 +69,31 @@ export function ProductHorizontal(props) {
                     />
                   )}
                   {props.showWishlist && (
+                    // <WithWishlist
+                    //   colors={props.colors}
+                    //   onPressmoveToWishlist={onPressmoveToWishlist}
+                    //   t={t}
+                    // />
+
                     <WithWishlist
                       colors={props.colors}
-                      onPressmoveToWishlist={onPressmoveToWishlist}
                       t={t}
+                      product={item}
+                      onMove={() => toggleProduct(item)}
+                      onRemove={() => removeFromWishlist(item.id)}
                     />
+
                   )}
                 </View>
                 <View style={styles.likeView}>
-                  {props.isWishlist && <LikeAnimation />}
+                  {/* {props.isWishlist && <LikeAnimation />} */}
+                  {props.isWishlist && (
+                    <LikeAnimation
+                      productId={item.id}
+                      isLiked={isInWishlist(item.id)}
+                      onToggle={() => toggleProduct(item)}
+                    />
+                  )}
                 </View>
               </View>
             </View>

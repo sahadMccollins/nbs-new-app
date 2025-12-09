@@ -57,6 +57,8 @@ import {
 import { logo } from "@utils/images/images";
 import { CustomerProvider } from './src/context/customerContext';
 import { CollectionsProvider } from './src/context/collectionContext';
+import { CartProvider } from './src/context/cartContext';
+import { WishlistProvider } from './src/context/wishlistContext';
 
 
 LogBox.ignoreAllLogs();
@@ -104,9 +106,13 @@ function App() {
   return (
     <CommonContext.Provider value={contextValues}>
       <CustomerProvider>
-        <CollectionsProvider>
-          <Navigator />
-        </CollectionsProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <CollectionsProvider>
+              <Navigator />
+            </CollectionsProvider>
+          </WishlistProvider>
+        </CartProvider>
       </CustomerProvider>
     </CommonContext.Provider>
   );

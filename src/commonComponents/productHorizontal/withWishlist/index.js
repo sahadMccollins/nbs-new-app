@@ -1,15 +1,20 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-import {windowHeight, windowWidth} from '@theme/appConstant';
-import {Cart, Remove, DropDown} from '@utils/icons';
-import {useTheme} from '@react-navigation/native';
-import {useValues} from '@App';
+import { windowHeight, windowWidth } from '@theme/appConstant';
+import { Cart, Remove, DropDown } from '@utils/icons';
+import { useTheme } from '@react-navigation/native';
+import { useValues } from '@App';
+import Icon from 'react-native-vector-icons/AntDesign';
+import { useShopifyCart } from '../../../hooks/useShopifyCart';
 
 export default withWishlist = props => {
-  const {onPressmoveToWishlist, icon} = props;
-  const {colors} = useTheme();
-  const {viewRTLStyle, textRTLStyle} = useValues();
+  // const {onPressmoveToWishlist, icon} = props;
+  const { onMove, onRemove, icon, onPressmoveToWishlist } = props;
+  const { colors } = useTheme();
+  const { viewRTLStyle, textRTLStyle, viewSelfRTLStyle } = useValues();
+  const { removeFromCart, increaseQuantity, decreaseQuantity } = useShopifyCart();
+
   return (
     <View>
       <View
@@ -19,17 +24,47 @@ export default withWishlist = props => {
             flexDirection: viewRTLStyle,
           },
         ]}>
-        <View
+        {/* <View
           style={[
             styles.dropDownValue,
-            {backgroundColor: colors.product, flexDirection: viewRTLStyle},
+            { backgroundColor: colors.product, flexDirection: viewRTLStyle },
           ]}>
-          <Text style={[styles.dropDown, {color: props.colors.text}]}>
-            Qty: 1
+          <Text style={[styles.dropDown, { color: props.colors.text }]}>
+            Qty: {props.item.quantity}
           </Text>
           <DropDown height={windowHeight(12)} width={windowWidth(12)} />
-        </View>
+        </View> */}
         <View
+          style={[
+            styles.row,
+            {
+              backgroundColor: props.colors.styleBackground,
+              flexDirection: viewRTLStyle,
+              alignSelf: viewSelfRTLStyle,
+            },
+          ]}>
+          <TouchableOpacity
+            activeOpacity={1}
+            style={[styles.mainView, { borderColor: props.colors.text }]}
+            onPress={() => decreaseQuantity(props.item.id)}
+          >
+            <Icon name={'minus'} size={13} color={props.colors.text} />
+          </TouchableOpacity>
+          <Text style={[styles.text, { color: props.colors.text }]}>
+            {props.item.quantity}
+          </Text>
+          <TouchableOpacity
+            activeOpacity={1}
+            style={[styles.mainView, { borderColor: props.colors.text }]}
+            onPress={() => increaseQuantity(props.item.id)}
+          >
+            <Icon name={'plus'} size={13} color={props.colors.text} />
+          </TouchableOpacity>
+
+        </View>
+
+
+        {/* <View
           style={[
             styles.dropDownValue,
             {
@@ -41,21 +76,21 @@ export default withWishlist = props => {
           <Text
             style={[
               styles.dropDown,
-              {color: props.colors.text, textAlign: textRTLStyle},
+              { color: props.colors.text, textAlign: textRTLStyle },
             ]}>
             Size: S
           </Text>
           <DropDown height={windowHeight(12)} width={windowWidth(12)} />
-        </View>
+        </View> */}
       </View>
-      <View style={[styles.line, {backgroundColor: colors.product}]} />
-      <View style={[styles.options, {flexDirection: viewRTLStyle}]}>
+      <View style={[styles.line, { backgroundColor: colors.product }]} />
+      <View style={[styles.options, { flexDirection: viewRTLStyle }]}>
         <TouchableOpacity
           style={styles.option}
           activeOpacity={0.7}
-          onPress={onPressmoveToWishlist}>
+          onPress={() => onPressmoveToWishlist(props.item)}>
           {icon}
-          <Text style={[styles.optionText, {color: props.colors.text}]}>
+          <Text style={[styles.optionText, { color: props.colors.text }]}>
             {props.t('cart.moveTowishlist')}
           </Text>
         </TouchableOpacity>
@@ -63,12 +98,12 @@ export default withWishlist = props => {
         <TouchableOpacity
           style={styles.option}
           activeOpacity={0.7}
-          onPress={onPressmoveToWishlist}>
+          onPress={() => removeFromCart(props.item.id)}>
           <Remove />
           <Text
             style={[
               styles.optionText,
-              {color: props.colors.text, top: windowHeight(2)},
+              { color: props.colors.text, top: windowHeight(2) },
             ]}>
             {props.t('cart.remove')}
           </Text>

@@ -116,6 +116,7 @@ import Product from './screens/dashboard/product';
 import ApplyCoupon from './screens/dashboard/cart/applyCoupons';
 import Notification from './screens/notification';
 import Payment from './screens/dashboard/cart/payment';
+import Checkout from './screens/dashboard/cart/checkout';
 import AddNewAddress from './screens/dashboard/cart/addNewAddress';
 import { innerCategory } from './screens/dashboard/category/innerCategory';
 import { CategoryStackScreen } from './navigation/categoryStackScreen';
@@ -127,6 +128,7 @@ import Category from './screens/dashboard/home/category';
 import { cart } from './screens/dashboard/cart';
 import { profile } from './screens/dashboard/profile';
 import ShopPage from './screens/dashboard/home/shopPage';
+import ShopPageCollection from './screens/dashboard/home/shopPageCollection';
 import PaymentCard from './screens/dashboard/profile/paymentCard';
 import { HomeStackScreen } from './navigation/homeStackNavigator';
 import { wishList } from './screens/dashboard/wishList';
@@ -296,6 +298,7 @@ const MyStack = () => {
                     initialParams={{ t }}
                 />
                 <Stack.Screen name="Payment" component={Payment} initialParams={{ t }} />
+                <Stack.Screen name="Checkout" component={Checkout} initialParams={{ t }} />
                 <Stack.Screen name="Search" component={Search} initialParams={{ t }} />
                 <Stack.Screen
                     name="DeliveryDetails"
@@ -317,6 +320,11 @@ const MyStack = () => {
                 <Stack.Screen
                     name="ShopPage"
                     component={ShopPage}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="ShopPageCollection"
+                    component={ShopPageCollection}
                     initialParams={{ t }}
                 />
                 <Stack.Screen

@@ -11,38 +11,43 @@ import styles from './styles';
 import { useTheme } from '@react-navigation/native';
 import Lottie from 'lottie-react-native';
 import LikeAnim from '@assets/likeAnim.json';
-import { Wishlist } from '@utils/icons';
 import StarRating from '@commonComponents/starRating';
 import { useValues } from '@App';
+import { Wishlist, WishlistFilled } from "@utils/icons";
+import { useShopifyWishlist } from '../../hooks/useShopifyWishlist';
 
 export function Product(props) {
   const { colors } = useTheme();
-  const animationProgress = useRef(new Animated.Value(0)).current;
   const [like, setLike] = useState(false);
-  const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
+  const { viewRTLStyle, textRTLStyle, currSymbol, currValue, isDark } = useValues();
+  const { toggleProduct, isInWishlist } = useShopifyWishlist();
+  const { product } = props;
 
-  useEffect(() => {
-    Animated.timing(animationProgress, {
-      toValue: like ? 1 : 0,
-      duration: 300,
-      easing: Easing.linear,
-      useNativeDriver: true,
-    }).start();
-  }, [like, animationProgress]);
+  const scaleAnim = useRef(new Animated.Value(1)).current;
 
-  const likeProduct = () => {
-    setLike(!like);
+  const animate = () => {
+    Animated.sequence([
+      Animated.timing(scaleAnim, {
+        toValue: 1.4,
+        duration: 120,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 1,
+        duration: 120,
+        useNativeDriver: true,
+      }),
+    ]).start();
   };
 
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      // onPress={() => props.navigation.navigate('Product')}
-      onPress={() => props.navigation.navigate('Product', { productId: props.id })}
+      onPress={() => props.navigation.navigate('Product', { productId: product.id })}
       style={{ width: props.width ? props.width : props.width }}>
       {/* <Image source={ props.image } style={styles.img} /> */}
       <Image
-        source={{ uri: String(props.image) }}
+        source={{ uri: String(product.image) }}
         style={styles.img}
       />
 
@@ -53,12 +58,12 @@ export function Product(props) {
         style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}
         numberOfLines={2}
         ellipsizeMode="tail">
-        {props.t(props.title)}
+        {props.t(product.title)}
       </Text>
 
 
-      {props.productTags?.includes("request-a-qoute") ||
-        props.productTags?.includes("request-a-quote") ? (
+      {product.productTags?.includes("request-a-qoute") ||
+        product.productTags?.includes("request-a-quote") ? (
 
         /* -------------------------------
            SHOW "PRICE ON REQUEST"
@@ -74,7 +79,7 @@ export function Product(props) {
           </Text>
         </View>
 
-      ) : props.price && props.price > props.discountPrice ? (
+      ) : product.oldPrice && product.oldPrice > product.price ? (
 
         /* -------------------------------
            SHOW PRICE + OLD PRICE (DISCOUNT)
@@ -87,12 +92,12 @@ export function Product(props) {
             ]}
           >
             {currSymbol}
-            {(props.discountPrice * currValue).toFixed(2)}
+            {(product.price * currValue).toFixed(2)}
           </Text>
 
           <Text style={[styles.price, { textAlign: textRTLStyle }]}>
             {currSymbol}
-            {(props.price * currValue).toFixed(2)}
+            {(product.oldPrice * currValue).toFixed(2)}
           </Text>
         </View>
 
@@ -109,7 +114,7 @@ export function Product(props) {
             ]}
           >
             {currSymbol}
-            {(props.discountPrice * currValue).toFixed(2)}
+            {(product.price * currValue).toFixed(2)}
           </Text>
         </View>
 
@@ -122,13 +127,24 @@ export function Product(props) {
         </Text>
       )} */}
 
-      {props.price && props.discountPrice && props.price > props.discountPrice && (
+      {!product.available ? (
         <Text style={[styles.newProduct, { textAlign: textRTLStyle }]}>
-          {`${Math.round(((props.price - props.discountPrice) / props.price) * 100)}% OFF`}
+          {props.t("products.outOfStock")}
         </Text>
+      ) : (
+        product.oldPrice &&
+        product.price &&
+        product.oldPrice > product.price && (
+          <Text style={[styles.newProduct, { textAlign: textRTLStyle }]}>
+            {`${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF`}
+          </Text>
+        )
       )}
 
-      <TouchableOpacity
+
+
+
+      {/* <TouchableOpacity
         activeOpacity={0.7}
         onPress={likeProduct}
         style={[styles.wishlist, { backgroundColor: colors.background }]}>
@@ -141,6 +157,19 @@ export function Product(props) {
         ) : (
           <Wishlist />
         )}
+      </TouchableOpacity> */}
+
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() => toggleProduct(product)}
+        style={[
+          styles.wishlist,
+          { backgroundColor: isDark ? "#2B2B2B" : "white" },
+        ]}
+      >
+        <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+          {isInWishlist(product.id) ? <WishlistFilled /> : <Wishlist />}
+        </Animated.View>
       </TouchableOpacity>
     </TouchableOpacity>
   );

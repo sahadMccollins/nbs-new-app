@@ -84,7 +84,7 @@ export function home(props) {
       <HomeHeader
         navigationProps={props.navigation}
         searchPress={goToSearch}
-        notificationPress={goToNotification}
+        // notificationPress={goToNotification}
         wishlistPress={goToWishlist}
         cartPress={goToCart}
         navigation={props.navigation}
