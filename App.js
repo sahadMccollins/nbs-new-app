@@ -59,6 +59,7 @@ import { CustomerProvider } from './src/context/customerContext';
 import { CollectionsProvider } from './src/context/collectionContext';
 import { CartProvider } from './src/context/cartContext';
 import { WishlistProvider } from './src/context/wishlistContext';
+import { SearchProvider } from './src/context/searchContext';
 
 
 LogBox.ignoreAllLogs();
@@ -109,7 +110,9 @@ function App() {
         <CartProvider>
           <WishlistProvider>
             <CollectionsProvider>
-              <Navigator />
+              <SearchProvider>
+                <Navigator />
+              </SearchProvider>
             </CollectionsProvider>
           </WishlistProvider>
         </CartProvider>

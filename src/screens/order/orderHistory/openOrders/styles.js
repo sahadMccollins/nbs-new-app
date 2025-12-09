@@ -16,6 +16,7 @@ export default openOrderStyles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    gap: windowWidth(10)
   },
   mainView: {
     marginVertical: windowHeight(15),

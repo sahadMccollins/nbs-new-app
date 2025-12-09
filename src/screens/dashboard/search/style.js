@@ -32,4 +32,30 @@ export default searchStyles = StyleSheet.create({
     separator: { justifyContent: 'space-between' },
     brand: { backgroundColor: appColors.styleBackground, width: '30%', height: windowHeight(40), alignItems: 'center', justifyContent: 'center', borderRadius: windowWidth(6) },
     brandImg: { width: windowWidth(80), height: windowHeight(17) },
+    header: {
+        flexDirection: 'row',
+        paddingTop: windowHeight(10),
+        alignItems: 'center',
+    },
+    camera: {
+        height: windowHeight(45),
+        width: windowWidth(400),
+        backgroundColor: appColors.styleBackground,
+        marginLeft: windowWidth(20),
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: windowWidth(12),
+        borderRadius: windowWidth(10),
+        justifyContent: 'space-between',
+    },
+    search: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    input: {
+        marginLeft: windowWidth(6),
+        width: windowWidth(280),
+        fontSize: fontSizes.FONT20,
+        fontFamily: appFonts.LatoRegular,
+    },
 })

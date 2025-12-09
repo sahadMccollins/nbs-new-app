@@ -25,8 +25,9 @@ export default recentSearchStyles = StyleSheet.create({
     },
     result: {
         fontFamily: appFonts.LatoMedium,
-        fontSize: fontSizes.FONT20,
+        fontSize: fontSizes.FONT17,
         color: appColors.grey,
-        marginHorizontal: windowWidth(10)
+        marginHorizontal: windowWidth(10),
+        // maxWidth: '85%'
     },
 })

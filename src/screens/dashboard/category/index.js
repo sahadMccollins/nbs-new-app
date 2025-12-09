@@ -38,7 +38,12 @@ export function category({ navigation }) {
         {category.map((item, key) => (
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('innerCategory')}
+            // onPress={() => navigation.navigate('innerCategory')}
+            onPress={() => {
+              navigation.navigate('ShopPageCollection', {
+                collectionId: item.collectionId
+              });
+            }}
             key={key}
             style={[
               styles.category,
@@ -56,9 +61,9 @@ export function category({ navigation }) {
               ) : (
                 <Image source={item.image} style={styles.categoryImage} />
               )} */}
-                <Text style={[styles.categoryName, { color: colors.text }]}>
-                  {t(item.name).toUpperCase()}
-                </Text>
+              <Text style={[styles.categoryName, { color: colors.text }]}>
+                {t(item.name).toUpperCase()}
+              </Text>
               <Text style={styles.categorySub}>{t(item.categorySubTxt)}</Text>
             </View>
             <Image style={styles.categoryImg} source={item.categoryImg} />

@@ -21,6 +21,7 @@ export * from '@assets/icons/remove';
 export * from '@assets/icons/return';
 export * from '@assets/icons/rtl';
 export * from '@assets/icons/search';
+export * from '@assets/icons/searchNew';
 export * from '@assets/icons/securePayment';
 export * from '@assets/icons/settings';
 export * from '@assets/icons/share';

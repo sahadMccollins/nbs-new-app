@@ -97,8 +97,9 @@
 
 
 // useShopifyCart.js
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useCart } from "../context/cartContext";
+import { shopifyCheckoutService } from '../services/shopify/checkout';
 
 export const useShopifyCart = () => {
     const [loading, setLoading] = useState(false);
@@ -136,6 +137,10 @@ export const useShopifyCart = () => {
         }
     };
 
+    const createShopifyCheckoutUrl = useCallback(async (cartDetail) => {
+        return await shopifyCheckoutService.createCheckoutUrl(cartDetail);
+    }, []);
+
     return {
         cart,
         loading,
@@ -149,5 +154,6 @@ export const useShopifyCart = () => {
         clearCart: clearAll,
         getCount: () => cart.length,
         isInCart: (id) => cart.some((p) => p.id === id),
+        createShopifyCheckoutUrl
     };
 };

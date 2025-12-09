@@ -1,15 +1,15 @@
-import React , {useState} from 'react';
-import {View, Text, FlatList,TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import styles from './style';
 import appColors from "@theme/appColors";
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 export default recommended = props => {
   const colors = props.colors;
   const recommended = props.recommended;
   const t = props.t;
   const [selected, setSelected] = useState(0);
-  const {textRTLStyle} = useValues()
+  const { textRTLStyle } = useValues()
 
   const onPress = val => {
     recommended.map(item => {
@@ -21,8 +21,8 @@ export default recommended = props => {
 
   return (
     <View>
-      <Text style={[styles.title, {color: colors.text,textAlign:textRTLStyle}]}>
-        {t('search.recommendedForYou')}
+      <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
+        {t('search.trendingCategory')}
       </Text>
       <FlatList
         data={recommended}
@@ -31,14 +31,23 @@ export default recommended = props => {
         ItemSeparatorComponent={() => (
           <View style={styles.recommendedSeparator} />
         )}
-        renderItem={({item, index}) => (
-          <TouchableOpacity onPress={() => onPress(index)
-          }
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            // onPress={() => onPress(index)}
+            onPress={() => {
+              props.navigation.navigate('ShopPageCollection', {
+                collectionId: item.collectionId,
+              });
+            }}
             style={[
               styles.recommended,
-              {backgroundColor: selected == item.id ?  appColors.primary :     colors.cuponsbg},
+              // { backgroundColor: selected == item.id ? appColors.primary : colors.cuponsbg },
+              { backgroundColor: colors.cuponsbg },
             ]}>
-            <Text style={[styles.name, {color: selected == item.id ? appColors.white : colors.text}]}>
+            <Text style={[styles.name,
+              //  { color: selected == item.id ? appColors.white : colors.text }
+              { color: colors.text }
+               ]}>
               {t(item.name)}
             </Text>
           </TouchableOpacity>

@@ -7,15 +7,15 @@ import { useValues } from '@App';
 export default function addressDetails(props) {
   const { viewRTLStyle, textRTLStyle } = useValues()
   // const address = props.address;
-  const { colors, address, deleteAddress } = props;
-  const [selectedAddress, setSelectedAddress] = useState(null);
+  const { colors, address, deleteAddress, selectedAddress, setSelectedAddress } = props;
+  // const [selectedAddress, setSelectedAddress] = useState(null);
   const t = props.t;
 
-  useEffect(() => {
-    if (address && address.length > 0) {
-      setSelectedAddress(address[0]);
-    }
-  }, [address]);
+  // useEffect(() => {
+  //   if (address && address.length > 0) {
+  //     setSelectedAddress(address[0]);
+  //   }
+  // }, [address]);
 
 
   return (

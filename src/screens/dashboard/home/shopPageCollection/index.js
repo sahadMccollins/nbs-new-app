@@ -245,18 +245,18 @@ export default function ShopPageCollection({ navigation, route }) {
         text={collectionTitle || t('paymentCard.allCollection')}
         showText
         showIcon
-        showWishListIcon
+        showSearchIcon
         subText={t('shopPage.numProducts')}
         navigation={navigation}
       />
 
       <View style={{ flex: 1 }}>
         <View style={{ marginTop: windowHeight(3) }} />
-        <SearchBar
+        {/* <SearchBar
           t={t}
           colors={colors}
           onFilterPress={onFilterPress}
-        />
+        /> */}
 
         {!loading && products.length === 0 ? (
           <View

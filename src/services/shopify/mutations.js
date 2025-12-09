@@ -223,3 +223,107 @@ export const DELETE_CUSTOMER_ADDRESS = `
     }
   }
 `;
+
+export const GET_ORDER_DETAILS = `
+  query GetCustomerOrders($customerAccessToken: String!) {
+        customer(customerAccessToken: $customerAccessToken) {
+          email
+          orders(first: 100, reverse: true) {
+            edges {
+              node {
+                orderNumber
+                processedAt
+                financialStatus
+                fulfillmentStatus
+                canceledAt
+                statusUrl
+                totalPriceV2 {
+                 amount
+                }
+                billingAddress {
+                 address1
+                 formattedArea
+                }
+                id
+                name
+                email
+                phone
+                lineItems(first: 20) {
+                 edges {
+                    node {
+                      quantity
+                      title
+                      discountedTotalPrice {
+                        amount
+                      }
+                      originalTotalPrice {
+                        amount
+                      }
+                      currentQuantity
+                      variant {
+                        image {
+                          src
+                        }
+                        price {
+                          amount
+                        }
+                        compareAtPrice {
+                          amount
+                        }
+                        product {
+                          vendor
+                          productType
+                          id
+                        }
+                        id
+                      }
+                    }
+                 }
+                }
+              }
+            }
+          }
+        }
+      }
+`;
+
+export const GET_SEARCH_PRODUCTS = `
+  query GetSearchProducts($query: String!) {
+        products(first:80, query: $query) {
+          edges {
+            node {
+              id
+              title
+              description
+              tags
+              productType
+              vendor
+              availableForSale
+              priceRange { minVariantPrice { amount } }
+              compareAtPriceRange { maxVariantPrice { amount } }
+              images(first: 1) { edges { node { transformedSrc } } }
+              variants(first: 1) { edges { node { 
+              id
+              availableForSale
+              } } }  
+            }
+          }
+        }
+      }
+`;
+
+
+export const GET_SEARCH_SUGGESTION = `
+  query GetSearchSuggestions($query: String!) {
+        search(first: 10, query: $query) {
+        edges {
+          node {
+            ... on Product {
+              title
+              id
+            }
+          }
+        }
+      }
+      }
+`;

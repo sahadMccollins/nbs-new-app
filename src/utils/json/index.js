@@ -157,6 +157,7 @@ module.exports = {
       categoryImg: images.category21,
       categorySubTxt: 'categoryArr.invertersCollection',
       color: appColors.categoryColor1,
+      collectionId: "gid://shopify/Collection/443235205332"
     },
     {
       name: 'categoryArr.batteries',
@@ -164,6 +165,7 @@ module.exports = {
       categoryImg: images.category22,
       categorySubTxt: 'categoryArr.batteriesCollection',
       color: appColors.divider,
+      collectionId: "gid://shopify/Collection/443235369172"
     },
     {
       name: 'categoryArr.waterPump',
@@ -171,6 +173,7 @@ module.exports = {
       categoryImg: images.category23,
       categorySubTxt: 'categoryArr.waterPumpCollection',
       color: appColors.categoryColor2,
+      collectionId: "gid://shopify/Collection/443234746580"
     },
     {
       name: 'categoryArr.generator',
@@ -178,6 +181,7 @@ module.exports = {
       categoryImg: images.category24,
       categorySubTxt: 'categoryArr.generatorCollection',
       color: appColors.divider,
+      collectionId: "gid://shopify/Collection/443266466004"
     },
     {
       name: 'categoryArr.powerStation',
@@ -185,6 +189,7 @@ module.exports = {
       categoryImg: images.category25,
       categorySubTxt: 'categoryArr.powerStationCollection',
       color: appColors.categoryColor3,
+      collectionId: "gid://shopify/Collection/443234615508"
     },
     {
       name: 'categoryArr.solarPanel',
@@ -192,6 +197,7 @@ module.exports = {
       categoryImg: images.category26,
       categorySubTxt: 'categoryArr.solarPanelCollection',
       color: appColors.divider,
+      collectionId: "gid://shopify/Collection/444937961684"
     },
     {
       name: 'categoryArr.accessories',
@@ -199,6 +205,7 @@ module.exports = {
       categoryImg: images.category27,
       categorySubTxt: 'categoryArr.accessoriesCollection',
       color: appColors.categoryColor3,
+      collectionId: "gid://shopify/Collection/443234779348"
     },
   ],
 
@@ -747,11 +754,41 @@ module.exports = {
   ],
 
   recommended: [
-    { id: 0, name: 'recommendedArr.denim' },
-    { id: 1, name: 'recommendedArr.skirts' },
-    { id: 2, name: 'recommendedArr.flowerprint' },
-    { id: 3, name: 'recommendedArr.jeans' },
-    { id: 4, name: 'recommendedArr.jumpsuit' },
+    {
+      id: 0,
+      name: 'categoryArr.inverters',
+      collectionId: "gid://shopify/Collection/443235205332"
+    },
+    {
+      id: 1,
+      name: 'categoryArr.batteries',
+      collectionId: "gid://shopify/Collection/443235369172"
+    },
+    {
+      id: 2,
+      name: 'categoryArr.waterPump',
+      collectionId: "gid://shopify/Collection/443234746580"
+    },
+    {
+      id: 3,
+      name: 'categoryArr.generator',
+      collectionId: "gid://shopify/Collection/443266466004"
+    },
+    {
+      id: 4,
+      name: 'categoryArr.powerStation',
+      collectionId: "gid://shopify/Collection/443234615508"
+    },
+    {
+      id: 5,
+      name: 'categoryArr.solarPanel',
+      collectionId: "gid://shopify/Collection/444937961684"
+    },
+    {
+      id: 6,
+      name: 'categoryArr.accessories',
+      collectionId: "gid://shopify/Collection/443234779348"
+    }
   ],
 
   trendingCategory: [

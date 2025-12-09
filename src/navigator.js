@@ -128,12 +128,14 @@ import Category from './screens/dashboard/home/category';
 import { cart } from './screens/dashboard/cart';
 import { profile } from './screens/dashboard/profile';
 import ShopPage from './screens/dashboard/home/shopPage';
+import SearchResults from './screens/dashboard/home/searchResults';
 import ShopPageCollection from './screens/dashboard/home/shopPageCollection';
 import PaymentCard from './screens/dashboard/profile/paymentCard';
 import { HomeStackScreen } from './navigation/homeStackNavigator';
 import { wishList } from './screens/dashboard/wishList';
 import LoginScreen from './screens/auth/login/login';
 import orderScreen from './screens/order/orderDescription';
+import OrderStatusWebview from './screens/order/orderStatusWebview';
 import orderSummary from './screens/order/orderSuccessful/orderSummary';
 import Splash from './screens/splash';
 import Pages from './screens/pages';
@@ -271,6 +273,11 @@ const MyStack = () => {
                     initialParams={{ t }}
                 />
                 <Stack.Screen
+                    name="OrderStatusWebview"
+                    component={OrderStatusWebview}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
                     name="orderScreen"
                     component={orderScreen}
                     initialParams={{ t }}
@@ -320,6 +327,11 @@ const MyStack = () => {
                 <Stack.Screen
                     name="ShopPage"
                     component={ShopPage}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="SearchResults"
+                    component={SearchResults}
                     initialParams={{ t }}
                 />
                 <Stack.Screen

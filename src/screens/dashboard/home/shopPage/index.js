@@ -249,12 +249,12 @@ export default function ShopPage({ navigation }) {
 
       <View style={{ flex: 1 }}>
         <View style={{ marginTop: windowHeight(3) }} />
-        <SearchBar
+        {/* <SearchBar
           t={t}
           colors={colors}
           // cameraIcon
           onFilterPress={onFilterPress}
-        />
+        /> */}
         <Categorys products={products} t={t} navigation={navigation} />
       </View>
 

@@ -8,7 +8,7 @@ import { useTheme } from '@react-navigation/native';
 import MenuItem from '@otherComponent/drawerComponents/menuItem';
 import Data from '@utils/json';
 import styles from './style';
-import { MultiLangauge, CommonModal, CurrencyConverter } from '@otherComponent';
+import { MultiLangauge, CommonModal, CurrencyConverter, NotLoggedInModal } from '@otherComponent';
 import { useValues } from '@App';
 import LogOut from '@otherComponent/logoutButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -19,6 +19,7 @@ export function profile({ navigation }) {
   const { colors } = useTheme();
   const [showModal, setShowModal] = useState(false);
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const { viewRTLStyle, viewSelfRTLStyle } = useValues();
   const { customer } = useCustomer();
 
@@ -53,12 +54,22 @@ export function profile({ navigation }) {
   //   }
   // };
 
-  const goToScreen = path => {
+  const goToScreen = (path) => {
     if (path === 'visibleModal') {
       setShowModal(!showModal);
-    } else {
-      navigation.navigate(path);
+      return; // Stop execution here
     }
+
+    // Check if authentication is required for certain screens
+    if (path === 'OrderHistory' || path === 'SavedAddress') {
+      if (!customer?.accessToken) {
+        setShowLoginModal(!showLoginModal);
+        return; // Stop execution here
+      }
+    }
+
+    // Navigate to the screen
+    navigation.navigate(path);
   };
 
   const visibleModal = () => {
@@ -66,6 +77,9 @@ export function profile({ navigation }) {
   };
   const visibleCurrencyModal = () => {
     setShowCurrencyModal(!showCurrencyModal);
+  };
+  const visibleLoginModal = () => {
+    setShowLoginModal(!showLoginModal);
   };
 
   return (
@@ -138,6 +152,17 @@ export function profile({ navigation }) {
           }
           showModal={showCurrencyModal}
           visibleModal={visibleCurrencyModal}
+        />
+        <CommonModal
+          modal={
+            <NotLoggedInModal
+              onCancel={visibleLoginModal}
+              navigation={navigation}
+              from="profile"
+            />
+          }
+          showModal={showLoginModal}
+          visibleModal={visibleLoginModal}
         />
       </View>
     </SafeAreaView>

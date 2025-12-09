@@ -126,6 +126,12 @@
     "multicurrencyModal": {
       "selectCurrency": "Select Currency"
     },
+    "notLoggedInModal": {
+      "title": "You're Not Logged In",
+      "desc": "Please log in to view your orders and saved addresses. This helps us provide you with personalized service and order history.",
+      "loginButton": "Login Now",
+      "cancelButton": "Cancel"
+    },
     "currencyConverterArr": {
       "indianRupees": "Indian rupees",
       "usDollar": "United State dollar",
@@ -278,10 +284,11 @@
     },
     "search": {
       "search": "Search",
-      "recentSearch": "Recent Search",
+      "recentSearch": "Suggested Search",
       "recommendedForYou": "Recommended for you",
       "trendingCategory": "Trending Category",
-      "topBrands": "Top Brands On Multikart"
+      "topBrands": "Top Brands On Multikart",
+      "resultFor": "Result for"
     },
     "profileSettings": {
       "personalDetails": "PERSONAL DETAILS",
@@ -315,6 +322,7 @@
       "continueShopping": "Continue Shopping",
       "ordername": "Pink Hoodie t-shirt full",
       "size": "Size",
+      "items": "items",
       "qty": "Qty"
     },
     "sizes": {
@@ -335,6 +343,7 @@
       "ordered": "Ordered:",
       "orderDate": "26th May, 2021",
       "deliveryStatus": "Delivery Status:",
+      "paymentStatus": "Payment Status:",
       "dispatched": "Dispatched",
       "ontheway": "On the way",
       "pastOrders": "Past Orders",

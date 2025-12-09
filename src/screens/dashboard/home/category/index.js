@@ -17,7 +17,10 @@ export default category = props => {
           // key != 0 && (
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('CategoryStackScreen');
+              // props.navigation.navigate('CategoryStackScreen');
+              props.navigation.navigate('ShopPageCollection', {
+                collectionId: item.collectionId
+              });
             }}
             activeOpacity={1}
             style={styles.categoryView}
