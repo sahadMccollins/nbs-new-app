@@ -109,15 +109,11 @@ export default function LogOut(props) {
                 activeOpacity={0.7}
                 onPress={handleLogoutCancel}
                 style={[
-                  styles.modalBtn,
-                  styles.cancelBtn,
-                  { borderColor: colors.text },
+                  styles.btnContainer,
+                  { backgroundColor: colors.background, borderColor: colors.text },
                 ]}>
                 <Text
-                  style={[
-                    styles.modalBtnText,
-                    { color: colors.text },
-                  ]}>
+                  style={[styles.btnText, { color: colors.text }]}>
                   Cancel
                 </Text>
               </TouchableOpacity>
@@ -125,9 +121,13 @@ export default function LogOut(props) {
               <TouchableOpacity
                 activeOpacity={0.7}
                 onPress={handleLogoutConfirm}
-                style={[styles.modalBtn, styles.confirmBtn]}>
-                <Text style={[styles.modalBtnText, { color: '#fff' }]}>
-                  Logout
+                style={[
+                  styles.btnContainer,
+                  { backgroundColor: colors.background, borderColor: colors.text },
+                ]}
+              >
+                <Text style={[styles.btnText, { color: colors.notification }]}>
+                  {t('profile.logOut')}
                 </Text>
               </TouchableOpacity>
             </View>

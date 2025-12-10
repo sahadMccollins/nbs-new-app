@@ -4,7 +4,7 @@ import Images from '@utils/images/images';
 import MenuItem from './menuItem';
 import Data from '@utils/json';
 import { useTheme } from '@react-navigation/native';
-import { MultiLangauge, CommonModal, CurrencyConverter } from '../';
+import { MultiLangauge, CommonModal, CurrencyConverter, NotLoggedInModal } from '../';
 import styles from './styles';
 import { DrawerArrow } from '@utils/icons';
 import LogOut from '../logoutButton';
@@ -13,6 +13,7 @@ import { useCustomer } from '../../context/customerContext';
 export default drawerComponent = props => {
   const [showModal, setShowModal] = useState(false);
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const { customer } = useCustomer();
   const { colors } = useTheme();
   const t = props.t;
@@ -47,12 +48,29 @@ export default drawerComponent = props => {
   //   }
   // };
 
-  const goToScreen = path => {
+  // const goToScreen = path => {
+  //   if (path === 'visibleModal') {
+  //     setShowModal(!showModal);
+  //   } else {
+  //     props.navigation.navigate(path);
+  //   }
+  // };
+
+  const goToScreen = (path) => {
     if (path === 'visibleModal') {
       setShowModal(!showModal);
-    } else {
-      props.navigation.navigate(path);
+      return; // Stop execution here
     }
+
+    // Check if authentication is required for certain screens
+    if (path === 'OrderHistory' || path === 'SavedAddress') {
+      if (!customer?.accessToken) {
+        setShowLoginModal(!showLoginModal);
+        return; // Stop execution here
+      }
+    }
+    // Navigate to the screen
+    props.navigation.navigate(path)
   };
 
   const visibleModal = () => {
@@ -60,6 +78,10 @@ export default drawerComponent = props => {
   };
   const visibleCurrencyModal = () => {
     setShowCurrencyModal(!showCurrencyModal);
+  };
+
+  const visibleLoginModal = () => {
+    setShowLoginModal(!showLoginModal);
   };
 
   return (
@@ -86,6 +108,17 @@ export default drawerComponent = props => {
         }
         showModal={showCurrencyModal}
         visibleModal={visibleCurrencyModal}
+      />
+      <CommonModal
+        modal={
+          <NotLoggedInModal
+            onCancel={visibleLoginModal}
+            navigation={props.navigation}
+            from="drawer"
+          />
+        }
+        showModal={showLoginModal}
+        visibleModal={visibleLoginModal}
       />
       <ScrollView
         showsVerticalScrollIndicator={false}

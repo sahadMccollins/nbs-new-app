@@ -195,7 +195,7 @@
       "batteries": "Batteries"
     },
     "products": {
-      "priceOnRequest": "Price On Request",
+      "priceOnRequest": "Price on Request",
       "by": "by",
       "outOfStock": "OUT OF STOCK",
       "productName1": "Pink Hoodie t-shirt full",
@@ -261,7 +261,7 @@
     "profile": {
       "profile": "Profile",
       "userName": "Guest User",
-      "userEmail": "paigeturner@gmail.com",
+      "userEmail": "Login to see your details",
       "edit": "Edit",
       "payment": "Payment",
       "pages": "Pages",

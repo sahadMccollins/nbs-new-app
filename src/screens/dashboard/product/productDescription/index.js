@@ -6,7 +6,6 @@ import { useValues } from '@App';
 
 export default productDescription = props => {
   const { t, product } = props;
-  console.log("Product Description Props:", product);
   const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
 
   let featuresArray = [];
@@ -28,24 +27,33 @@ export default productDescription = props => {
         ]}>
         {product?.title}
       </Text>
-      <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>
-        <Text style={[styles.discountPrice, { color: props.colors.text }]}>
-          {currSymbol}{(product?.variants[0]?.price * currValue).toFixed(2)}
-        </Text>
-        {product?.variants[0]?.oldPrice && product?.variants[0]?.oldPrice > product?.variants[0]?.price && (
-          <>
-            <Text style={[styles.price, { color: props.colors.subText }]}>
-              {currSymbol}{(product?.variants[0]?.oldPrice * currValue).toFixed(2)}
-            </Text>
-            <Text style={styles.discount}>
-              {product?.variants[0]?.oldPrice && product?.variants[0]?.price && product?.variants[0]?.oldPrice > product?.variants[0]?.price
-                ? `(${Math.round(((product?.variants[0]?.oldPrice - product?.variants[0]?.price) / product?.variants[0]?.oldPrice) * 100)}% OFF)`
-                : ''}
-            </Text>
+      {product?.tags?.includes("request-a-qoute") ||
+        product?.tags?.includes("request-a-quote") ? (
+        <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>
+          <Text style={[styles.discountPrice, { color: props.colors.text }]}>
+            {props.t("products.priceOnRequest")}
+          </Text>
+        </View>
+      ) : (
+        <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>
+          <Text style={[styles.discountPrice, { color: props.colors.text }]}>
+            {currSymbol}{(product?.variants[0]?.price * currValue).toFixed(2)}
+          </Text>
+          {product?.variants[0]?.oldPrice && product?.variants[0]?.oldPrice > product?.variants[0]?.price && (
+            <>
+              <Text style={[styles.price, { color: props.colors.subText }]}>
+                {currSymbol}{(product?.variants[0]?.oldPrice * currValue).toFixed(2)}
+              </Text>
+              <Text style={styles.discount}>
+                {product?.variants[0]?.oldPrice && product?.variants[0]?.price && product?.variants[0]?.oldPrice > product?.variants[0]?.price
+                  ? `(${Math.round(((product?.variants[0]?.oldPrice - product?.variants[0]?.price) / product?.variants[0]?.oldPrice) * 100)}% OFF)`
+                  : ''}
+              </Text>
 
-          </>
-        )}
-      </View>
+            </>
+          )}
+        </View>
+      )}
       <Text style={[styles.text, { textAlign: textRTLStyle }]}>
         {t('product.inclusive')}
       </Text>

@@ -11,36 +11,19 @@ export default youMayLike = props => {
   const screenWidth = Dimensions.get('window').width;
   const itemWidth = screenWidth / 2;
 
+  console.log("recommendedProducts", recommendedProducts[0]);
+
   return (
     <View>
       <Text
         style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
         {title}
       </Text>
-      {/* <FlatList
-        data={recommendedProducts}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.container}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-        inverted={isRtl ? true : false}
-        renderItem={({ item }) => (
-          <Product
-            image={item.image}
-            title={item.title}
-            discountPrice={item.price}
-            price={item.oldPrice}
-            t={t}
-            navigation={navigation}
-
-          />
-        )}
-      /> */}
-
       <FlatList
         horizontal
-        data={recommendedProducts}
+        data={recommendedProducts ? recommendedProducts : []}
         showsHorizontalScrollIndicator={false}
+        onStartShouldSetResponder={() => true}
         contentContainerStyle={[styles.container, { flexDirection: viewRTLStyle }]}
         ItemSeparatorComponent={() => <View style={styles.itemSeprator} />}
         renderItem={({ item }) => (
@@ -48,8 +31,8 @@ export default youMayLike = props => {
             product={item}
             t={props.t}
             disc
-            width={itemWidth}
             navigation={props.navigation}
+            width={itemWidth}
           />
         )}
         snapToInterval={itemWidth}

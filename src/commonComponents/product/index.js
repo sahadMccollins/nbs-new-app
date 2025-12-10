@@ -44,7 +44,8 @@ export function Product(props) {
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={() => props.navigation.navigate('Product', { productId: product.id })}
-      style={{ width: props.width ? props.width : props.width }}>
+      style={{ width: props.width }}
+    >
       {/* <Image source={ props.image } style={styles.img} /> */}
       <Image
         source={{ uri: String(product.image) }}

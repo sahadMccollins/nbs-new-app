@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, ScrollView, View } from 'react-native';
-import { Header, Divider } from '@commonComponents';
+import { Header, Divider, } from '@commonComponents';
 import { windowHeight } from '@theme/appConstant';
 import { useTranslation } from 'react-i18next';
 import { useRoute, useTheme } from '@react-navigation/native';
 import Slider from './slider';
 import ProductDescription from './productDescription';
 import SizeSection from './sizeSection';
-import Data from '@utils/json';
 import ColorSection from './colorSection';
 import QuantitySection from './quantitySection';
 import OfferSection from './offerSection';
@@ -25,7 +24,7 @@ export default function product({ navigation }) {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const route = useRoute();
-  const productId = route.params?.productId;
+  const scrollViewRef = useRef(null);
   const {
     fetchProductData,
     fetchRecommendedProductsData,
@@ -39,10 +38,23 @@ export default function product({ navigation }) {
     setSelectedColor(val);
   };
 
+  // useEffect(() => {
+  //   fetchProductData(productId)
+  //   fetchRecommendedProductsData(productId)
+  // }, [])
+
   useEffect(() => {
-    fetchProductData(productId)
-    fetchRecommendedProductsData(productId)
-  }, [])
+    const newProductId = route.params?.productId;
+    if (newProductId) {
+      fetchProductData(newProductId);
+      fetchRecommendedProductsData(newProductId);
+
+      // Scroll to top after a small delay to ensure data is loaded
+      setTimeout(() => {
+        scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+      }, 100);
+    }
+  }, [route.params?.productId]);
 
   // ✅ Full-screen centered loader
   if (loading && !product) {
@@ -68,6 +80,8 @@ export default function product({ navigation }) {
       <ScrollView
         contentContainerStyle={{ paddingBottom: windowHeight(80) }}
         style={{ backgroundColor: colors.card }}
+        keyboardShouldPersistTaps={true}
+        ref={scrollViewRef}
       >
         <Slider images={product?.images} t={t} colors={colors} selectedColor={selectedColor} />
         <View style={{ height: windowHeight(30) }} />
@@ -98,7 +112,8 @@ export default function product({ navigation }) {
 
         <ProductDetail
           t={t}
-          productDetails={Data.productDetails}
+          productDescription={product?.descriptionHtml}
+          specifications={product?.specificationValues}
           colors={colors}
         />
         <Divider />

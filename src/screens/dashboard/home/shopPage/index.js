@@ -59,12 +59,13 @@ import { ScrollView, View, ActivityIndicator, FlatList } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { Header } from '@commonComponents';
 import { useTranslation } from 'react-i18next';
-import { windowHeight } from '@theme/appConstant';
 import SearchBar from '@commonComponents/searchBar';
+import { Product } from '@commonComponents';
 import Categorys from './categorys';
 import Filter from './filter';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL } from '../../../../utils/fetchGraphql';
+import { windowHeight, windowWidth } from '@theme/appConstant';
 
 /** ------------------------------------------------------------------
  * NETWORK – GraphQL helper
@@ -156,6 +157,7 @@ export default function ShopPage({ navigation }) {
 
   // Product fetching state
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [products, setProducts] = useState([]);
   const [hasNextPage, setHasNextPage] = useState(false);
   const [endCursor, setEndCursor] = useState(null);
@@ -194,8 +196,8 @@ export default function ShopPage({ navigation }) {
 
   // Load more products for pagination
   const loadMoreProducts = useCallback(async () => {
-    if (!hasNextPage || loading) return;
-    setLoading(true);
+    if (!hasNextPage || loadingMore) return;
+    setLoadingMore(true);
     const res = await fetchProductsFromShopify(
       endCursor,
       sort.sortKey,
@@ -206,11 +208,20 @@ export default function ShopPage({ navigation }) {
     setProducts(prev => [...prev, ...res.products]);
     setHasNextPage(res.hasNextPage);
     setEndCursor(res.endCursor);
-    setLoading(false);
-  }, [hasNextPage, loading, endCursor, sort.sortKey, sort.reverse, appliedTypes, appliedBrands]);
+    setLoadingMore(false);
+  }, [hasNextPage, loadingMore, endCursor, sort.sortKey, sort.reverse, appliedTypes, appliedBrands]);
 
   const onFilterPress = () => {
     setModalVisible(!modalVisible);
+  };
+
+  const renderFooter = () => {
+    if (!loadingMore) return null;
+    return (
+      <View style={{ paddingVertical: 24 }}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
   };
 
   const handleShowResults = () => {
@@ -247,20 +258,48 @@ export default function ShopPage({ navigation }) {
         navigation={navigation}
       />
 
-      <View style={{ flex: 1 }}>
-        <View style={{ marginTop: windowHeight(3) }} />
-        {/* <SearchBar
-          t={t}
-          colors={colors}
-          // cameraIcon
-          onFilterPress={onFilterPress}
-        /> */}
-        <Categorys products={products} t={t} navigation={navigation} />
-      </View>
-
-      {loading && (
-        <View style={{ paddingVertical: 24 }}>
+      {loading ? (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      ) : (
+        <View style={{ flex: 1 }}>
+          <View style={{ marginTop: windowHeight(3) }} />
+          <View style={{
+            flex: 1,
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <FlatList
+              numColumns={2}
+              columnWrapperStyle={{
+                justifyContent: 'space-between',
+                marginHorizontal: windowWidth(16),
+                marginTop: windowHeight(20),
+              }}
+              data={products}
+              ItemSeparatorComponent={() => <View style={{
+                backgroundColor: 'red',
+                width: '30%',
+              }} />}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => (
+                <Product
+                  product={item}
+                  t={t}
+                  disc
+                  width={"50%"}
+                  navigation={navigation}
+                />
+              )}
+
+              onEndReached={loadMoreProducts}
+              onEndReachedThreshold={0.5}
+              ListFooterComponent={renderFooter}
+              scrollEventThrottle={16}
+            />
+          </View>
         </View>
       )}
 

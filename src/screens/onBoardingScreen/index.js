@@ -16,10 +16,12 @@ export default function onBoarding(props) {
   const { customer } = useCustomer();
 
   useEffect(() => {
-    if (customer.accessToken) {
+    if (customer && customer.accessToken) {
       props.navigation.replace("Drawer");
     }
   }, [customer]);
+
+
 
   return (
     <SafeAreaView>

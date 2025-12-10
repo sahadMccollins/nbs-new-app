@@ -269,7 +269,7 @@ export default function LoginScreen(props) {
   };
 
   useEffect(() => {
-    if (customer.accessToken) {
+    if (customer && customer.accessToken) {
       props.navigation.replace("Drawer");
     }
   }, [customer]);

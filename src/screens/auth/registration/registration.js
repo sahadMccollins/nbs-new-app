@@ -191,12 +191,11 @@ export default function RegistrationScreen(props) {
     props.navigation.replace('LoginScreen');
   };
 
-
   useEffect(() => {
-    if (customer.accessToken) {
-      props.navigation.replace("Drawer");
-    }
-  }, [customer]);
+      if (customer && customer.accessToken) {
+        props.navigation.replace("Drawer");
+      }
+    }, [customer]);
 
   return (
     <SafeAreaView>
