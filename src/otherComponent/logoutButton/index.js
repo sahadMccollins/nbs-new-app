@@ -39,8 +39,10 @@ import styles from './styles';
 export default function LogOut(props) {
   const { navigation } = props;
   const { colors } = useTheme();
-  const { clearCustomer } = useCustomer();
+  const { customer, clearCustomer } = useCustomer();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const isLoggedIn = !!customer?.accessToken;
 
   const handleLogoutConfirm = async () => {
     try {
@@ -65,17 +67,32 @@ export default function LogOut(props) {
 
   return (
     <>
-      <TouchableOpacity
-        activeOpacity={0.7}
-        onPress={onLogoutBtn}
-        style={[
-          styles.btnContainer,
-          { backgroundColor: colors.background, borderColor: colors.text },
-        ]}>
-        <Text style={[styles.btnText, { color: colors.text }]}>
-          {t('profile.logOut')}
-        </Text>
-      </TouchableOpacity>
+      {isLoggedIn ? (
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={onLogoutBtn}
+          style={[
+            styles.btnContainer,
+            { backgroundColor: colors.background, borderColor: colors.text },
+          ]}>
+          <Text style={[styles.btnText, { color: colors.text }]}>
+            {t('profile.logOut')}
+          </Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('LoginScreen')}
+          style={[
+            styles.btnContainer,
+            { backgroundColor: colors.background, borderColor: colors.text },
+          ]}>
+          <Text style={[styles.btnText, { color: colors.text }]}>
+            {t('login.loginNow')}
+          </Text>
+        </TouchableOpacity>
+      )}
+
 
       <Modal
         transparent={true}
