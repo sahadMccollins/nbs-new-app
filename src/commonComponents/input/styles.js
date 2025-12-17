@@ -14,7 +14,8 @@ export default inputStyles = StyleSheet.create({
   error: {
     fontSize: fontSizes.FONT16,
     marginLeft: windowWidth(22),
-    marginTop: windowHeight(4),
+    // marginTop: windowHeight(4),
+    marginTop: windowHeight(10),
     color: appColors.error,
     fontFamily: appFonts.LatoRegular,
   },

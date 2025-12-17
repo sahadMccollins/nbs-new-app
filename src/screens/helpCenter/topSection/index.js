@@ -10,7 +10,7 @@ export default topSection = props => {
   return (
     <View>
       <Image source={helpCenter} style={styles.image} />
-      <Text
+      {/* <Text
         style={[styles.title, {color: colors.text, textAlign: textRTLStyle}]}>
         {t('helpCenter.helpCenter')}
       </Text>
@@ -24,7 +24,7 @@ export default topSection = props => {
       <Text
         style={[styles.title, {color: colors.text, textAlign: textRTLStyle}]}>
         {t('helpCenter.issueFacing')}
-      </Text>
+      </Text> */}
     </View>
   );
 };

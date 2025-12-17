@@ -9,6 +9,7 @@ import {
   Orders,
   Profile,
   Settings,
+  Lock,
   Hindi,
   Language,
   CurrencyConverter,
@@ -23,6 +24,10 @@ import {
   DarkMode,
   Location,
   Wallet,
+  Document,
+  Delivery,
+  ReturnOrder,
+  Return,
 } from '@utils/icons';
 import images from '../images/images';
 import { windowHeight, windowWidth } from '@theme/appConstant';
@@ -209,7 +214,7 @@ module.exports = {
     },
   ],
 
-  bannerSection: [{ image: images.banner1Image }, { image: images.banner2Image }, { image: images.banner3Image }, { image: images.banner4Image }],
+  bannerSection: [{ image: images.banner1Image }, { image: images.banner2Image }, { image: images.banner3Image }, { image: images.banner4Image }, { image: images.banner5Image }, { image: images.banner6Image }],
 
   dealsOfDaySection: [
     {
@@ -732,11 +737,39 @@ module.exports = {
     //   showSwitch: false,
     // },
     {
+      name: 'profile.privacyPolicy',
+      icons: <Lock/>,
+      description: 'profile.privacyPolicyDesc',
+      showSwitch: false,
+      path: 'PrivacyPolicy'
+    },
+    {
       name: 'profile.termsConditions',
       icons: <AboutUs />,
       description: 'profile.termsProfile',
       showSwitch: false,
       path: 'TermsCondition'
+    },
+    {
+      name: 'profile.shippingPolicy',
+      icons: <Document/>,
+      description: 'profile.shippingPolicyDesc',
+      showSwitch: false,
+      path: 'ShippingPolicy'
+    },
+    {
+      name: 'profile.refundPolicy',
+      icons: <Return />,
+      description: 'profile.refundPolicyDesc',
+      showSwitch: false,
+      path: 'RefundPolicy'
+    },
+    {
+      name: 'profile.deliveryPolicy',
+      icons: <Delivery />,
+      description: 'profile.deliveryPolicyDesc',
+      showSwitch: false,
+      path: 'DeliveryPolicy'
     },
     {
       name: 'drawerArr.help',
@@ -1276,26 +1309,29 @@ module.exports = {
   ],
   helpCenter: [
     {
-      quetion: 'helpCenter.trackOrderQuetion',
+      quetion: 'helpCenter.question1',
     },
     {
-      quetion: 'helpCenter.manageOrderQuetion',
+      quetion: 'helpCenter.question2',
     },
     {
-      quetion: 'helpCenter.credit/debitQuetion',
+      quetion: 'helpCenter.question3',
     },
     {
-      quetion: 'helpCenter.otherIssues',
+      quetion: 'helpCenter.question4',
     },
     {
-      quetion: 'helpCenter.walletPayQuetion',
+      quetion: 'helpCenter.question5',
     },
     {
-      quetion: 'helpCenter.unsubscribeSms',
+      quetion: 'helpCenter.question6',
 
     },
     {
-      quetion: 'helpCenter.refunds',
+      quetion: 'helpCenter.question7',
+    },
+    {
+      quetion: 'helpCenter.question8',
     },
   ],
   termsConditions: [

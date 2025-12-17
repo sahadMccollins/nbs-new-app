@@ -1,28 +1,29 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Data from '@utils/json';
 import Swiper from 'react-native-swiper';
-import {Button} from '@commonComponents';
+import { Button } from '@commonComponents';
 import styles from './style';
 
 export default slider = props => {
   const bannerSection = Data.bannerSection;
-  const {colors} = props;
+  const { colors } = props;
   return (
     <TouchableOpacity
       activeOpacity={0.9}
-      style={[styles.mainView, {backgroundColor: colors.background}]}
-      onPress={() => {
-        props.navigation.navigate('ShopPage');
-      }}>
+      style={[styles.mainView, { backgroundColor: colors.background }]}
+    // onPress={() => {
+    //   props.navigation.navigate('ShopPage');
+    // }}
+    >
       <Swiper
         paginationStyle={styles.pagination}
         dot={
-          <View style={[styles.dot, {backgroundColor: props.colors.divider}]} />
+          <View style={[styles.dot, { backgroundColor: props.colors.divider }]} />
         }
         activeDot={
           <View
-            style={[styles.activeDot, {backgroundColor: props.colors.divider}]}
+            style={[styles.activeDot, { backgroundColor: props.colors.divider }]}
           />
         }
         dotColor={'black'}
@@ -36,8 +37,14 @@ export default slider = props => {
         removeClippedSubviews={false}
         containerStyle={styles.container}>
         {bannerSection.map((item, key) => (
-          <View key={key}>
-            <Image source={item.image} style={styles.img} />
+          <TouchableOpacity
+            key={key}
+            onPress={() => {
+              props.navigation.navigate('ShopPage');
+            }}>
+            <View style={styles.imageWrapper}>
+              <Image source={item.image} style={styles.img} />
+            </View>
             {/* <View style={styles.txtView}>
               <Text style={[styles.welcomeTxt, {color: props.colors.text}]}>
                 {props.t('homePage.welcomeToMultikart')}
@@ -54,7 +61,7 @@ export default slider = props => {
                 text={'homePage.shopNow'}
               />
             </View> */}
-          </View>
+          </TouchableOpacity>
         ))}
       </Swiper>
     </TouchableOpacity>

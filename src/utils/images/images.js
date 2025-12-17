@@ -46,9 +46,21 @@ module.exports = {
   banner2Image: require('@assets/images/home/home_banner/banner2.jpg'),
   banner3Image: require('@assets/images/home/home_banner/banner3.jpg'),
   banner4Image: require('@assets/images/home/home_banner/banner4.jpg'),
+  banner5Image: require('@assets/images/home/home_banner/banner5.jpg'),
+  banner6Image: require('@assets/images/home/home_banner/banner6.jpg'),
 
   homeDivider: require('@assets/images/home/divider.png'),
   denimWear: require('@assets/images/home/denimWear.png'),
+
+  callIcon: require('@assets/images/headset.png'),
+  emailIcon: require('@assets/images/email-outline.png'),
+  whatsappIcon: require('@assets/images/whatsapp.png'),
+  websiteIcon: require('@assets/images/internet-outline.png'),
+  facebookIcon: require('@assets/images/facebook2.png'),
+  instagramIcon: require('@assets/images/instagram.png'),
+
+
+  privacyIcon: require('@assets/images/privacy.png'),
 
   // biggestDeal1: require('@assets/images/home/biggest_deal/biggestDeal1.png'),
   // biggestDeal2: require('@assets/images/home/biggest_deal/biggestDeal2.png'),

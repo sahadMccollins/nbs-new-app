@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import StarRating from '@commonComponents/starRating';
+import { Wishlist, WishlistFilled } from '@utils/icons';
+import appColors from '@theme/appColors';
 import styles from './styles';
 import { useValues } from '@App';
+import { useShopifyWishlist } from '../../../../hooks/useShopifyWishlist';
 
 export default productDescription = props => {
-  const { t, product } = props;
+  const { t, product, colors } = props;
   const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
+  const { toggleProduct, isInWishlist } = useShopifyWishlist();
 
   let featuresArray = [];
+
+  const inWishlist = isInWishlist(product?.id);
 
   try {
     const rawFeatures = product?.features ?? "[]"; // default to empty array string
@@ -20,13 +26,30 @@ export default productDescription = props => {
 
   return (
     <View style={styles.container}>
-      <Text
-        style={[
-          styles.name,
-          { color: props.colors.text, textAlign: textRTLStyle },
-        ]}>
-        {product?.title}
-      </Text>
+      <View
+        style={{
+          flexDirection: viewRTLStyle, // 'row' or 'row-reverse'
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          paddingRight: 20
+        }} >
+        <Text
+          style={[
+            styles.name,
+            { color: props.colors.text, textAlign: textRTLStyle },
+          ]}>
+          {product?.title}
+        </Text>
+        <TouchableOpacity
+          onPress={() => toggleProduct(product)}
+        >
+          {inWishlist ? (
+            <WishlistFilled color={appColors.primary} />
+          ) : (
+            <Wishlist color={colors.text} />
+          )}
+        </TouchableOpacity>
+      </View>
       {product?.tags?.includes("request-a-qoute") ||
         product?.tags?.includes("request-a-quote") ? (
         <View style={[styles.priceView, { flexDirection: viewRTLStyle }]}>

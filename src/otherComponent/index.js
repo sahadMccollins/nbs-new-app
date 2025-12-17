@@ -2,6 +2,7 @@ export * from './tabComponents';
 export * from './multiLangaugeModal';
 export * from './currencyConverterModal';
 export * from './notLoggedInModal';
+export * from './priceOnRequestModal';
 export * from './commonModal';
 export * from './topBrands';
 export * from './filterModal';

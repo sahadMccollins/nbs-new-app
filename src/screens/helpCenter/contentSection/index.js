@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Image,
@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 import styles from './styles';
 import Data from '@utils/json';
-import {SideArrow} from '@utils/icons';
-import {windowWidth} from '@theme/appConstant';
+import { SideArrow } from '@utils/icons';
+import { windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -21,8 +21,8 @@ if (Platform.OS === 'android') {
   }
 }
 export default function contentSection(props) {
-  const {viewRTLStyle, imageRTLStyle, textRTLStyle} = useValues();
-  const {t, colors} = props;
+  const { viewRTLStyle, imageRTLStyle, textRTLStyle } = useValues();
+  const { t, colors } = props;
   const quetions = Data.helpCenter;
   const [selectedQuetions, setSelectedQuetions] = useState(null);
   const onSelect = val => {
@@ -40,7 +40,7 @@ export default function contentSection(props) {
         }}
         data={quetions}
         showsVerticalScrollIndicator={false}
-        renderItem={({item, index}) => (
+        renderItem={({ item, index }) => (
           <View>
             <TouchableOpacity
               onPress={() => {
@@ -48,12 +48,12 @@ export default function contentSection(props) {
               }}
               style={[
                 styles.mainView,
-                {backgroundColor: colors.product, flexDirection: viewRTLStyle},
+                { backgroundColor: colors.product, flexDirection: viewRTLStyle },
               ]}>
-              <Text style={[styles.name, {color: colors.text}]}>
+              <Text style={[styles.name, { color: colors.text }]}>
                 {t(item.quetion)}
               </Text>
-              <View style={{transform: [{scaleX: imageRTLStyle}]}}>
+              <View style={{ transform: [{ scaleX: imageRTLStyle }] }}>
                 <SideArrow
                   color={colors.subText}
                   height={windowWidth(16)}
@@ -65,63 +65,72 @@ export default function contentSection(props) {
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question1Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 1 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question2Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 2 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question3Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 3 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question4Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 4 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question5Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 5 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question6Answer')}
               </Text>
             )}
             {index == selectedQuetions && selectedQuetions == 6 && (
               <Text
                 style={[
                   styles.content,
-                  {color: colors.subText, textAlign: textRTLStyle},
+                  { color: colors.subText, textAlign: textRTLStyle },
                 ]}>
-                {t('aboutUs.content')}
+                {t('helpCenter.question7Answer')}
+              </Text>
+            )}
+            {index == selectedQuetions && selectedQuetions == 7 && (
+              <Text
+                style={[
+                  styles.content,
+                  { color: colors.subText, textAlign: textRTLStyle },
+                ]}>
+                {t('helpCenter.question8Answer')}
               </Text>
             )}
           </View>

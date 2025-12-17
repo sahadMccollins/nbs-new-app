@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -25,14 +25,28 @@ export default sliderStyles = StyleSheet.create({
     margin: windowWidth(3),
   },
   container: {
-    width: windowWidth(440),
+    width: windowWidth(460),
     marginLeft: windowWidth(20),
   },
-  img: {
+  // img: {
+  //   height: windowHeight(180),
+  //   width: windowWidth(420),
+  //   borderRadius: windowHeight(7),
+  //   // resizeMode: 'contain'
+  // },
+  imageWrapper: {
     height: windowHeight(180),
-    width: windowWidth(420),
+    // width: windowWidth(420),
+    width: windowWidth(440),
     borderRadius: windowHeight(7),
+    overflow: 'hidden', // 👈 THIS is the key
   },
+
+  img: {
+    height: '100%',
+    width: '100%',
+  },
+
   txtView: {
     position: 'absolute',
     justifyContent: 'center',

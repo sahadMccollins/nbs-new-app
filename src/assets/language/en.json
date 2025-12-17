@@ -80,7 +80,7 @@
       "aboutUs": "About us",
       "help": "Help/Customer Care",
       "homeDrawer": "Offer, Top Deals, Top Brands",
-      "categoryDrawer": "Men, Women, Kids, Beauty..",
+      "categoryDrawer": "Generators, Inverters, Batteri...",
       "orderDrawer": "Ongoing Orders, Recent Orders..",
       "wishlistDrawer": "Your Save Products",
       "accountDrawer": "Profile, Settings, Saved Cards...",
@@ -196,6 +196,7 @@
     },
     "products": {
       "priceOnRequest": "Price on Request",
+      "priceOnRequestCap": "REQUEST QUOTE",
       "by": "by",
       "outOfStock": "OUT OF STOCK",
       "productName1": "Pink Hoodie t-shirt full",
@@ -273,6 +274,14 @@
       "addProfile": "Home, office..",
       "profileSettings": "Full Name, Password..",
       "termsProfile": "T&C for use of Platform",
+      "privacyPolicy": "Privacy Policy",
+      "shippingPolicy": "Shipping Policy",
+      "refundPolicy": "Refund & Cancellation Policy",
+      "deliveryPolicy": "Delivery Policy",
+      "privacyPolicyDesc": "Policy for handling user data",
+      "shippingPolicyDesc": "Terms for order shipping",
+      "refundPolicyDesc": "Terms for refunds and cancellations",
+      "deliveryPolicyDesc": "Terms for product delivery",
       "logOut": "LOG OUT"
     },
     "recommendedArr": {
@@ -541,9 +550,26 @@
     },
     "helpCenter": {
       "helpCenter": "Help Center",
+      "contact": "Contact us",
+      "faq": "FAQs",
       "content": "Please get in touch and we will be happy to help you. Get quick customer support by selecting your item",
       "issueFacing": "What issues are you facing?",
-      "trackOrderQuetion": "I want to track my order",
+      "question1": "How do I place an order on the app?",
+      "question1Answer": "To place an order, simply browse through our product catalog, select the items you want, add them to your cart, and proceed to checkout to confirm your order.",
+      "question2": "Can I view product details, such as specifications and availability?",
+      "question2Answer": "Yes, you can view detailed product information including specifications, availability, and customer reviews. Simply navigate to the product page within the app.",
+      "question3": "What should I do if I need to cancel or modify an order?",
+      "question3Answer": "To cancel or modify an order, go to the \"My Orders\" section, find your order, and follow the provided options to make changes.",
+      "question4": "How can I find products from specific categories or brands?",
+      "question4Answer": "You can use the app’s search filters to find products from specific categories or brands. Filter results by categories such as electronics or clothing.",
+      "question5": "Is there a way to make payments for orders within the app?",
+      "question5Answer": "Yes, you can securely make payments for orders using various payment methods available in the app, including credit/debit cards and digital wallets.",
+      "question6": "Are my personal details and order information kept secure?",
+      "question6Answer": "Yes, we prioritize the security and confidentiality of your personal details and order information. Our app complies with strict privacy and data protection standards.",
+      "question7": "Can I request assistance with special product requirements or preferences?",
+      "question7Answer": "Yes, you can request assistance with special product requirements or preferences during the ordering process. Simply specify your preferences, and we'll do our best to accommodate them.",
+      "question8": "Is customer support available through this app?",
+      "question8Answer": "While we facilitate online shopping, our app is not for customer support. For assistance, please contact our support team through the designated channels provided in the app.",
       "manageOrderQuetion": "I want to manage my order",
       "credit/debitQuetion": "I did not receive Instant Cashback (Credit/Debit Card)",
       "otherIssues": "I want help with other issues",
@@ -552,26 +578,189 @@
       "refunds": "I want help with returns & refunds"
     },
     "termsCondition": {
-      "termsCondition": "Terms and Conditions for Multikart",
-      "introContent": "These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, multikart accessible at www.multikart.com.",
-      "introContent1": "These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions. These Terms and Conditions have been generated with the help of the Terms And Conditiions Sample Generator.",
-      "Intellectual": "Intellectual Property Rights",
-      "intellectualContent": "Other than the content you own, under these Terms, Multikart and/or its licensors own all the intellectual property rights and materials contained in this Website.",
-      "intellectualContent1": "You are granted limited license only for purposes of viewing the material contained on this Website.",
-      "restrictions": "Restrictions",
-      "restricted": "You are specifically restricted from all of the following:",
-      "restrictionContent": "publishing any Website material in any other media",
-      "restrictionContent1": "selling, sublicensing and/or otherwise any Website material",
-      "restrictionContent2": " publicly performing and/or showing any Website material",
-      "restrictionContent3": "using this Website in any way that is or may be damaging to this Website",
-      "restrictionContent4": "using this Website in any way that impacts user access to this Website",
-      "restrictionContent5": "using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity",
-      "restrictionContent6": "engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website",
-      "restrictionContent7": "using this Website to engage in any advertising or marketing.",
-      "content": "Certain areas of this Website are restricted from being access by you and Multikart may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.",
-      "yourContent": "Your Content",
-      "yourDesc": "In these Website Standard Terms and Conditions, 'Your Content' shall mean any audio, video text, images or other material you choose to display on this Website. By displaying Your Content, you grant Multikart a non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.",
-      "yourDesc1": "Your Content must be your own and must not be invading any third-party’s rights. Multikart reserves the right to remove any of Your Content from this Website at any time without notice."
+      "termsCondition": "Terms and Conditions for NBS Groups",
+      "introContent": "By accessing or placing an order with NBS Group, you agree to the following terms and conditions. Please read them carefully.",
+      "section1Title": "1. Company Information",
+      "section1Content": "NBS Group \n\nNazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC PO Box: 379670, Deira, Dubai, U.A.E.\n\n📧 sales@nbsgroups.com | 📞 +971 4 2243543",
+      "section2Title": "2. Orders & Payments",
+      "section2List": [
+        "All orders are subject to availability and acceptance.",
+        "Prices listed are in AED (or local currency) and may include applicable taxes.",
+        "Payments must be made in full before shipping unless otherwise agreed."
+      ],
+      "section3Title": "3. Shipping & Delivery",
+      "section3List": [
+        "Delivery timelines may vary depending on product availability and location.",
+        "We are not responsible for delays caused by courier services or unforeseen circumstances.",
+        "Customers must provide accurate shipping information to avoid delays."
+      ],
+      "section4Title": "4. Cancellations & Refunds",
+      "section4List": [
+        "Orders can be canceled within 24 hours if not yet shipped.",
+        "Returns are accepted within 7 days for eligible items. See our Refund & Cancellation Policy for details."
+      ],
+      "section5Title": "5. Product Warranty",
+      "section5List": [
+        "Products are covered under manufacturer warranty (if applicable).",
+        "Warranty does not cover misuse, improper installation, or unauthorized repairs."
+      ],
+      "section6Title": "6. Use of Website",
+      "section6List": [
+        "You agree not to misuse our website or attempt unauthorized access.",
+        "Content on the website (text, images, etc.) is property of NBS Group and may not be copied without permission."
+      ],
+      "section7Title": "8. Limitation of Liability",
+      "section7List": [
+        {
+          "title": "NBS Group is not liable for:",
+          "items": [
+            "Indirect, incidental, or consequential damages.",
+            "Damages resulting from improper product use or installation."
+          ]
+        }
+      ],
+      "section8Title": "7. Governing Law",
+      "section8List": [
+        "These terms are governed by the laws of the United Arab Emirates. Any disputes will be resolved under Dubai jurisdiction."
+      ],
+      "section9Title": "9. Changes to Terms",
+      "section9Content": "NBS Group reserves the right to modify these terms at any time. Updated terms will be posted on our website with the effective date.",
+      "section10Title": "10. Contact Us",
+      "section10Content": "For any questions regarding these terms, contact:",
+      "section10List": {
+        "email": "sales@nbsgroups.com",
+        "phone": "+971 4 2243543",
+        "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, PO Box: 379670, Deira, Dubai, U.A.E."
+      }
+    },
+    "deliveryPolicy": {
+      "title": "Delivery Policy",
+      "intro": "At NBS Group, we are committed to ensuring your orders are delivered promptly, securely, and with full transparency. This Delivery Policy outlines how we process, ship, and deliver orders to our customers in the United Arab Emirates and internationally.",
+      "section1": {
+        "title": "1. Delivery Coverage",
+        "description": "We currently deliver to:",
+        "domestic": "All Emirates within the UAE (Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah).",
+        "domesticFirst": "Domestic Deliveries: ",
+        "international": "Selected countries worldwide (please contact our support team for availability before placing an order).",
+        "internationalFirst": "International Deliveries: "
+      },
+      "section2": {
+        "title": "2. Processing Time",
+        "point1": "Orders are processed within 1–2 business days after payment confirmation.",
+        "point2": "Orders placed on weekends or UAE public holidays will be processed on the next working day."
+      },
+      "section3": {
+        "title": "3. Delivery Methods & Timelines",
+        "intro": "We use trusted courier partners to ensure safe and timely delivery. Estimated delivery times are:",
+        "table": {
+          "header": {
+            "col1": "Delivery Type",
+            "col2": "Estimated Time",
+            "col3": "Cost"
+          },
+          "rows_0_col1": "Standard Domestic",
+          "rows_0_col2": "2–4 business days",
+          "rows_0_col3": "Based on order weight/volume",
+          "rows_1_col1": "Express Domestic",
+          "rows_1_col2": "1–2 business days",
+          "rows_1_col3": "Additional charge applies",
+          "rows_2_col1": "International Shipping",
+          "rows_2_col2": "5–12 business days",
+          "rows_2_col3": "Based on destination"
+        },
+        "note": "*Please note: Delivery timelines may vary depending on location, customs clearance, and unforeseen circumstances.*"
+      },
+      "section4": {
+        "title": "4. Order Tracking",
+        "description": "Once your order has been shipped, you will receive:",
+        "point1": "A tracking number via email/SMS.",
+        "point2": "A link to track your shipment in real-time."
+      },
+      "section5": {
+        "title": "5. Delivery Delays",
+        "description": "While we strive to deliver within the estimated timeframes, delays may occur due to:",
+        "point1": "Incorrect or incomplete delivery details provided by the customer.",
+        "point2": "Weather conditions, customs checks, or unforeseen logistical issues.",
+        "point3": "Delays from third-party courier partners.",
+        "note": "In such cases, NBS Group will work closely with our delivery partners to resolve the issue promptly."
+      },
+      "section6": {
+        "title": "6. Delivery Address",
+        "point1": "Please ensure your shipping address is accurate and complete before placing an order.",
+        "point2": "Any changes after dispatch are subject to courier approval and may incur additional charges."
+      },
+      "section7": {
+        "title": "7. Missed Deliveries",
+        "point1": "If a delivery attempt is missed, the courier will attempt redelivery or contact you to reschedule.",
+        "point2": "Orders unclaimed within 5 days may be returned to us, and additional shipping charges may apply for resending."
+      },
+      "section8": {
+        "title": "8. Damaged or Missing Items",
+        "description": "If your order arrives damaged or incomplete:",
+        "point1": "Report the issue to sales@nbsgroups.com within 48 hours of delivery.",
+        "point2": "Provide photos of the damaged package/items for quicker resolution.",
+        "point3": "We will arrange for replacement, exchange, or refund as per our Return & Refund Policy."
+      },
+      "section9": {
+        "title": "9. Contact Us",
+        "email": "📧  sales@nbsgroups.com",
+        "phone": "☎️  +971 4 2243543",
+        "address": "🏢  Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, PO Box: 379670, Deira, Dubai, U.A.E.",
+        "website": "🌐 www.nbsgroups.com"
+      },
+      "footer1": "NBS Group ",
+      "footer": "values your trust and is committed to delivering your orders with care and reliability."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "intro": "At NBS Group, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data.",
+      "section1Title": "1. Information We Collect",
+      "section1List": [
+        "Name, email address, phone number, and shipping/billing address",
+        "Order details and transaction history",
+        "Device and browser information (for website usage analytics)"
+      ],
+      "section2Title": "2. How We Use Your Information",
+      "section2List": [
+        "Process and deliver your orders",
+        "Communicate order updates and customer support",
+        "Improve our website, products, and services",
+        "Send promotional updates (only if you opt in)"
+      ],
+      "section3Title": "3. Data Protection",
+      "section3Content": "We take appropriate security measures to protect your personal data from unauthorized access, misuse, or disclosure. Your information is never sold or shared with third parties without your consent, except as required by law.",
+      "section4Title": "4. Cookies",
+      "section4Content": "Our website may use cookies to enhance user experience. You can choose to disable cookies through your browser settings.",
+      "section5Title": "5. Your Rights",
+      "section5Content": "You may request access, correction, or deletion of your personal data at any time by contacting us.",
+      "section6Title": "6. Contact Us",
+      "section6Content": "If you have any questions about this Privacy Policy or how we handle your data, please contact us:",
+      "section6List": {
+        "email": "sales@nbsgroups.com",
+        "phone": "+971 4 2243543",
+        "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, PO Box: 379670, Deira, Dubai, U.A.E."
+      }
+    },
+    "refundAndCancellationPolicy": {
+      "title": "Refund & Cancellation Policy",
+      "intro": "At NBS Group, we are committed to customer satisfaction and transparent service.",
+      "section1Title": "1. Order Cancellation:",
+      "section1Content": "Orders can be canceled within 24 hours if not yet shipped. For custom or bulk orders, cancellation is not allowed once confirmed.",
+      "section2Title": "2. Returns & Refunds:",
+      "section2Content": "Returns are accepted within 7 days of delivery for unused, uninstalled items in original packaging. Non-returnable items include customized products, opened electrical components, and items marked “Final Sale.” Return shipping is the customer's responsibility unless the product is defective or incorrect.",
+      "section3Title": "3. Damaged or Defective Items:",
+      "section3List": "Contact us within 3 days of delivery for a free replacement or full refund if the item is damaged, faulty, or incorrect.",
+      "section4Title": "4. Refund Timeline:",
+      "section4Content": "Approved refunds will be processed within 7–10 business days to the original payment method.",
+      "section5Title": "5. Exchanges:",
+      "section5Content": "Subject to availability. Return and re-shipping costs may apply.",
+      "section6Title": "6. Contact Us",
+      "section6Content": "For all return, refund, or cancellation requests:",
+      "section6List": {
+        "email": "sales@nbsgroups.com",
+        "phone": "+971 4 2243543",
+        "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, PO Box: 379670, Deira, Dubai, U.A.E."
+      }
     },
     "shopPage": {
       "womenCollection": "Women Collection",
@@ -669,6 +858,23 @@
       "removeItem": "Remove Item",
       "removeDesc": "Are you sure you want to remove or move this item from the cart?",
       "moveToWishlist": "MOVE TO WISHLIST"
+    },
+    "requestQuoteModal": {
+      "title": "Request a Quote",
+      "name": "Name *",
+      "nameError": "Name is Required",
+      "email": "Email *",
+      "emailError": "Email is Required",
+      "emailInvalid": "Email is not valid",
+      "phoneNumber": "Phone Number *",
+      "phoneError": "Phone Number is Required",
+      "company": "Company Name",
+      "additional": "Additional Details",
+      "submit": "Submit Quote Request",
+      "success": "Success",
+      "successMessage": "Your quote request has been submitted successfully",
+      "error": "Error",
+      "errorMessage": "Failed to submit quote request"
     },
     "writeReview": {
       "writeReview": "Write Review",

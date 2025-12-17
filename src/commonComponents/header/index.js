@@ -29,10 +29,10 @@ export function Header(props) {
             <Arrow />
           </View>
         </TouchableOpacity>
-        <View style={styles.text}>
+        <View style={[styles.text, {maxWidth: windowWidth(300)}]}>
           <Text
           numberOfLines={1}
-          ellipsizeMode='clip'
+          // ellipsizeMode='tail'
             style={[
               styles.text1,
               {
@@ -46,11 +46,11 @@ export function Header(props) {
         </View>
       </View>
       <View style={[styles.cart, {flexDirection: viewRTLStyle}]}>
-        {props.shareIcon && (
+        {/* {props.shareIcon && (
           <TouchableOpacity activeOpacity={0.9} style={styles.share}>
             <Share width={windowWidth(24)} height={windowHeight(24)} />
           </TouchableOpacity>
-        )}
+        )} */}
         {props.searchIcon && (
           <TouchableOpacity
             activeOpacity={0.9}

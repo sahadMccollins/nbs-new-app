@@ -124,6 +124,10 @@ import DeliveryDetails from './screens/dashboard/cart/deliveryDetails';
 import AboutUs from './screens/aboutUs';
 import HelpCenter from './screens/helpCenter';
 import TermsCondition from './screens/termsConditions';
+import PrivacyPolicy from './screens/privacyPolicy';
+import ShippingPolicy from './screens/shippingPolicy';
+import RefundPolicy from './screens/refundPolicy';
+import DeliveryPolicy from './screens/deliveryPolicy';
 import Category from './screens/dashboard/home/category';
 import { cart } from './screens/dashboard/cart';
 import { profile } from './screens/dashboard/profile';
@@ -316,6 +320,26 @@ const MyStack = () => {
                 <Stack.Screen
                     name="TermsCondition"
                     component={TermsCondition}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="PrivacyPolicy"
+                    component={PrivacyPolicy}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="ShippingPolicy"
+                    component={ShippingPolicy}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="RefundPolicy"
+                    component={RefundPolicy}
+                    initialParams={{ t }}
+                />
+                 <Stack.Screen
+                    name="DeliveryPolicy"
+                    component={DeliveryPolicy}
                     initialParams={{ t }}
                 />
                 <Stack.Screen name="cart" component={cart} initialParams={{ t }} />

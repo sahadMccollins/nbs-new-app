@@ -122,7 +122,7 @@ export function profile({ navigation }) {
               description={items.description}
               showSwitch={items.showSwitch}
               onPress={() => goToScreen(items.path)}
-              showBg
+              // showBg
               t={t}
               darkModeSwitch={key == 0 ? true : false}
               rtlSwitch={key == 1 ? true : false}

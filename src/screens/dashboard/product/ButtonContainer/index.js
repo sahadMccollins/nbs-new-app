@@ -255,7 +255,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-import { Wishlist, Cart, WishlistFilled } from '@utils/icons';
+import { Wishlist, Cart, Document, WishlistFilled } from '@utils/icons';
 import appColors from '@theme/appColors';
 import { useValues } from '@App';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -263,7 +263,7 @@ import { useShopifyWishlist } from '../../../../hooks/useShopifyWishlist';
 import { useShopifyCart } from '../../../../hooks/useShopifyCart';
 
 export default buttonContainer = (props) => {
-  const { t, colors } = props;
+  const { t, colors, visibleLoginModal } = props;
   const { viewRTLStyle } = useValues();
 
   const { toggleProduct, isInWishlist } = useShopifyWishlist();
@@ -304,25 +304,37 @@ export default buttonContainer = (props) => {
       ]}
     >
       {/* ----------- WISHLIST BUTTON ----------- */}
-      <TouchableOpacity
-        style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}
-        onPress={() => toggleProduct(product)}
-      >
-        {inWishlist ? (
-          <WishlistFilled color={appColors.primary} />
-        ) : (
-          <Wishlist color={colors.text} />
-        )}
-
-        <Text
-          style={[
-            styles.text,
-            { color: inWishlist ? appColors.primary : colors.text },
-          ]}
+      {isRequestQuote ? (
+        <TouchableOpacity
+          style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}
+          onPress={() => toggleProduct(product)}
         >
-          {t('tabBar.wishList')}
-        </Text>
-      </TouchableOpacity>
+          {inWishlist ? (
+            <WishlistFilled color={appColors.primary} />
+          ) : (
+            <Wishlist color={colors.text} />
+          )}
+
+          <Text
+            style={[
+              styles.text,
+              { color: inWishlist ? appColors.primary : colors.text },
+            ]}
+          >
+            {t('tabBar.wishList')}
+          </Text>
+        </TouchableOpacity>
+      ) : (
+        <View style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}>
+          <TouchableOpacity style={{ flexDirection: 'row' }} onPress={visibleLoginModal} >
+            {/* <CartQuotation color={appColors.primary} /> */}
+            <Document color={appColors.primary} />
+            <Text style={styles.cartText}>
+              {t('products.priceOnRequestCap') || 'Request a Quote'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       {/* DIVIDER */}
       <View>
@@ -342,9 +354,9 @@ export default buttonContainer = (props) => {
           // REQUEST A QUOTE
           <>
             <Cart color={appColors.primary} />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={visibleLoginModal} >
               <Text style={styles.cartText}>
-                {t('products.priceOnRequest') || 'Request a Quote'}
+                {t('products.priceOnRequestCap') || 'Request a Quote'}
               </Text>
             </TouchableOpacity>
           </>

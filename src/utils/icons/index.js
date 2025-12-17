@@ -56,5 +56,9 @@ export * from '@assets/icons/rightArrow';
 export * from '@assets/icons/darkMode';
 export * from '@assets/icons/location';
 export * from '@assets/icons/wallet';
-export * from '@assets/icons/activeHome'
-export * from '@assets/icons/activeCart'
+export * from '@assets/icons/activeHome';
+export * from '@assets/icons/activeCart';
+export * from '@assets/icons/lock';
+export * from '@assets/icons/document';
+export * from '@assets/icons/returnOrder';
+export * from '@assets/icons/cartQuotation';

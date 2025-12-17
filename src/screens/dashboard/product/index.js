@@ -14,6 +14,7 @@ import PolicySection from './policySection';
 import ProductDetail from './productDetail';
 import ReViewSection from './reviewSection';
 import CheckDelivery from './checkDelivery';
+import { CommonModal, PriceOnRequestModal } from '@otherComponent';
 import YouMayLike from '../cart/youMayLike';
 import ButtonContainer from './ButtonContainer';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -32,11 +33,12 @@ export default function product({ navigation }) {
     recommendedProducts,
     loading
   } = useShopifyProduct();
-
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedColor, setSelectedColor] = useState(0);
   const setColor = val => {
     setSelectedColor(val);
   };
+  const [submitting, setSubmitting] = useState(false);
 
   // useEffect(() => {
   //   fetchProductData(productId)
@@ -65,6 +67,10 @@ export default function product({ navigation }) {
     );
   }
 
+  const visibleLoginModal = () => {
+    setShowLoginModal(!showLoginModal);
+  };
+
   return (
     <SafeAreaView style={{ paddingBottom: windowHeight(48) }}>
       <Header
@@ -73,7 +79,7 @@ export default function product({ navigation }) {
         showText
         textStyle={{ marginTop: windowHeight(15) }}
         showIcon
-        shareIcon
+        // shareIcon
         navigation={navigation}
       />
 
@@ -136,7 +142,20 @@ export default function product({ navigation }) {
         />
       </ScrollView>
 
-      <ButtonContainer item={product} navigation={navigation} t={t} colors={colors} />
+      <ButtonContainer item={product} navigation={navigation} t={t} colors={colors} visibleLoginModal={visibleLoginModal} />
+      <CommonModal
+        modal={
+          <PriceOnRequestModal
+            onCancel={visibleLoginModal}
+            navigation={navigation}
+            from={product?.title}
+            setSubmitting={setSubmitting}
+            submitting={submitting}
+          />
+        }
+        showModal={showLoginModal}
+        visibleModal={visibleLoginModal}
+      />
     </SafeAreaView>
   );
 }
