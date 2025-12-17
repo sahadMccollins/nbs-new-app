@@ -114,8 +114,8 @@ export function PriceOnRequestModal(props) {
       };
 
       // Call your API endpoint here
-      // const response = await fetch('https://nbs-server.vercel.app/api/bulk-order-form-submitted-mobile', {
-      const response = await fetch('http://localhost:3000/api/bulk-order-form-submitted-mobile', {
+      const response = await fetch('https://nbs-server.vercel.app/api/bulk-order-form-submitted-mobile', {
+      // const response = await fetch('http://localhost:3000/api/bulk-order-form-submitted-mobile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
