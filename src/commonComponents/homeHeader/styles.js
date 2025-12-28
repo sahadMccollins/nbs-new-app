@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { windowHeight, windowWidth } from '@theme/appConstant';
+import { windowHeight, windowWidth, fontSizes } from '@theme/appConstant';
+import appColors from '@theme/appColors';
 
 export default homeHeaderStyle = StyleSheet.create({
   mainView: {
@@ -29,7 +30,7 @@ export default homeHeaderStyle = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: '60%',
+    width: '70%',
     justifyContent: 'center',
   },
   darkLogoImg: {
@@ -38,5 +39,33 @@ export default homeHeaderStyle = StyleSheet.create({
     height: windowHeight(20),
     resizeMode: 'contain',
     marginTop: windowHeight(10),
+  },
+
+
+  cartWrapper: {
+    // position: 'relative',
+    marginHorizontal: windowWidth(6),
+    justifyContent: 'center',
+    // bottom: 0,
+    position: 'relative'
+  },
+
+  cartBadge: {
+    position: 'absolute',
+    top: 6,
+    right: -6,
+    minWidth: windowWidth(23),
+    height: windowHeight(14),
+    borderRadius: 9,
+    backgroundColor: appColors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 4,
+  },
+
+  cartBadgeText: {
+    color: '#fff',
+    fontSize: fontSizes.FONT10,
+    fontWeight: '600',
   },
 });

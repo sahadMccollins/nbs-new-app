@@ -40,7 +40,7 @@ export default productDescription = props => {
           ]}>
           {product?.title}
         </Text>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => toggleProduct(product)}
         >
           {inWishlist ? (
@@ -48,7 +48,7 @@ export default productDescription = props => {
           ) : (
             <Wishlist color={colors.text} />
           )}
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       {product?.tags?.includes("request-a-qoute") ||
         product?.tags?.includes("request-a-quote") ? (
@@ -81,7 +81,7 @@ export default productDescription = props => {
         {t('product.inclusive')}
       </Text>
 
-      <Text style={[styles.highlightText, { textAlign: textRTLStyle }]}>
+      <Text style={[styles.highlightText, { textAlign: textRTLStyle, color: colors.text }]}>
         {t('product.highlights')}
       </Text>
 

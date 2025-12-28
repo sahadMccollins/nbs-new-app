@@ -49,6 +49,11 @@ module.exports = {
   banner5Image: require('@assets/images/home/home_banner/banner5.jpg'),
   banner6Image: require('@assets/images/home/home_banner/banner6.jpg'),
 
+  addToCart: require('@assets/images/add-to-cart-black.png'),
+  addedToCart: require('@assets/images/added-to-cart-black.png'),
+  addToCartWhite: require('@assets/images/add-to-cart-white.png'),
+  addedToCartWhite: require('@assets/images/added-to-cart-white.png'),
+
   homeDivider: require('@assets/images/home/divider.png'),
   denimWear: require('@assets/images/home/denimWear.png'),
 

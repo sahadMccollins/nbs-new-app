@@ -123,6 +123,7 @@ import { CategoryStackScreen } from './navigation/categoryStackScreen';
 import DeliveryDetails from './screens/dashboard/cart/deliveryDetails';
 import AboutUs from './screens/aboutUs';
 import HelpCenter from './screens/helpCenter';
+import BulkOrder from './screens/bulkOrder';
 import TermsCondition from './screens/termsConditions';
 import PrivacyPolicy from './screens/privacyPolicy';
 import ShippingPolicy from './screens/shippingPolicy';
@@ -366,6 +367,11 @@ const MyStack = () => {
                 <Stack.Screen
                     name="HelpCenter"
                     component={HelpCenter}
+                    initialParams={{ t }}
+                />
+                <Stack.Screen
+                    name="Bulk Order"
+                    component={BulkOrder}
                     initialParams={{ t }}
                 />
                 <Stack.Screen

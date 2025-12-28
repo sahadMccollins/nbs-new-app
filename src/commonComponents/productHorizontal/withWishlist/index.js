@@ -85,7 +85,7 @@ export default withWishlist = props => {
       </View>
       <View style={[styles.line, { backgroundColor: colors.product }]} />
       <View style={[styles.options, { flexDirection: viewRTLStyle }]}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.option}
           activeOpacity={0.7}
           onPress={() => onPressmoveToWishlist(props.item)}>
@@ -93,7 +93,7 @@ export default withWishlist = props => {
           <Text style={[styles.optionText, { color: props.colors.text }]}>
             {props.t('cart.moveTowishlist')}
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View style={styles.divider} />
         <TouchableOpacity
           style={styles.option}

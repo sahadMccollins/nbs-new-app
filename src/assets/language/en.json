@@ -40,7 +40,7 @@
     },
     "forgotPassword": {
       "emailAddress": "Email Address",
-      "sendOTP": "SEND OTP"
+      "sendOTP": "Send Reset Link"
     },
     "resetPassword": {
       "resetPassword": "Reset Password",
@@ -72,6 +72,9 @@
       "shopByCategory": "Shop by Category",
       "orders": "Orders",
       "wishlist": "Your Wishlist",
+      "bulkOrder": "Bulk Orders",
+      "bulkOrderDrawer": "Bulk Order Requests",
+      "cart": "Your Cart",
       "account": "Your Account",
       "language": "Language",
       "currencyConverter": "Currency Change",
@@ -90,6 +93,9 @@
       "settingsDrawer": "App settings, Dark mode",
       "aboutUsDrawer": "About Multikart",
       "helpDrawer": "Customer Support, FAQs"
+    },
+    "bulkOrder": {
+      "title": "Bulk Order Request"
     },
     "categoryArr": {
       "inverters": "Inverters",

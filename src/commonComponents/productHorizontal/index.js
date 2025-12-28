@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import Price from './withPrice';
 import AddToCart from './withAddToCart';
@@ -11,12 +11,15 @@ import { windowHeight } from '@theme/appConstant';
 import LikeAnimation from '../likeAnimation';
 import { useValues } from '@App';
 import { useShopifyWishlist } from '../../hooks/useShopifyWishlist';
+import { useShopifyCart } from '../../hooks/useShopifyCart';
+import images from '@utils/images/images';
 
 export function ProductHorizontal(props) {
   const products = props.products;
   const { addToWishlist, removeFromWishlist, toggleProduct, isInWishlist } = useShopifyWishlist();
+  const { addToCart, loading, removeFromCart, isInCart } = useShopifyCart();
   const { colors } = useTheme();
-  const { isRTL, viewRTLStyle } = useValues();
+  const { isRTL, viewRTLStyle, isDark } = useValues();
 
   // console.log('props',props.)
   return (
@@ -64,8 +67,8 @@ export function ProductHorizontal(props) {
                     <AddToCart
                       colors={props.colors}
                       t={t}
-                      onPressAddToCart={onPressAddToCart}
-                      onPressRemove={onPressRemove}
+                    // onPressAddToCart={onPressAddToCart}
+                    // onPressRemove={onPressRemove}
                     />
                   )}
                   {props.showWishlist && (
@@ -85,14 +88,62 @@ export function ProductHorizontal(props) {
 
                   )}
                 </View>
-                <View style={styles.likeView}>
-                  {/* {props.isWishlist && <LikeAnimation />} */}
+                {/* <View style={styles.likeView}>
                   {props.isWishlist && (
                     <LikeAnimation
                       productId={item.id}
                       isLiked={isInWishlist(item.id)}
                       onToggle={() => toggleProduct(item)}
                     />
+                  )}
+                </View> */}
+                <View style={styles.likeView}>
+                  {props.isCart && (
+                    <View
+                      style={{
+                        borderWidth: 1,
+                        borderColor: '#d6d6d6',
+                        // borderRadius: 6,
+                        padding: 4,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}>
+                      {loading ? (
+                        <ActivityIndicator size="small" color={colors.primary} />
+                      ) : isInCart(item.id) ? (
+                        <TouchableOpacity onPress={() => removeFromCart(item.id)}>
+                          <Image
+                            source={isDark ? images.addedToCartWhite : images.addedToCart}
+                            style={{ width: 20, height: 20 }}
+                            resizeMode="contain"
+                          />
+                        </TouchableOpacity>
+                      ) : (
+                        !item.available ? (
+                          <TouchableOpacity disabled onPress={null}>
+                            <Image
+                              source={isDark ? images.addToCartWhite : images.addToCart}
+                              style={{ width: 20, height: 20, opacity:  0.5 }}
+                              resizeMode="contain"
+                            />
+                          </TouchableOpacity>
+                        ) : (
+                          <TouchableOpacity onPress={() => addToCart(item)}>
+                            <Image
+                              source={isDark ? images.addToCartWhite : images.addToCart}
+                              style={{ width: 20, height: 20 }}
+                              resizeMode="contain"
+                            />
+                          </TouchableOpacity>
+                        )
+                      )}
+                    </View>
+
+                    // <LikeAnimation
+                    //   productId={item.id}
+                    //   isLiked={isInWishlist(item.id)}
+                    //   onToggle={() => toggleProduct(item)}
+                    // />
                   )}
                 </View>
               </View>

@@ -141,6 +141,10 @@ export const useShopifyCart = () => {
         return await shopifyCheckoutService.createCheckoutUrl(cartDetail);
     }, []);
 
+    const getCount = () => {
+        return cart.reduce((total, item) => total + (item.quantity || 1), 0);
+    };
+
     return {
         cart,
         loading,
@@ -152,7 +156,8 @@ export const useShopifyCart = () => {
         setQuantity,
         toggleProduct,
         clearCart: clearAll,
-        getCount: () => cart.length,
+        // getCount: () => cart.length,
+        getCount,
         isInCart: (id) => cart.some((p) => p.id === id),
         createShopifyCheckoutUrl
     };

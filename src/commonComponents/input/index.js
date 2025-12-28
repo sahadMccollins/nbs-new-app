@@ -77,7 +77,7 @@ export function Input(props) {
         style={[
           styles.placeholder,
           {
-            fontSize: props.fontSize ? props.fontSize : fontSizes.FONT19,
+            fontSize: props.fontSize ? props.fontSize : fontSizes.FONT17,
             color: colors.subText,
             backgroundColor: colors.background,
           },

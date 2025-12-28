@@ -47,8 +47,8 @@ export default productStyles = StyleSheet.create({
   // },s
   wishlist: {
     height: windowHeight(22),
-    width: windowWidth(32),
-    borderRadius: windowWidth(16),
+    // width: windowWidth(32),
+    // borderRadius: windowWidth(16),
     position: "absolute",
     top: windowHeight(10),
     right: windowWidth(10),

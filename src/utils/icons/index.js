@@ -62,3 +62,4 @@ export * from '@assets/icons/lock';
 export * from '@assets/icons/document';
 export * from '@assets/icons/returnOrder';
 export * from '@assets/icons/cartQuotation';
+export * from '@assets/icons/bulkOrder';

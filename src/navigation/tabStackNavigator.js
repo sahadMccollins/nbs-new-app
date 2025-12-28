@@ -44,11 +44,11 @@ export default TabStackScreen = props => {
         component={cart}
         options={{
           tabBarLabel: t('tabBar.cart'),
-          tabBarIcon: ({ tintColor }) => <Cart height={26} width={20} color={tintColor} />,
+          tabBarIcon: ({ tintColor }) => <Cart height={29} width={20} color={tintColor} />,
           headerShown: false,
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="wishList"
         component={wishList}
         options={{
@@ -58,15 +58,13 @@ export default TabStackScreen = props => {
           ),
           headerShown: false,
         }}
-      />
+      /> */}
       <Tab.Screen
         name="profile"
         component={profile}
         options={{
           tabBarLabel: t('tabBar.profile'),
-          tabBarIcon: ({ tintColor }) => (
-            <Profile height={22} width={20} color={tintColor} />
-          ),
+          tabBarIcon: ({ tintColor }) => <Profile height={29} color={tintColor} />,
           headerShown: false,
         }}
       />

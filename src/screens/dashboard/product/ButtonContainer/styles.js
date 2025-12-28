@@ -6,7 +6,7 @@ import appFonts from '@theme/appFonts';
 export default buttonContainerStyles = StyleSheet.create({
   mainView: {
     position: 'absolute',
-    bottom: windowHeight(60),
+    // bottom: windowHeight(60),
     width: '100%',
     paddingVertical: windowHeight(10),
     flexDirection: 'row',

@@ -11,8 +11,6 @@ export default youMayLike = props => {
   const screenWidth = Dimensions.get('window').width;
   const itemWidth = screenWidth / 2;
 
-  console.log("recommendedProducts", recommendedProducts[0]);
-
   return (
     <View>
       <Text

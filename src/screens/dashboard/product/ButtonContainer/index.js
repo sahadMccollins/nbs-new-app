@@ -257,10 +257,13 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { Wishlist, Cart, Document, WishlistFilled } from '@utils/icons';
 import appColors from '@theme/appColors';
+import { windowHeight } from '@theme/appConstant';
 import { useValues } from '@App';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useShopifyWishlist } from '../../../../hooks/useShopifyWishlist';
 import { useShopifyCart } from '../../../../hooks/useShopifyCart';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 
 export default buttonContainer = (props) => {
   const { t, colors, visibleLoginModal } = props;
@@ -274,6 +277,8 @@ export default buttonContainer = (props) => {
     decreaseQuantity,
     isInCart,
   } = useShopifyCart();
+
+  const insets = useSafeAreaInsets();
 
   const product = props.item;
 
@@ -297,7 +302,9 @@ export default buttonContainer = (props) => {
       style={[
         styles.mainView,
         {
-          backgroundColor: colors.card,
+          bottom: insets.bottom + windowHeight(40),
+          // backgroundColor: colors.card,
+          backgroundColor: colors.background,
           borderTopColor: colors.divider,
           flexDirection: viewRTLStyle,
         },

@@ -36,6 +36,8 @@ export default dealOfDay = props => {
         colors={props.colors}
         showPrice
         isWishlist
+        isCart
+        // showCart
         productStyle={styles.product}
         navigation={props.navigation}
       />

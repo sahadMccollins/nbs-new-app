@@ -27,7 +27,7 @@ export default productHorizontalStyles = StyleSheet.create({
   title: {
     fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoBold,
-    maxWidth: windowWidth(260),
+    maxWidth: windowWidth(250),
   },
   brand: {
     color: appColors.grey,
@@ -70,5 +70,6 @@ export default productHorizontalStyles = StyleSheet.create({
   },
   likeView: {
     top: windowHeight(-10),
+    right: windowWidth(10)
   },
 });

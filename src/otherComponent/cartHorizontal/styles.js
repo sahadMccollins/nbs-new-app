@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -24,17 +24,18 @@ export default cartHorizontalStyles = StyleSheet.create({
     padding: windowHeight(12),
   },
   title: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT18,
     fontFamily: appFonts.LatoBold,
   },
   brand: {
     color: appColors.grey,
-    fontSize: fontSizes.FONT17,
+    fontSize: fontSizes.FONT16,
     fontFamily: appFonts.LatoMedium,
   },
   priceView: {
     flexDirection: 'row',
     marginTop: windowHeight(4),
+    alignItems: 'baseline'
   },
   discountPrice: {
     fontSize: fontSizes.FONT19,
@@ -42,13 +43,14 @@ export default cartHorizontalStyles = StyleSheet.create({
   },
   price: {
     color: appColors.grey,
-    fontSize: fontSizes.FONT19,
+    // fontSize: fontSizes.FONT19,
+    fontSize: fontSizes.FONT10,
     fontFamily: appFonts.LatoMedium,
     marginHorizontal: windowWidth(10),
   },
   discount: {
     color: appColors.primary,
-    fontSize: fontSizes.FONT19,
+    // fontSize: fontSizes.FONT14,
     fontFamily: appFonts.LatoMedium,
   },
 });

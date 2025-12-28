@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, ScrollView, View } from 'react-native';
+import { ActivityIndicator, Image, ScrollView, Text, View } from 'react-native';
 import { Header, Divider, } from '@commonComponents';
-import { windowHeight } from '@theme/appConstant';
+import { windowHeight, windowWidth, fontSizes } from '@theme/appConstant';
 import { useTranslation } from 'react-i18next';
 import { useRoute, useTheme } from '@react-navigation/native';
 import Slider from './slider';
@@ -92,6 +92,68 @@ export default function product({ navigation }) {
         <Slider images={product?.images} t={t} colors={colors} selectedColor={selectedColor} />
         <View style={{ height: windowHeight(30) }} />
         <ProductDescription colors={colors} t={t} product={product} />
+        <Divider />
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingVertical: windowHeight(12),
+            paddingHorizontal: windowWidth(8),
+          }}
+        >
+          {[
+            {
+              text: '7 Days Return',
+              uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-returns._CB562506492.png?v=1766558585',
+            },
+            {
+              text: 'Free Delivery',
+              uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/trust_icon_free_shipping_81px._CB630870460.png?v=1766558614',
+            },
+            {
+              text: 'Secure Transaction',
+              uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/Secure-payment._CB650126890.png?v=1766558647',
+            },
+            {
+              text: 'Top Rated Brand',
+              uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-top-brand._CB562506657.png?v=1766558680',
+            },
+            {
+              text: 'NBS Delivered',
+              uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-amazon-delivered._CB432973688.png?v=1766558766',
+            },
+          ].map((item, index) => (
+            <View
+              key={index}
+              style={{
+                alignItems: 'center',
+                flex: 1,
+              }}
+            >
+              <Image
+                source={{ uri: item.uri }}
+                style={{
+                  width: windowWidth(35),
+                  height: windowHeight(35),
+                  resizeMode: 'contain',
+                  marginBottom: 4,
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: fontSizes.FONT14,
+                  textAlign: 'center',
+                  maxWidth: windowWidth(80),
+                  color: colors.text
+                }}
+              >
+                {item.text}
+              </Text>
+            </View>
+          ))}
+        </View>
+
         <Divider />
 
         <SizeSection

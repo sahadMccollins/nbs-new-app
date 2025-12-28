@@ -12,7 +12,6 @@ export const useShopifyAuth = () => {
     setError(null);
     try {
       const result = await shopifyAuthService.loginCustomer(email, password);
-      console.log("Login result:", result);
       // Save customer to context and AsyncStorage
       await saveCustomer({
         id: result.customer.id,

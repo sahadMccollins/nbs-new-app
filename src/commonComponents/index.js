@@ -13,3 +13,4 @@ export * from './dropdown';
 export * from './radioButton';
 export * from './likeAnimation';
 export * from './swithContainer';
+export * from './textArea';

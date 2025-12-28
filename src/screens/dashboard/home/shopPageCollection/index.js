@@ -3,8 +3,9 @@
 // import { useTheme } from '@react-navigation/native';
 // import { Header } from '@commonComponents';
 // import { useTranslation } from 'react-i18next';
-// import { windowHeight } from '@theme/appConstant';
+// import { windowHeight, windowWidth } from '@theme/appConstant';
 // import SearchBar from '@commonComponents/searchBar';
+// import { Product } from '@commonComponents';
 // import Categorys from './categorys';
 // import Filter from './filter';
 // import { SafeAreaView } from 'react-native-safe-area-context';
@@ -129,6 +130,7 @@
 
 //   // Product fetching state
 //   const [loading, setLoading] = useState(false);
+//   const [loadingMore, setLoadingMore] = useState(false);
 //   const [products, setProducts] = useState([]);
 //   const [hasNextPage, setHasNextPage] = useState(false);
 //   const [endCursor, setEndCursor] = useState(null);
@@ -197,8 +199,8 @@
 
 //   // Load more products for pagination
 //   const loadMoreProducts = useCallback(async () => {
-//     if (!hasNextPage || loading || !collectionId) return;
-//     setLoading(true);
+//     if (!hasNextPage || loadingMore || !collectionId) return;
+//     setLoadingMore(true);
 //     const res = await fetchProductsFromCollection(
 //       collectionId,
 //       endCursor,
@@ -210,8 +212,17 @@
 //     setProducts(prev => [...prev, ...res.products]);
 //     setHasNextPage(res.hasNextPage);
 //     setEndCursor(res.endCursor);
-//     setLoading(false);
-//   }, [collectionId, hasNextPage, loading, endCursor, sort.sortKey, sort.reverse, appliedTypes, appliedBrands]);
+//     setLoadingMore(false);
+//   }, [collectionId, hasNextPage, loadingMore, endCursor, sort.sortKey, sort.reverse, appliedTypes, appliedBrands]);
+
+//   const renderFooter = () => {
+//     if (!loadingMore) return null;
+//     return (
+//       <View style={{ paddingVertical: 24 }}>
+//         <ActivityIndicator size="large" color={colors.primary} />
+//       </View>
+//     );
+//   };
 
 //   const onFilterPress = () => {
 //     setModalVisible(!modalVisible);
@@ -250,39 +261,62 @@
 //         navigation={navigation}
 //       />
 
-//       <View style={{ flex: 1 }}>
-//         <View style={{ marginTop: windowHeight(3) }} />
-//         {/* <SearchBar
-//           t={t}
-//           colors={colors}
-//           onFilterPress={onFilterPress}
-//         /> */}
-
-//         {!loading && products.length === 0 ? (
-//           <View
-//             style={{
-//               flex: 1,
-//               justifyContent: 'center',
-//               alignItems: 'center',
-//               paddingHorizontal: 20,
-//             }}
-//           >
-//             <Text style={{ fontSize: 16, color: colors.text, textAlign: 'center', fontWeight: "800", marginBottom: 8, textTransform: "uppercase" }}>
-//               {t('shopPage.emptyCollection')}
-//             </Text>
-//             <Text style={{ fontSize: 14, color: colors.text, textAlign: 'center' }}>
-//               {t('shopPage.emptyCollectionDesc')}
-//             </Text>
-//           </View>
-//         ) : (
-//           <Categorys products={products} t={t} navigation={navigation} />
-//         )}
-
-//       </View>
-
-//       {loading && (
-//         <View style={{ paddingVertical: 24 }}>
+//       {loading ? (
+//         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 //           <ActivityIndicator size="large" color={colors.primary} />
+//         </View>
+//       ) : (
+//         <View style={{ flex: 1 }}>
+//           <View style={{ marginTop: windowHeight(3) }} />
+
+//           {!loading && products.length === 0 ? (
+//             <View
+//               style={{
+//                 flex: 1,
+//                 justifyContent: 'center',
+//                 alignItems: 'center',
+//                 paddingHorizontal: 20,
+//               }}
+//             >
+//               <Text style={{ fontSize: 16, color: colors.text, textAlign: 'center', fontWeight: "800", marginBottom: 8, textTransform: "uppercase" }}>
+//                 {t('shopPage.emptyCollection')}
+//               </Text>
+//               <Text style={{ fontSize: 14, color: colors.text, textAlign: 'center' }}>
+//                 {t('shopPage.emptyCollectionDesc')}
+//               </Text>
+//             </View>
+//           ) : (
+//             <View style={{
+//               flex: 1,
+//               width: '100%',
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//             }}>
+//               <FlatList
+//                 numColumns={2}
+//                 columnWrapperStyle={{
+//                   justifyContent: 'space-between',
+//                   marginHorizontal: windowWidth(16),
+//                   marginTop: windowHeight(20),
+//                 }}
+//                 data={products}
+//                 keyExtractor={(item, index) => index.toString()}
+//                 renderItem={({ item }) => (
+//                   <Product
+//                     product={item}
+//                     t={t}
+//                     disc
+//                     width={"50%"}
+//                     navigation={navigation}
+//                   />
+//                 )}
+//                 onEndReached={loadMoreProducts}
+//                 onEndReachedThreshold={0.5}
+//                 ListFooterComponent={renderFooter}
+//                 scrollEventThrottle={16}
+//               />
+//             </View>
+//           )}
 //         </View>
 //       )}
 
@@ -300,6 +334,7 @@
 //     </SafeAreaView>
 //   );
 // }
+
 
 
 
@@ -591,36 +626,30 @@ export default function ShopPageCollection({ navigation, route }) {
               </Text>
             </View>
           ) : (
-            <View style={{
-              flex: 1,
-              width: '100%',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <FlatList
-                numColumns={2}
-                columnWrapperStyle={{
-                  justifyContent: 'space-between',
-                  marginHorizontal: windowWidth(16),
-                  marginTop: windowHeight(20),
-                }}
-                data={products}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item }) => (
-                  <Product
-                    product={item}
-                    t={t}
-                    disc
-                    width={"50%"}
-                    navigation={navigation}
-                  />
-                )}
-                onEndReached={loadMoreProducts}
-                onEndReachedThreshold={0.5}
-                ListFooterComponent={renderFooter}
-                scrollEventThrottle={16}
-              />
-            </View>
+            <FlatList
+              numColumns={2}
+              columnWrapperStyle={{
+                justifyContent: 'flex-start',
+                marginHorizontal: windowWidth(16),
+                marginTop: windowHeight(20),
+                gap: 8
+              }}
+              data={products}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => (
+                <Product
+                  product={item}
+                  t={t}
+                  disc
+                  width={"50%"}
+                  navigation={navigation}
+                />
+              )}
+              onEndReached={loadMoreProducts}
+              onEndReachedThreshold={0.5}
+              ListFooterComponent={renderFooter}
+              scrollEventThrottle={16}
+            />
           )}
         </View>
       )}

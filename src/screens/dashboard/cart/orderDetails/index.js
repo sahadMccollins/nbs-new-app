@@ -209,8 +209,30 @@ export default orderDetails = (props) => {
   // Compute: bagTotal = sum(price * qty)
   //          bagSavings = sum(max(0, oldPrice - price) * qty)
   //          totalAmount = bagTotal - bagSavings
+  // const { bagTotal, bagSavings, totalAmount } = useMemo(() => {
+  //   if (!cart || !Array.isArray(cart)) return { bagTotal: 0, bagSavings: 0, totalAmount: 0 };
+
+  //   let bagTotal = 0;
+  //   let bagSavings = 0;
+
+  //   cart.forEach(item => {
+  //     const price = Number(item?.price) || 0;
+  //     const oldPrice = Number(item?.oldPrice) || 0;
+  //     const qty = Number(item?.quantity) || 1;
+
+  //     bagTotal += price * qty;
+  //     const diff = oldPrice - price;
+  //     if (diff > 0) bagSavings += diff * qty;
+  //   });
+
+  //   const totalAmount = bagTotal - bagSavings;
+  //   return { bagTotal, bagSavings, totalAmount };
+  // }, [cart]);
+
   const { bagTotal, bagSavings, totalAmount } = useMemo(() => {
-    if (!cart || !Array.isArray(cart)) return { bagTotal: 0, bagSavings: 0, totalAmount: 0 };
+    if (!cart || !Array.isArray(cart)) {
+      return { bagTotal: 0, bagSavings: 0, totalAmount: 0 };
+    }
 
     let bagTotal = 0;
     let bagSavings = 0;
@@ -220,14 +242,21 @@ export default orderDetails = (props) => {
       const oldPrice = Number(item?.oldPrice) || 0;
       const qty = Number(item?.quantity) || 1;
 
-      bagTotal += price * qty;
-      const diff = oldPrice - price;
-      if (diff > 0) bagSavings += diff * qty;
+      // ✅ Bag total should use oldPrice if exists
+      const displayPrice = oldPrice > 0 ? oldPrice : price;
+      bagTotal += displayPrice * qty;
+
+      // ✅ Savings only if oldPrice > price
+      if (oldPrice > price) {
+        bagSavings += (oldPrice - price) * qty;
+      }
     });
 
     const totalAmount = bagTotal - bagSavings;
+
     return { bagTotal, bagSavings, totalAmount };
   }, [cart]);
+
 
   return (
     <View

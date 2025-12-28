@@ -102,11 +102,11 @@ export function home(props) {
         />
         <Divider marginVertical={windowHeight(20)} />
         <FindYourStyle
-        collections={collections}
-         navigation={props.navigation}
-          t={t} 
+          collections={collections}
+          navigation={props.navigation}
+          t={t}
           colors={colors}
-           />
+        />
         {/* <SaleStart t={t} colors={colors} /> */}
         <BiggestDeals navigation={props.navigation} t={t} colors={colors} />
         <Divider marginVertical={windowHeight(8)} />
@@ -118,7 +118,7 @@ export function home(props) {
           colors={colors}
         />
         {/* <OfferCorner navigation={props.navigation} t={t} colors={colors} /> */}
-        <View style={styles.view} />
+        <View style={{ marginBottom: windowHeight(40) }} />
       </ScrollView>
     </SafeAreaView>
   );

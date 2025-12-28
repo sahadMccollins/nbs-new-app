@@ -1,28 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { View, Text, StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
-import {GlobalStyle} from '@style';
-import {useValues} from '@App';
+import { GlobalStyle } from '@style';
+import { useValues } from '@App';
 
 export default policySection = props => {
-  const {t} = props;
-  const {textRTLStyle} = useValues();
+  const { t } = props;
+  const { textRTLStyle } = useValues();
 
   return (
     <View style={GlobalStyle.container}>
       <Text
         style={[
           styles.title,
-          {color: props.colors.text, textAlign: textRTLStyle},
+          { color: props.colors.text, textAlign: textRTLStyle },
         ]}>
         {t('policySection.name')}
       </Text>
       <Text
         style={[
           styles.discription,
-          {color: props.colors.subText, textAlign: textRTLStyle},
+          { color: props.colors.subText, textAlign: textRTLStyle },
         ]}>
         {t('policySection.content')}
       </Text>

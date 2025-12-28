@@ -9,6 +9,7 @@ import styles from './styles';
 import { DrawerArrow } from '@utils/icons';
 import LogOut from '../logoutButton';
 import { useCustomer } from '../../context/customerContext';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default drawerComponent = props => {
   const [showModal, setShowModal] = useState(false);
@@ -17,6 +18,8 @@ export default drawerComponent = props => {
   const { customer } = useCustomer();
   const { colors } = useTheme();
   const t = props.t;
+
+  const insets = useSafeAreaInsets();
 
   // const goToScreen = key => {
   //   if (key === 0) {
@@ -122,6 +125,7 @@ export default drawerComponent = props => {
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: insets.bottom, }}
         style={[styles.mainView, { backgroundColor: colors.brandsBg }]}>
         <View style={[styles.imageView, { borderBottomColor: colors.line }]}>
           <Image source={Images.user} resizeMode="contain" style={styles.img} />

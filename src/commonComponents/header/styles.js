@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appFonts from '@theme/appFonts';
 import appColors from '@theme/appColors';
 
@@ -43,5 +43,29 @@ export default headerStyle = StyleSheet.create({
     right: windowWidth(8),
     marginBottom: windowHeight(-2),
   },
-  cartIcon: {bottom: 2},
+  cartIcon: { bottom: 2 },
+
+  cartWrapper: {
+    position: 'relative',
+  },
+
+  cartBadge: {
+    position: 'absolute',
+    top: -6,
+    right: -6,
+    minWidth: windowWidth(23),
+    height: windowHeight(14),
+    borderRadius: 9,
+    backgroundColor: appColors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 4,
+  },
+
+  cartBadgeText: {
+    color: '#fff',
+    fontSize: fontSizes.FONT10,
+    fontWeight: '600',
+  },
+
 });

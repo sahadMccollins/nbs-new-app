@@ -3,6 +3,7 @@ import {
   AboutUs,
   Category,
   Wishlist,
+  Cart,
   Help,
   Home,
   Notification,
@@ -28,6 +29,7 @@ import {
   Delivery,
   ReturnOrder,
   Return,
+  BulkOrder
 } from '@utils/icons';
 import images from '../images/images';
 import { windowHeight, windowWidth } from '@theme/appConstant';
@@ -94,11 +96,11 @@ module.exports = {
       path: 'OrderHistory'
     },
     {
-      name: 'drawerArr.wishlist',
-      icons: <Wishlist />,
+      name: 'drawerArr.cart',
+      icons: <Cart />,
       description: 'drawerArr.wishlistDrawer',
       showSwitch: false,
-      path: 'wishList'
+      path: 'cart'
     },
     {
       name: 'drawerArr.account',
@@ -106,6 +108,13 @@ module.exports = {
       description: 'drawerArr.accountDrawer',
       showSwitch: false,
       path: 'profile'
+    },
+    {
+      name: 'drawerArr.bulkOrder',
+      icons: <BulkOrder />,
+      description: 'drawerArr.bulkOrderDrawer',
+      showSwitch: false,
+      path: 'Bulk Order'
     },
     // {
     //   name: 'drawerArr.language',
@@ -685,11 +694,11 @@ module.exports = {
       path: 'OrderHistory'
     },
     {
-      name: 'drawerArr.wishlist',
-      icons: <Wishlist />,
+      name: 'drawerArr.cart',
+      icons: <Cart />,
       description: 'drawerArr.wishlistDrawer',
       showSwitch: false,
-      path: 'wishList'
+      path: 'cart'
     },
     // {
     //   name: 'profile.payment',
@@ -730,6 +739,13 @@ module.exports = {
       showSwitch: false,
       path: 'Settings'
     },
+    {
+      name: 'drawerArr.bulkOrder',
+      icons: <BulkOrder />,
+      description: 'drawerArr.bulkOrderDrawer',
+      showSwitch: false,
+      path: 'Bulk Order'
+    },
     // {
     //   name: 'profile.profileSetting',
     //   icons: <AboutUs />,
@@ -738,7 +754,7 @@ module.exports = {
     // },
     {
       name: 'profile.privacyPolicy',
-      icons: <Lock/>,
+      icons: <Lock />,
       description: 'profile.privacyPolicyDesc',
       showSwitch: false,
       path: 'PrivacyPolicy'
@@ -752,7 +768,7 @@ module.exports = {
     },
     {
       name: 'profile.shippingPolicy',
-      icons: <Document/>,
+      icons: <Document />,
       description: 'profile.shippingPolicyDesc',
       showSwitch: false,
       path: 'ShippingPolicy'
