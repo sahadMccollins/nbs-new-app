@@ -70,6 +70,8 @@ export default function CartHorizontal(props) {
                         price={t(item.oldPrice)}
                         discount={t(item.discount)}
                         t={props.t}
+                        quantity={item.quantity}
+                        isFreeGift={item.isFreeGift}
                       />
                     )}
                     {props.showWishlist && (

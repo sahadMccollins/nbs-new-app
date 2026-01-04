@@ -95,7 +95,18 @@
       "helpDrawer": "Customer Support, FAQs"
     },
     "bulkOrder": {
-      "title": "Bulk Order Request"
+      "title": "Bulk Order Request",
+      "contactInformation": "Contact Information",
+      "name": "Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "businessDetails": "Business Details",
+      "companyName": "Company Name",
+      "trnNumber": "TRN Number",
+      "orderDetails": "Order Details",
+      "subject": "Subject",
+      "additionalDetails": "Additional Details",
+      "submit": "Submit Quote Request"
     },
     "categoryArr": {
       "inverters": "Inverters",
@@ -149,6 +160,7 @@
       "hindi": "Hindi",
       "english": "English",
       "korean": "Korean",
+      "french": "French",
       "arabic": "Arabic"
     },
     "homePage": {
@@ -284,6 +296,8 @@
       "shippingPolicy": "Shipping Policy",
       "refundPolicy": "Refund & Cancellation Policy",
       "deliveryPolicy": "Delivery Policy",
+      "shareApp": "Share App",
+      "shareAppDesc": "Send app links via text, email, or social media",
       "privacyPolicyDesc": "Policy for handling user data",
       "shippingPolicyDesc": "Terms for order shipping",
       "refundPolicyDesc": "Terms for refunds and cancellations",
@@ -891,6 +905,48 @@
     "emptyCart": {
       "title": "Whoops !! Cart is Empty",
       "discription": " Looks like you haven't added anything to your cart yet. You will find alot of interesting products on our “Shop” page"
+    },
+    "filters": {
+      "title": "Filters",
+      "byProductType": "By Product Types:",
+      "productType": {
+        "title": "Product Type",
+        "option1": "AVR",
+        "option2": "Batteries",
+        "option3": "Generators",
+        "option4": "Inverter/UPS",
+        "option5": "Ongrid Inverter",
+        "option6": "Power Station",
+        "option7": "Solar Hybrid UPS",
+        "option8": "Water Pumps"
+      },
+      "byBrands": "By Brands:",
+      "brands": {
+        "title": "Brands",
+        "option1": "Nbs Groups",
+        "option2": "Samsun",
+        "option3": "Sumak",
+        "option4": "Sunride"
+      },
+      "showResults": "Show Results"
+    },
+    "sortBy": {
+      "title": "Sort By",
+      "option1": "Featured",
+      "option2": "Best selling",
+      "option3": "Alphabetically A-Z",
+      "option4": "Alphabetically Z-A",
+      "option5": "Price low to high",
+      "option6": "Price high to low",
+      "option7": "Date old to new",
+      "option8": "Date new to old"
+    },
+    "points": {
+      "point1": "7 Days Return",
+      "point2": "Free Delivery",
+      "point3": "Secure Transaction",
+      "point4": "Top Rated Brand",
+      "point5": "NBS Delivered"
     }
   }
 }

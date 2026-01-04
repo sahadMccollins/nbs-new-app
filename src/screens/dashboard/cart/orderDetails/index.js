@@ -206,11 +206,10 @@ export default orderDetails = (props) => {
   const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
   const { cart } = useCart();
 
-  // Compute: bagTotal = sum(price * qty)
-  //          bagSavings = sum(max(0, oldPrice - price) * qty)
-  //          totalAmount = bagTotal - bagSavings
   // const { bagTotal, bagSavings, totalAmount } = useMemo(() => {
-  //   if (!cart || !Array.isArray(cart)) return { bagTotal: 0, bagSavings: 0, totalAmount: 0 };
+  //   if (!cart || !Array.isArray(cart)) {
+  //     return { bagTotal: 0, bagSavings: 0, totalAmount: 0 };
+  //   }
 
   //   let bagTotal = 0;
   //   let bagSavings = 0;
@@ -220,12 +219,18 @@ export default orderDetails = (props) => {
   //     const oldPrice = Number(item?.oldPrice) || 0;
   //     const qty = Number(item?.quantity) || 1;
 
-  //     bagTotal += price * qty;
-  //     const diff = oldPrice - price;
-  //     if (diff > 0) bagSavings += diff * qty;
+  //     // ✅ Bag total should use oldPrice if exists
+  //     const displayPrice = oldPrice > 0 ? oldPrice : price;
+  //     bagTotal += displayPrice * qty;
+
+  //     // ✅ Savings only if oldPrice > price
+  //     if (oldPrice > price) {
+  //       bagSavings += (oldPrice - price) * qty;
+  //     }
   //   });
 
   //   const totalAmount = bagTotal - bagSavings;
+
   //   return { bagTotal, bagSavings, totalAmount };
   // }, [cart]);
 
@@ -242,11 +247,19 @@ export default orderDetails = (props) => {
       const oldPrice = Number(item?.oldPrice) || 0;
       const qty = Number(item?.quantity) || 1;
 
-      // ✅ Bag total should use oldPrice if exists
+      // Use oldPrice for bag total display if available
       const displayPrice = oldPrice > 0 ? oldPrice : price;
+
+      // 🧮 Always add full value to bag total
       bagTotal += displayPrice * qty;
 
-      // ✅ Savings only if oldPrice > price
+      // 🎁 Free gift → savings = price of ONE unit
+      if (item.isFreeGift) {
+        bagSavings += displayPrice;
+        return;
+      }
+
+      // 💰 Normal discount savings
       if (oldPrice > price) {
         bagSavings += (oldPrice - price) * qty;
       }

@@ -9,7 +9,7 @@ import { useShopifyWishlist } from '../../../../hooks/useShopifyWishlist';
 
 export default productDescription = props => {
   const { t, product, colors } = props;
-  const { viewRTLStyle, textRTLStyle, currSymbol, currValue } = useValues();
+  const { viewRTLStyle, textRTLStyle, currSymbol, currValue, isRTL } = useValues();
   const { toggleProduct, isInWishlist } = useShopifyWishlist();
 
   let featuresArray = [];
@@ -31,7 +31,7 @@ export default productDescription = props => {
           flexDirection: viewRTLStyle, // 'row' or 'row-reverse'
           alignItems: 'flex-start',
           justifyContent: 'space-between',
-          paddingRight: 20
+          paddingRight: isRTL ? 0 : 20
         }} >
         <Text
           style={[
@@ -89,8 +89,23 @@ export default productDescription = props => {
         data={featuresArray}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.featureItem}>
-            <Text style={styles.bullet}>▸</Text>
+          <View style={[styles.featureItem, { flexDirection: viewRTLStyle }]}>
+            <Text
+              style={[
+                styles.bullet,
+                isRTL
+                  ? {
+                    marginLeft: 8,
+                    transform: [{ rotate: '180deg' }],
+                  }
+                  : {
+                    marginRight: 8,
+                  },
+              ]}
+            >
+              ▸
+            </Text>
+
             <Text
               style={[
                 styles.discription,

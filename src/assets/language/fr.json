@@ -1,0 +1,952 @@
+{
+    "translation": {
+        "onBoarding": {
+            "sliderText1": "Bienvenue chez NBS Energy Store",
+            "sliderDescription1": "Explorez les panneaux solaires, les onduleurs, les batteries et les systèmes d'énergie chez NBS. Trouvez de nouvelles solutions énergétiques, les meilleures marques et des produits fiables chaque semaine.",
+            "sliderText2": "Solutions énergétiques pour tous les besoins",
+            "sliderDescription2": "Plus de 20 marques de confiance et plus de 2000+ produits énergétiques. Découvrez la meilleure solution d'énergie pour vos besoins avec un support facile et des options de retour.",
+            "sliderText3": "Durable. Fiable. Abordable.",
+            "sliderDescription3": "Les derniers systèmes solaires, les sauvegardes d'énergie et les pompes à eau chaque semaine. Qualité premium. Livraison rapide disponible. Installation sans tracas et service sécurisé.",
+            "startShopping": "COMMENCER LES ACHATS"
+        },
+        "login": {
+            "usernameOrEmail": "E-mail",
+            "signIn": "SE CONNECTER",
+            "orSignInWith": "Ou se connecter avec",
+            "ifNew": "Si vous êtes nouveau,",
+            "createNow": "Créer maintenant",
+            "loginNow": "Se connecter maintenant"
+        },
+        "register": {
+            "firstName": "Prénom",
+            "lastName": "Nom de famille",
+            "email": "E-mail",
+            "signUp": "S'INSCRIRE",
+            "orSignUpWith": "Ou s'inscrire avec",
+            "signUpNow": "S'inscrire maintenant"
+        },
+        "authComman": {
+            "hey": "Bonjour,",
+            "password": "Mot de passe",
+            "emailError": "L'e-mail est requis",
+            "passwordError": "Le mot de passe est requis",
+            "validEmailError": "Entrez une adresse e-mail valide",
+            "validPasswordError": "Le mot de passe doit contenir 8 caractères",
+            "skip": "IGNORER",
+            "forgotPassword": "Mot de passe oublié",
+            "alreadyHaveAccount": "Vous avez déjà un compte?",
+            "signIn": "Se connecter",
+            "backTo": "Retour à"
+        },
+        "forgotPassword": {
+            "emailAddress": "Adresse e-mail",
+            "sendOTP": "Envoyer le lien de réinitialisation"
+        },
+        "resetPassword": {
+            "resetPassword": "Réinitialiser le mot de passe",
+            "currentPassword": "Mot de passe actuel",
+            "newPassword": "Nouveau mot de passe",
+            "confirmPassword": "Confirmer le mot de passe",
+            "resetPasswordBtn": "RÉINITIALISER LE MOT DE PASSE"
+        },
+        "otp": {
+            "codeVerification": "Vérification du code",
+            "enterCode": "Entrez votre code de vérification ici:",
+            "dontGetCode": "Vous n'avez pas reçu le code?",
+            "resendCode": "Renvoyer",
+            "done": "Terminé",
+            "otpNumber": "+981 215 1545"
+        },
+        "tabBar": {
+            "home": "ACCUEIL",
+            "category": "CATÉGORIE",
+            "cart": "PANIER",
+            "wishList": "LISTE DE SOUHAITS",
+            "profile": "PROFIL"
+        },
+        "drawerArr": {
+            "name": "Bonjour, utilisateur invité",
+            "mode": "Mode sombre",
+            "rtl": "RTL",
+            "home": "Accueil",
+            "shopByCategory": "Acheter par catégorie",
+            "orders": "Commandes",
+            "wishlist": "Votre liste de souhaits",
+            "bulkOrder": "Commandes en gros",
+            "bulkOrderDrawer": "Demandes de commandes en gros",
+            "cart": "Votre panier",
+            "account": "Votre compte",
+            "language": "Langue",
+            "currencyConverter": "Changement de devise",
+            "notification": "Notification",
+            "settings": "Paramètres",
+            "aboutUs": "À propos de nous",
+            "help": "Aide/Service à la clientèle",
+            "homeDrawer": "Offres, meilleures affaires, meilleures marques",
+            "categoryDrawer": "Générateurs, onduleurs, batteries...",
+            "orderDrawer": "Commandes en cours, commandes récentes...",
+            "wishlistDrawer": "Vos produits enregistrés",
+            "accountDrawer": "Profil, paramètres, cartes enregistrées...",
+            "languageDrawer": "Sélectionnez votre langue ici...",
+            "currencyConverterDrawer": "Sélectionnez votre devise ici...",
+            "notificationDrawer": "Offres, messages de suivi des commandes...",
+            "settingsDrawer": "Paramètres de l'application, mode sombre",
+            "aboutUsDrawer": "À propos de Multikart",
+            "helpDrawer": "Support client, FAQ"
+        },
+        "bulkOrder": {
+            "title": "Demande de commande en gros",
+            "contactInformation": "Informations de contact",
+            "name": "Nom",
+            "email": "E-mail",
+            "phoneNumber": "Numéro de téléphone",
+            "businessDetails": "Informations sur l’entreprise",
+            "companyName": "Nom de l’entreprise",
+            "trnNumber": "Numéro TRN",
+            "orderDetails": "Détails de la commande",
+            "subject": "Objet",
+            "additionalDetails": "Détails supplémentaires",
+            "submit": "Soumettre la demande de devis"
+        },
+        "categoryArr": {
+            "inverters": "Onduleurs",
+            "batteries": "Batteries",
+            "waterPump": "Pompes à eau",
+            "generator": "Générateurs",
+            "powerStation": "Stations d'énergie",
+            "solarPanel": "Panneaux solaires",
+            "accessories": "Accessoires",
+            "invertersCollection": "Onde sinusoïdale pure, UPS, hybride solaire, connecté au réseau, hors réseau",
+            "batteriesCollection": "Gel, tubes hauts, SMF, ions lithium",
+            "waterPumpCollection": "Diesel, essence, électrique",
+            "generatorCollection": "Diesel, essence, hybride",
+            "powerStationCollection": "Station d'énergie portable Bluetti",
+            "solarPanelCollection": "Ja-Solar, Risen Solar, Trina Solar, Jinko Solar, Su-Mak Solar",
+            "accessoriesCollection": "Contrôleurs de charge, câbles solaires, pinces, testeur de panneaux, etc...",
+            "women": "Femmes",
+            "men": "Hommes",
+            "kid": "Enfants",
+            "beauty": "Beauté",
+            "footwear": "Chaussures",
+            "jewelery": "Bijoux",
+            "upto": "Jusqu'à 50% de réduction sur tous les produits",
+            "womanCollection": "T-shirts, hauts, bas...",
+            "menCollection": "Vestes, jeans, denim...",
+            "kidsCollection": "Vêtements, jouets, livres...",
+            "beautyCollection": "Soins de la peau, soins des cheveux, maquillage...",
+            "footWearCollection": "Chaussures, sandales, vêtements de sport...",
+            "jewelleryCollection": "Colliers, chaînes, boucles d'oreilles..."
+        },
+        "multiLangaugeModal": {
+            "selectLanguage": "Sélectionner la langue"
+        },
+        "multicurrencyModal": {
+            "selectCurrency": "Sélectionner la devise"
+        },
+        "notLoggedInModal": {
+            "title": "Vous n'êtes pas connecté",
+            "desc": "Veuillez vous connecter pour voir vos commandes et adresses enregistrées. Cela nous aide à fournir un service personnalisé et un historique des commandes.",
+            "loginButton": "Se connecter maintenant",
+            "cancelButton": "Annuler"
+        },
+        "currencyConverterArr": {
+            "indianRupees": "Roupie indienne",
+            "usDollar": "Dollar américain",
+            "euro": "Euro",
+            "australianDollar": "Dollar australien",
+            "koreanWon": "Won coréen"
+        },
+        "langaugesArr": {
+            "hindi": "Hindi",
+            "english": "Anglais",
+            "korean": "Coréen",
+            "french": "Français",
+            "arabic": "Arabe"
+        },
+        "homePage": {
+            "welcomeToMultikart": "Bienvenue chez NBS",
+            "flatOFF": "50% de réduction fixe",
+            "freeShipping": "Livraison gratuite jusqu'à minuit",
+            "shopNow": "ACHETER MAINTENANT",
+            "dealsOfDay": "Meilleures ventes",
+            "seeAll": "Voir tout",
+            "ourProducts": "Nos produits",
+            "ourProductsDesc": "Explorez notre large gamme de produits énergétiques",
+            "superSummerSale": "Super vente d'été",
+            "denimWear": "Vêtements en denim",
+            "salesStartsIn": "La vente commence dans",
+            "hours": "Heures",
+            "minutes": "Minutes",
+            "seconds": "Secondes",
+            "exploreNow": "Explorer maintenant",
+            "biggestDeals": "Les meilleures offres sur les meilleures marques",
+            "theKidsCorner": "Le coin des enfants",
+            "clothingFor": "Vêtements pour vos petits",
+            "offerCorner": "Coin des offres",
+            "newArrivals": "Nouvelles arrivées",
+            "newArrivalsDesc": "Énergie. Précision. Performance."
+        },
+        "category": {
+            "categories": "Catégories"
+        },
+        "cart": {
+            "shoppingCart": "Panier",
+            "emptyCart": "Panier vide",
+            "emptyCartDesc": "Votre panier est actuellement vide. Ajoutez des articles pour passer une commande.",
+            "steps": "Étape 1 sur 3",
+            "moveTowishlist": "Ajouter à la liste de souhaits",
+            "remove": "Supprimer",
+            "youMay": "Vous aimerez peut-être aussi",
+            "coupons": "Coupons",
+            "applyCoupons": "Appliquer les coupons",
+            "noDeliveryCharges": "Aucun frais de livraison appliqués à cette commande",
+            "dayReturn": "Retour 7 jours",
+            "support": "Support 24/7",
+            "securePayment": "Paiement sécurisé",
+            "viewDetails": "Voir les détails",
+            "placeOrder": "PASSER LA COMMANDE"
+        },
+        "ourProductsArr": {
+            "generators": "Générateur",
+            "waterpumps": "Pompes à eau",
+            "powerstations": "Stations d'énergie",
+            "batteries": "Batteries"
+        },
+        "products": {
+            "priceOnRequest": "Prix sur demande",
+            "priceOnRequestCap": "DEMANDER UN DEVIS",
+            "by": "par",
+            "outOfStock": "RUPTURE DE STOCK",
+            "productName1": "Sweat à capuche rose complet",
+            "productBrand1": "par Mango",
+            "productDiscountPrice1": 32.00,
+            "productPrice1": "35.00",
+            "productDiscount1": "20%",
+            "productName2": "Veste en jean bleu pour homme",
+            "productBrand2": "par Zara",
+            "productDiscountPrice2": 32.00,
+            "productPrice2": "35.00",
+            "productDiscount2": "20%",
+            "productName3": "Combinaison de soirée",
+            "productBrand3": "par H&M",
+            "productDiscountPrice3": 32.00,
+            "productPrice3": "35.00",
+            "productDiscount3": "20%"
+        },
+        "offerCornerArr": {
+            "under": "MOINS DE 50,00 $",
+            "flat": "20 $ DE RÉDUCTION FIXE",
+            "buyGet": "ACHETEZ UN, OBTENEZ UN",
+            "upto": "JUSQU'À 50% DE RÉDUCTION"
+        },
+        "subCategoryArr": {
+            "funsionWear": "Vêtements de fusion",
+            "westernWear": "Vêtements occidentaux",
+            "lingerieSleepwear": "Lingerie et vêtements de nuit",
+            "footWear": "Chaussures",
+            "sportsAndActive": "Vêtements de sport et actifs",
+            "beautyAndCare": "Beauté et soins personnels",
+            "jewellery": "Bijoux",
+            "gadgets": "Gadgets",
+            "plusSize": "Grande taille"
+        },
+        "innerCategoryArr": {
+            "maxiDresses": "Robes maxi",
+            "skirts": "Jupes",
+            "cropTops": "Hauts courts",
+            "tunics": "Tuniques",
+            "halterTops": "Hauts à bretelles",
+            "spaghettiKurtas": "Kurtas spaghetti",
+            "capes": "Casquettes",
+            "fusionGowns": "Robes de fusion",
+            "nightwear": "Vêtements de nuit",
+            "handbags": "Sacs à main"
+        },
+        "orderDetails": {
+            "orderDetail": "Détails de la commande",
+            "bagTotal": "Total du panier",
+            "bagSavings": "Économies du panier",
+            "couponDiscount": "Réduction du coupon",
+            "delivery": "Livraison",
+            "totalAmount": "Montant total",
+            "applyCoupon": "Appliquer le coupon"
+        },
+        "wishList": {
+            "yourWishlist": "Votre liste de souhaits",
+            "addToCart": "Ajouter au panier",
+            "emptyWishlist": "Liste de souhaits vide",
+            "emptyWishlistDesc": "Vous n'avez pas encore ajouté d'articles à votre liste de souhaits."
+        },
+        "profile": {
+            "profile": "Profil",
+            "userName": "Utilisateur invité",
+            "userEmail": "Connectez-vous pour voir vos détails",
+            "edit": "Modifier",
+            "payment": "Paiement",
+            "pages": "Pages",
+            "savedAddress": "Adresse enregistrée",
+            "profileSetting": "Paramètre de profil",
+            "termsConditions": "Termes et conditions",
+            "pagesProfile": "Éléments et autres pages",
+            "paymentProfile": "Cartes enregistrées, portefeuilles",
+            "addProfile": "Maison, bureau...",
+            "profileSettings": "Nom complet, mot de passe...",
+            "termsProfile": "T&C pour l'utilisation de la plateforme",
+            "privacyPolicy": "Politique de confidentialité",
+            "shippingPolicy": "Politique d'expédition",
+            "refundPolicy": "Politique de remboursement et d'annulation",
+            "deliveryPolicy": "Politique de livraison",
+            "shareApp": "Partager l'application",
+            "shareAppDesc": "Envoyez des liens d'application par SMS, e-mail ou réseaux sociaux",
+            "privacyPolicyDesc": "Politique de traitement des données utilisateur",
+            "shippingPolicyDesc": "Conditions d'expédition de la commande",
+            "refundPolicyDesc": "Conditions de remboursement et d'annulation",
+            "deliveryPolicyDesc": "Conditions de livraison du produit",
+            "logOut": "SE DÉCONNECTER"
+        },
+        "recommendedArr": {
+            "denim": "Denim",
+            "skirts": "Jupes",
+            "flowerprint": "Imprimé fleuri",
+            "jeans": "Jeans",
+            "jumpsuit": "Combinaison"
+        },
+        "search": {
+            "search": "Rechercher",
+            "recentSearch": "Recherche suggérée",
+            "recommendedForYou": "Recommandé pour vous",
+            "trendingCategory": "Catégorie tendance",
+            "topBrands": "Meilleures marques sur Multikart",
+            "resultFor": "Résultat pour"
+        },
+        "profileSettings": {
+            "personalDetails": "DÉTAILS PERSONNELS",
+            "firstName": "Prénom",
+            "lastName": "Nom de famille",
+            "DOB": "Date de naissance",
+            "gender": "Genre",
+            "security": "Sécurité",
+            "mobileNumber": "Numéro de téléphone mobile",
+            "password": "Mot de passe",
+            "saveDetails": "ENREGISTRER LES DÉTAILS",
+            "cancel": "ANNULER",
+            "change": "CHANGER",
+            "male": "Homme",
+            "female": "Femme",
+            "other": "Autre"
+        },
+        "orderSuccess": {
+            "orderPlaced": "Commande placée",
+            "orderSuccessfully": "Commande avec succès!",
+            "paymentSuccessful": "Le paiement a été traité avec succès et votre commande est en route.",
+            "orderDetails": "Détails de la commande",
+            "yourOrder": "Votre numéro de commande est: 64484032",
+            "emailReceipt": "Un reçu par e-mail contenant les détails de votre commande a été envoyé à votre adresse e-mail.",
+            "orderShip": "Cette commande sera livrée à:",
+            "address": "3501 Maloy Court, East Elmhurst, New York City NY 11369",
+            "paymentMethod": "Méthode de paiement",
+            "googleUPI": "Google UPI",
+            "orderSummary": "Résumé de la commande",
+            "trackOrder": "Suivre la commande",
+            "continueShopping": "Continuer vos achats",
+            "ordername": "Sweat à capuche rose complet",
+            "size": "Taille",
+            "items": "articles",
+            "qty": "Qté"
+        },
+        "sizes": {
+            "small": "S",
+            "midium": "M",
+            "large": "L",
+            "xlarge": "XL",
+            "smallSize": "Petit",
+            "medium": "Moyen",
+            "largeSize": "Grand",
+            "2xl": "2XL"
+        },
+        "orderHistory": {
+            "orderHistory": "Historique des commandes",
+            "openOrders": "Commandes ouvertes",
+            "ongoing": "en cours",
+            "delivered": "Livré",
+            "ordered": "Commandé:",
+            "orderDate": "26 mai 2021",
+            "deliveryStatus": "Statut de livraison:",
+            "paymentStatus": "Statut du paiement:",
+            "dispatched": "Expédié",
+            "ontheway": "En route",
+            "pastOrders": "Commandes précédentes",
+            "rate&Review": "Évaluer et examiner le produit",
+            "needHelp": "Besoin d'aide?"
+        },
+        "ShippingDetails": {
+            "ShippingDetails": "Détails d'expédition",
+            "area": "Caroline S Seo",
+            "phoneNo": "Numéro de téléphone",
+            "priceDetails": "Détails du prix",
+            "downloadInvoice": "Télécharger la facture"
+        },
+        "orderTrackerData": {
+            "order": "Sortie pour la livraison",
+            "description": "livraison prévue lundi",
+            "order1": "En transit",
+            "description1": "10h00, 21/05/2020",
+            "order2": "Prêt à expédier",
+            "description2": "12h00, 20/05/2020"
+        },
+        "product": {
+            "name": "Jupes florales",
+            "discription": "Jupe imprimée fleurie avec haut blanc",
+            "content": "Jupe évolutive imprimée en noir, blanc cassé et pêche, avec fermeture éclair et doublure attachée",
+            "ratings": "(20 évaluations)",
+            "off": "réduction",
+            "inclusive": "Exclusif de toutes les taxes",
+            "highlights": "Points forts",
+            "selectSize": "Sélectionner la taille",
+            "sizeChart": "Tableau des tailles",
+            "selectColor": "Sélectionner la couleur",
+            "quantity": "Quantité",
+            "catalogue": "Catalogue des produits",
+            "openCatalogue": "Fiche technique"
+        },
+        "OffersForYou": {
+            "OffersForYou": "Offres pour vous",
+            "name": "Utilisez le code MULTIKART10 pour obtenir 10% de réduction fixe",
+            "discription": "Utilisez le code MULTIKART10 pour obtenir 10% de réduction fixe sur une commande minimale de 200,00 $. Offre valable pour les nouveaux utilisateurs uniquement",
+            "tapToCopy": "Appuyez pour copier",
+            "MULTIKART10": "MULTIKART10"
+        },
+        "policySection": {
+            "name": "Politique de retour et d'échange",
+            "content": "Ce produit est admissible aux retours. Veuillez initier les retours à partir de la section 'Mes commandes' de l'application dans les 7 jours suivant la livraison. Veuillez vous assurer que le produit est en bon état avec toutes les étiquettes attachées."
+        },
+        "checkout": {
+            "title": "Paiement",
+            "subTitle": "Étape 3 sur 3"
+        },
+        "productDetail": {
+            "productDetails": "Détails du produit",
+            "discription": "Jupe évolutive imprimée en noir, blanc cassé et pêche, avec fermeture éclair et doublure attachée",
+            "product": "Taille du modèle et ajustement",
+            "content": "Le mannequin (hauteur 5'8) porte une taille 28",
+            "product1": "Matériau et entretien",
+            "content1": "100% polyester, lavage en machine",
+            "product2": "Code produit",
+            "content2": "460356366_floral"
+        },
+        "customerReview": {
+            "customerReview": "Avis des clients",
+            "name": "Mark Jacob",
+            "date": "20 août 2021",
+            "review": "C'est vraiment une jolie jupe! Je ne m'attendais pas à me sentir aussi bien dans une matière polyester. L'impression est un peu moins brillante que ce qui est montré dans la description du produit.",
+            "sizeBought": "Taille achetée",
+            "review1": "Wow... mais il devrait avoir plus de volants. Achat époustouflant...🤗",
+            "allReviews": "Tous les avis"
+        },
+        "checkDelivery": {
+            "CheckDelivery": "Vérifier la livraison",
+            "content": "Entrez le code postal pour vérifier la date de livraison / l'option de retrait",
+            "pinCode": "Code postal",
+            "check": "vérifier",
+            "discription": "Livraison gratuite pour les commandes de plus de 200,00 $",
+            "discription1": "Paiement à la livraison disponible",
+            "discription2": "Retours et échanges faciles pendant 21 jours",
+            "similarProducts": "Produits similaires",
+            "addToBag": "AJOUTER AU PANIER"
+        },
+        "cupons": {
+            "save": "Enregistrer",
+            "apply": "APPLIQUER",
+            "welcome": "BIENVENUE",
+            "multikartDisc": "Utilisez le code MULTIKART10 pour obtenir 10% de réduction fixe sur une commande minimale de 200,00 $. Offre valable pour les nouveaux utilisateurs uniquement",
+            "welcomeDesc": "Utilisez le code WELCOME pour obtenir 10% de réduction fixe sur une commande minimale de 200,00 $. Offre valable pour les nouveaux utilisateurs uniquement",
+            "Lucky50": "LUCKY50",
+            "LUCKYDesc": "Utilisez le code LUCKY50 pour obtenir 10% de réduction fixe sur une commande minimale de 200,00 $. Offre valable pour les nouveaux utilisateurs uniquement",
+            "SummerSale": "SUMMERSALE",
+            "SummerSaleDesc": "Utilisez le code SUMMERSALE pour obtenir 10% de réduction fixe sur une commande minimale de 200,00 $. Offre valable pour les nouveaux utilisateurs uniquement",
+            "viewT&C": "Voir les conditions générales",
+            "maximumSavings": "Économies maximales:"
+        },
+        "notification": {
+            "all": "Tous",
+            "orderInfo": "Informations sur la commande",
+            "Offers": "Offres",
+            "payment": "Paiement"
+        },
+        "paymentDetails": {
+            "paymentDetails": "Détails du paiement",
+            "steps": "Étape 3 sur 3",
+            "offers&promotions": "Offres et promotions",
+            "offerDesc": "Obtenez jusqu'à 25% de réduction sur Multikart Pay en utilisant les services bancaires en ligne ICICI ou les cartes",
+            "promotionDesc": "Profitez de jusqu'à 50% de réduction et livraison gratuite sur les commandes en ligne!",
+            "showMore": "Afficher plus (4 offres)",
+            "showLess": "Afficher moins",
+            "paymentMethod": "Méthode de paiement",
+            "cashDelivery": "Paiement à la livraison",
+            "debit/credit": "Carte de débit/crédit",
+            "wallets": "Portefeuilles",
+            "netBanking": "Services bancaires en ligne",
+            "nameOnCard": "Nom sur la carte",
+            "cardNumber": "Numéro de carte",
+            "expiration": "Date d'expiration",
+            "cvv": "CVV",
+            "makePayment": "Effectuer le paiement"
+        },
+        "wallets": {
+            "commercialBank": "Banque industrielle et commerciale",
+            "constructionBank": "Banque de construction",
+            "agriculturalBank": "Banque agricole",
+            "hsbcholdings": "HSBC Holdings",
+            "bankAmerica": "Bank of America",
+            "jpMorgan": "JPMorgan Chase & Co.",
+            "countryRegion": "Pays/Région",
+            "chooseBank": "Choisir une banque",
+            "ICICI": "ICICI",
+            "BOB": "BOB"
+        },
+        "netBanking": {
+            "adyen": "Adyen",
+            "airtelMoney": "Airtel Money",
+            "alliedWallet": "Allied Wallet",
+            "applePay": "Apple Pay",
+            "brinks": "Brinks",
+            "cardFree": "CardFree"
+        },
+        "addNewAddress": {
+            "addNewAddress": "Ajouter une nouvelle adresse",
+            "firstName": "Prénom",
+            "lastName": "Nom de famille",
+            "newZealand": "Nouvelle-Zélande",
+            "australia": "Australie",
+            "india": "Inde",
+            "fullName": "Nom complet",
+            "address": "Appartement, numéro de maison, bâtiment...",
+            "area": "Zone, colonie, rue",
+            "landmark": "Point de repère",
+            "city/district": "Ville/District",
+            "emirate": "Émirat",
+            "state/province/region": "État/Province/Région",
+            "abudhabi": "Abu Dhabi",
+            "dubai": "Dubaï",
+            "sharjah": "Sharjah",
+            "ajman": "Ajman",
+            "rasalkhaima": "Ras Al Khaimah",
+            "fujairah": "Fujairah",
+            "ummalquwain": "Umm Al Quwain",
+            "typeOfAddress": "Type d'adresse",
+            "home": "Maison",
+            "office": "Bureau",
+            "others": "Autres",
+            "defaultAddress": "Rendre l'adresse par défaut",
+            "reset": "RÉINITIALISER",
+            "addAddress": "AJOUTER UNE ADRESSE"
+        },
+        "deliveryDetails": {
+            "deliveryDetails": "Détails de livraison",
+            "steps": "Étape 2 sur 3",
+            "area": "Arthur M Willingham",
+            "address": "3059 Elk City Road Indianapolis, Indiana IN 46229",
+            "addNewAddress": "Ajouter une nouvelle adresse",
+            "expectedDelivery": "Livraison prévue",
+            "deliveryBy": "Livraison par",
+            "ProceedPayment": "Procéder au paiement"
+        },
+        "aboutUs": {
+            "introduction": "Introduction",
+            "subTitle": "Multikart est une destination mode de premier plan pour les dernières tendances et les styles les plus chauds.",
+            "content": "L'extrait standard de Lorem Ipsum utilisé depuis les années 1500 est reproduit ci-dessous pour ceux qui sont intéressés. Les sections 1.10.32 et 1.10.33 de 'de Finibus Bonorum et Malorum' par Cicero sont également reproduites dans leur forme originale exacte.",
+            "content1": "Contrairement à la croyance populaire, Lorem Ipsum n'est pas simplement un texte aléatoire. Il a ses racines dans un texte de la littérature latine classique datant de 45 avant JC, ce qui le rend vieux de plus de 2000 ans. Richard McClintock, professeur de latin au Hampden-Sydney College en Virginie, a recherché l'un des mots latins les plus obscurs.",
+            "users": "150+ utilisateurs",
+            "userContent": "Multikart compte 150+ utilisateurs enregistrés dans le magasin en ligne",
+            "stores": "50+ magasins",
+            "storeContent": "Multikart compte 50+ magasins dans le monde.",
+            "orders": "1,5M+ commandes",
+            "orderContent": "Multikart a 1,5M+ commandes au total jusqu'à présent.",
+            "brands": "100+ Marques",
+            "brandContent": "Multikart compte 100+ marques dans nos magasins.",
+            "content2": "Contrairement à la croyance populaire, Lorem Ipsum n'est pas simplement un texte aléatoire. Il a ses racines dans un texte de la littérature latine classique datant de 45 avant JC, ce qui le rend vieux de plus de 2000 ans. Richard McClintock, professeur de latin au Hampden-Sydney College en Virginie, a recherché l'un des mots latins les plus obscurs.",
+            "ourBrands": "Nos marques",
+            "brandDiscription": "Chaque marque a sa propre personnalité unique et son design exclusif. Elles ont la liberté de développer les styles et vêtements qui créent le bon attrait - et toutes nos marques sont unies"
+        },
+        "helpCenter": {
+            "helpCenter": "Centre d'aide",
+            "contact": "Nous contacter",
+            "faq": "Questions fréquemment posées",
+            "content": "Veuillez nous contacter et nous serons heureux de vous aider. Obtenez un support client rapide en sélectionnant votre article",
+            "issueFacing": "Quels problèmes rencontrez-vous?",
+            "question1": "Comment passer une commande sur l'application?",
+            "question1Answer": "Pour passer une commande, parcourez simplement notre catalogue de produits, sélectionnez les articles que vous souhaitez, ajoutez-les à votre panier et procédez au paiement pour confirmer votre commande.",
+            "question2": "Puis-je consulter les détails du produit, comme les spécifications et la disponibilité?",
+            "question2Answer": "Oui, vous pouvez consulter les informations détaillées du produit, y compris les spécifications, la disponibilité et les avis des clients. Accédez simplement à la page du produit dans l'application.",
+            "question3": "Que faire si je dois annuler ou modifier une commande?",
+            "question3Answer": "Pour annuler ou modifier une commande, accédez à la section 'Mes commandes', trouvez votre commande et suivez les options fournies pour apporter des modifications.",
+            "question4": "Comment trouver des produits de catégories ou de marques spécifiques?",
+            "question4Answer": "Vous pouvez utiliser les filtres de recherche de l'application pour trouver des produits de catégories ou de marques spécifiques. Filtrez les résultats par catégories telles que l'électronique ou les vêtements.",
+            "question5": "Y a-t-il un moyen de payer les commandes au sein de l'application?",
+            "question5Answer": "Oui, vous pouvez payer les commandes en toute sécurité en utilisant diverses méthodes de paiement disponibles dans l'application, y compris les cartes de crédit/débit et les portefeuilles numériques.",
+            "question6": "Mes détails personnels et mes informations de commande sont-ils sécurisés?",
+            "question6Answer": "Oui, nous accordons la priorité à la sécurité et à la confidentialité de vos détails personnels et de vos informations de commande. Notre application se conforme aux normes strictes de confidentialité et de protection des données.",
+            "question7": "Puis-je demander de l'aide pour des exigences ou préférences de produits spéciales?",
+            "question7Answer": "Oui, vous pouvez demander de l'aide pour des exigences ou préférences de produits spéciales lors du processus de commande. Veuillez simplement spécifier vos préférences et nous ferons de notre mieux pour les accommoder.",
+            "question8": "Le support client est-il disponible via cette application?",
+            "question8Answer": "Bien que nous facilitions les achats en ligne, notre application n'est pas destinée au support client. Pour obtenir de l'aide, veuillez contacter notre équipe d'assistance par les canaux désignés fournis dans l'application.",
+            "manageOrderQuetion": "Je veux gérer ma commande",
+            "credit/debitQuetion": "Je n'ai pas reçu de remboursement instantané (carte de crédit/débit)",
+            "otherIssues": "Je veux de l'aide pour d'autres problèmes",
+            "walletPayQuetion": "Je ne peux pas payer avec mon portefeuille",
+            "unsubscribeSms": "Je souhaite me désabonner des e-mails et SMS promotionnels",
+            "refunds": "Je veux de l'aide avec les retours et les remboursements"
+        },
+        "termsCondition": {
+            "termsCondition": "Conditions générales pour les groupes NBS",
+            "introContent": "En accédant à ou en passant une commande avec les groupes NBS, vous acceptez les conditions générales suivantes. Veuillez les lire attentivement.",
+            "section1Title": "1. Informations sur l'entreprise",
+            "section1Content": "Groupes NBS\n\nNazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC BP: 379670, Deira, Dubaï, Émirats Arabes Unis.\n\n📧 sales@nbsgroups.com | 📞 +971 4 2243543",
+            "section2Title": "2. Commandes et paiements",
+            "section2List": [
+                "Toutes les commandes sont soumises à la disponibilité et à l'acceptation.",
+                "Les prix affichés sont en AED (ou devise locale) et peuvent inclure les taxes applicables.",
+                "Les paiements doivent être effectués en intégralité avant l'expédition, sauf accord contraire."
+            ],
+            "section3Title": "3. Expédition et livraison",
+            "section3List": [
+                "Les délais de livraison peuvent varier en fonction de la disponibilité des produits et de l'emplacement.",
+                "Nous ne sommes pas responsables des retards causés par les services de messagerie ou les circonstances imprévues.",
+                "Les clients doivent fournir des informations d'expédition précises pour éviter les retards."
+            ],
+            "section4Title": "4. Annulations et remboursements",
+            "section4List": [
+                "Les commandes peuvent être annulées dans les 24 heures s'il n'y a pas encore eu d'expédition.",
+                "Les retours sont acceptés dans les 7 jours pour les articles éligibles. Consultez notre politique de remboursement et d'annulation pour plus de détails."
+            ],
+            "section5Title": "5. Garantie du produit",
+            "section5List": [
+                "Les produits sont couverts par la garantie du fabricant (le cas échéant).",
+                "La garantie ne couvre pas l'usage abusif, l'installation incorrecte ou les réparations non autorisées."
+            ],
+            "section6Title": "6. Utilisation du site Web",
+            "section6List": [
+                "Vous acceptez de ne pas abuser de notre site Web ou de tenter un accès non autorisé.",
+                "Le contenu du site Web (texte, images, etc.) est la propriété des groupes NBS et ne peut pas être copié sans permission."
+            ],
+            "section7Title": "8. Limitation de responsabilité",
+            "section7List": [
+                {
+                    "title": "Les groupes NBS ne sont pas responsables de:",
+                    "items": [
+                        "Les dommages indirects, accessoires ou consécutifs.",
+                        "Les dommages résultant de l'utilisation incorrecte du produit ou de l'installation."
+                    ]
+                }
+            ],
+            "section8Title": "7. Loi applicable",
+            "section8List": [
+                "Ces conditions sont régies par les lois des Émirats Arabes Unis. Tout différend sera résolu selon la juridiction de Dubaï."
+            ],
+            "section9Title": "9. Modifications des conditions",
+            "section9Content": "Les groupes NBS se réservent le droit de modifier ces conditions à tout moment. Les conditions mises à jour seront affichées sur notre site Web avec la date d'entrée en vigueur.",
+            "section10Title": "10. Nous contacter",
+            "section10Content": "Pour toute question concernant ces conditions, veuillez nous contacter:",
+            "section10List": {
+                "email": "sales@nbsgroups.com",
+                "phone": "+971 4 2243543",
+                "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, BP: 379670, Deira, Dubaï, Émirats Arabes Unis."
+            }
+        },
+        "deliveryPolicy": {
+            "title": "Politique de livraison",
+            "intro": "Chez les groupes NBS, nous nous engageons à assurer que vos commandes sont livrées rapidement, en toute sécurité et en toute transparence. Cette politique de livraison explique comment nous traitons, expédions et livrons les commandes à nos clients aux Émirats Arabes Unis et à l'international.",
+            "section1": {
+                "title": "1. Couverture de livraison",
+                "description": "Nous livrons actuellement à:",
+                "domestic": "Tous les émirats des Émirats Arabes Unis (Abu Dhabi, Dubaï, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah).",
+                "domesticFirst": "Livraisons nationales: ",
+                "international": "Pays sélectionnés dans le monde (veuillez contacter notre équipe d'assistance pour vérifier la disponibilité avant de passer une commande).",
+                "internationalFirst": "Livraisons internationales: "
+            },
+            "section2": {
+                "title": "2. Délai de traitement",
+                "point1": "Les commandes sont traitées dans les 1 à 2 jours ouvrables après confirmation du paiement.",
+                "point2": "Les commandes passées les week-ends ou jours fériés aux Émirats Arabes Unis seront traitées le jour ouvrable suivant."
+            },
+            "section3": {
+                "title": "3. Méthodes et délais de livraison",
+                "intro": "Nous utilisons des partenaires de messagerie de confiance pour assurer une livraison sûre et opportune. Les délais de livraison estimés sont:",
+                "table": {
+                    "header": {
+                        "col1": "Type de livraison",
+                        "col2": "Temps estimé",
+                        "col3": "Coût"
+                    },
+                    "rows_0_col1": "Livraison nationale standard",
+                    "rows_0_col2": "2-4 jours ouvrables",
+                    "rows_0_col3": "En fonction du poids/volume de la commande",
+                    "rows_1_col1": "Livraison nationale express",
+                    "rows_1_col2": "1-2 jours ouvrables",
+                    "rows_1_col3": "Des frais supplémentaires s'appliquent",
+                    "rows_2_col1": "Expédition internationale",
+                    "rows_2_col2": "5-12 jours ouvrables",
+                    "rows_2_col3": "En fonction de la destination"
+                },
+                "note": "*Veuillez noter: Les délais de livraison peuvent varier en fonction de l'emplacement, du dédouanement et des circonstances imprévues.*"
+            },
+            "section4": {
+                "title": "4. Suivi des commandes",
+                "description": "Une fois votre commande expédiée, vous recevrez:",
+                "point1": "Un numéro de suivi par e-mail/SMS.",
+                "point2": "Un lien pour suivre votre colis en temps réel."
+            },
+            "section5": {
+                "title": "5. Retards de livraison",
+                "description": "Bien que nous nous efforcions de livrer dans les délais estimés, des retards peuvent survenir en raison de:",
+                "point1": "Détails de livraison incorrects ou incomplets fournis par le client.",
+                "point2": "Conditions météorologiques, contrôles douaniers ou problèmes logistiques imprévus.",
+                "point3": "Retards des partenaires de messagerie tiers.",
+                "note": "Dans ces cas, les groupes NBS travailleront étroitement avec nos partenaires de livraison pour résoudre le problème rapidement."
+            },
+            "section6": {
+                "title": "6. Adresse de livraison",
+                "point1": "Veuillez vous assurer que votre adresse d'expédition est exacte et complète avant de passer une commande.",
+                "point2": "Tout changement après l'expédition est soumis à l'approbation de la messagerie et peut entraîner des frais supplémentaires."
+            },
+            "section7": {
+                "title": "7. Livraisons manquées",
+                "point1": "En cas d'échec d'une tentative de livraison, la messagerie tentera une réexpédition ou vous contactera pour reprogrammer.",
+                "point2": "Les commandes non réclamées dans les 5 jours peuvent nous être renvoyées et des frais d'expédition supplémentaires peuvent s'appliquer pour le renvoi."
+            },
+            "section8": {
+                "title": "8. Articles endommagés ou manquants",
+                "description": "Si votre commande arrive endommagée ou incomplète:",
+                "point1": "Signalez le problème à sales@nbsgroups.com dans les 48 heures suivant la livraison.",
+                "point2": "Fournissez des photos du colis/des articles endommagés pour une résolution plus rapide.",
+                "point3": "Nous organiserons un remplacement, un échange ou un remboursement selon notre politique de retour et remboursement."
+            },
+            "section9": {
+                "title": "9. Nous contacter",
+                "email": "📧 sales@nbsgroups.com",
+                "phone": "☎️ +971 4 2243543",
+                "address": "🏢 Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, BP: 379670, Deira, Dubaï, Émirats Arabes Unis.",
+                "website": "🌐 www.nbsgroups.com"
+            },
+            "footer1": "Groupes NBS ",
+            "footer": "valorise votre confiance et s'engage à livrer vos commandes avec soin et fiabilité."
+        },
+        "privacyPolicy": {
+            "title": "Politique de confidentialité",
+            "intro": "Chez les groupes NBS, nous respectons votre vie privée et nous nous engageons à protéger vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données.",
+            "section1Title": "1. Informations que nous collectons",
+            "section1List": [
+                "Nom, adresse e-mail, numéro de téléphone et adresse de livraison/facturation",
+                "Détails de la commande et historique des transactions",
+                "Informations sur l'appareil et le navigateur (pour l'analyse d'utilisation du site Web)"
+            ],
+            "section2Title": "2. Comment nous utilisons vos informations",
+            "section2List": [
+                "Traiter et livrer vos commandes",
+                "Communiquer les mises à jour de commandes et le support client",
+                "Améliorer notre site Web, nos produits et nos services",
+                "Envoyer des mises à jour promotionnelles (uniquement si vous optez pour cela)"
+            ],
+            "section3Title": "3. Protection des données",
+            "section3Content": "Nous prenons des mesures de sécurité appropriées pour protéger vos données personnelles contre l'accès non autorisé, l'utilisation abusive ou la divulgation. Vos informations ne sont jamais vendues ou partagées avec des tiers sans votre consentement, sauf si la loi l'exige.",
+            "section4Title": "4. Cookies",
+            "section4Content": "Notre site Web peut utiliser des cookies pour améliorer l'expérience utilisateur. Vous pouvez choisir de désactiver les cookies via les paramètres de votre navigateur.",
+            "section5Title": "5. Vos droits",
+            "section5Content": "Vous pouvez demander l'accès, la correction ou la suppression de vos données personnelles à tout moment en nous contactant.",
+            "section6Title": "6. Nous contacter",
+            "section6Content": "Si vous avez des questions sur cette politique de confidentialité ou sur la façon dont nous traitons vos données, veuillez nous contacter:",
+            "section6List": {
+                "email": "sales@nbsgroups.com",
+                "phone": "+971 4 2243543",
+                "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, BP: 379670, Deira, Dubaï, Émirats Arabes Unis."
+            }
+        },
+        "refundAndCancellationPolicy": {
+            "title": "Politique de remboursement et d'annulation",
+            "intro": "Chez les groupes NBS, nous nous engageons à la satisfaction des clients et à un service transparent.",
+            "section1Title": "1. Annulation de commande:",
+            "section1Content": "Les commandes peuvent être annulées dans les 24 heures s'il n'y a pas encore eu d'expédition. Pour les commandes personnalisées ou en gros, l'annulation n'est pas autorisée une fois confirmée.",
+            "section2Title": "2. Retours et remboursements:",
+            "section2Content": "Les retours sont acceptés dans les 7 jours suivant la livraison pour les articles inutilisés et non installés dans leur emballage d'origine. Les articles non retournables incluent les produits personnalisés, les composants électriques ouverts et les articles marqués \"Vente finale\". L'expédition retour est la responsabilité du client sauf si le produit est défectueux ou incorrect.",
+            "section3Title": "3. Articles endommagés ou défectueux:",
+            "section3List": "Contactez-nous dans les 3 jours suivant la livraison pour un remplacement gratuit ou un remboursement complet si l'article est endommagé, défectueux ou incorrect.",
+            "section4Title": "4. Délai de remboursement:",
+            "section4Content": "Les remboursements approuvés seront traités dans les 7 à 10 jours ouvrables selon le mode de paiement initial.",
+            "section5Title": "5. Échanges:",
+            "section5Content": "Soumis à la disponibilité. Des frais de retour et de réexpédition peuvent s'appliquer.",
+            "section6Title": "6. Nous contacter",
+            "section6Content": "Pour toutes les demandes de retour, remboursement ou annulation:",
+            "section6List": {
+                "email": "sales@nbsgroups.com",
+                "phone": "+971 4 2243543",
+                "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, BP: 379670, Deira, Dubaï, Émirats Arabes Unis."
+            }
+        },
+        "shopPage": {
+            "womenCollection": "Collection femme",
+            "numProducts": "Explorez tous les produits",
+            "emptyCollection": "Collection vide",
+            "emptyCollectionDesc": "Cette collection ne contient aucun produit.",
+            "newProduct": "NOUVEAU",
+            "filters": "Filtres",
+            "sortBy": "Trier par:",
+            "recommended": "Recommandé",
+            "popularity": "Popularité",
+            "WhatsNew": "Quoi de neuf",
+            "hightToLow": "Prix: élevé à bas",
+            "lowToHigh": "Prix: bas à élevé",
+            "customerRating": "Évaluation des clients",
+            "here&Now": "Ici et maintenant",
+            "zara": "Zara",
+            "mast&harbour": "Mast & harbour",
+            "tokyoTalkies": "Tokyo talkies",
+            "vogue": "Vogue",
+            "gucci": "Gucci",
+            "brand": "Marque:",
+            "colors": "Couleurs:",
+            "Occasion": "Occasion",
+            "casual": "Casual",
+            "sports": "Sports",
+            "beachWear": "Vêtements de plage",
+            "loungeWear": "Vêtements de détente",
+            "formal": "Formel",
+            "party": "Fête",
+            "price": "Prix:",
+            "applyFilters": "APPLIQUER LES FILTRES"
+        },
+        "paymentCard": {
+            "payments": "Paiements",
+            "savedCards": "Cartes enregistrées",
+            "creditCard": "Carte de crédit",
+            "bankName": "Nom de la banque",
+            "paigeTurner": "Paige Turner",
+            "VALIDTHRU": "VALABLE JUSQU'AU",
+            "wallets": "Portefeuilles",
+            "paytmWallet": "Portefeuille Paytm",
+            "balance": "Solde",
+            "cashApp": "Application Cash",
+            "googleWallet": "Portefeuille Google",
+            "payNow": "Payer maintenant",
+            "allCollection": "Toutes les collections",
+            "delink": "Dissocier",
+            "addNewCard": "Ajouter une nouvelle carte"
+        },
+        "authError": {
+            "firstName": "Veuillez entrer le prénom",
+            "lastName": "Veuillez entrer le nom de famille",
+            "email": "Veuillez entrer l'e-mail",
+            "validEmail": "Veuillez entrer un e-mail valide",
+            "password": "Veuillez entrer le mot de passe",
+            "validPassword": "Le mot de passe ne doit pas être inférieur à 8",
+            "curruntPassword": "Veuillez entrer le mot de passe actuel",
+            "newPassword": "Veuillez entrer le nouveau mot de passe",
+            "cpassword": "Veuillez entrer la confirmation du mot de passe",
+            "validCPassword": "Le mot de passe doit être identique à celui ci-dessus"
+        },
+        "pages": {
+            "onBoarding": "Intégration",
+            "onBoardingDesc": "Écrans d'enregistrement et de démarrage",
+            "login": "Connexion",
+            "otp": "OTP",
+            "homeProduct": "Accueil et produit",
+            "homeProductDesc": "Trouver des produits, bannières, ventes",
+            "innerCategory": "Catégories internes",
+            "shop": "Boutique",
+            "products": "Produits",
+            "cartOrderPayment": "Panier, commande et paiement",
+            "cartOrderDesc": "Ajoutez vos produits et passez votre commande",
+            "emptyCart": "Panier vide",
+            "orderSuccess": "Succès de la commande",
+            "profileDesc": "Consultez l'historique des commandes et les pages de suivi.",
+            "ordertrack": "Suivi des commandes",
+            "noOrder": "Aucune commande",
+            "otherPages": "Autres pages",
+            "otherPageDesc": "Liste des autres pages internes",
+            "help": "Aide"
+        },
+        "orderFilter": {
+            "allOrders": "Toutes les commandes",
+            "openOrders": "Commandes ouvertes",
+            "returnOrders": "Commandes de retour",
+            "cancelledOrders": "Commandes annulées",
+            "timeFilter": "Filtre horaire",
+            "last30days": "30 derniers jours",
+            "last6months": "6 derniers mois",
+            "back": "RETOUR"
+        },
+        "cartModal": {
+            "removeItem": "Supprimer l'article",
+            "removeDesc": "Êtes-vous sûr de vouloir supprimer ou déplacer cet article de votre panier?",
+            "moveToWishlist": "AJOUTER À LA LISTE DE SOUHAITS"
+        },
+        "requestQuoteModal": {
+            "title": "Demander un devis",
+            "name": "Nom *",
+            "nameError": "Le nom est requis",
+            "email": "E-mail *",
+            "emailError": "L'e-mail est requis",
+            "emailInvalid": "L'e-mail n'est pas valide",
+            "phoneNumber": "Numéro de téléphone *",
+            "phoneError": "Le numéro de téléphone est requis",
+            "company": "Nom de l'entreprise",
+            "additional": "Détails supplémentaires",
+            "submit": "Soumettre la demande de devis",
+            "success": "Succès",
+            "successMessage": "Votre demande de devis a été soumise avec succès",
+            "error": "Erreur",
+            "errorMessage": "Échec de la soumission de la demande de devis"
+        },
+        "writeReview": {
+            "writeReview": "Écrire un avis",
+            "yourRating": "Votre évaluation",
+            "review": "Avis",
+            "submit": "SOUMETTRE"
+        },
+        "emptyCart": {
+            "title": "Oups! Le panier est vide",
+            "discription": "Il semble que vous n'ayez rien ajouté à votre panier pour le moment. Vous trouverez de nombreux produits intéressants sur notre page 'Boutique'"
+        },
+        "filters": {
+            "title": "Filtres",
+            "byProductType": "Par type de produit :",
+            "productType": {
+                "title": "Type de produit",
+                "option1": "AVR",
+                "option2": "Batteries",
+                "option3": "Générateurs",
+                "option4": "Onduleur / UPS",
+                "option5": "Onduleur connecté au réseau",
+                "option6": "Station d’énergie",
+                "option7": "UPS solaire hybride",
+                "option8": "Pompes à eau"
+            },
+            "byBrands": "Par marques :",
+            "brands": {
+                "title": "Marques",
+                "option1": "NBS Groups",
+                "option2": "Samsun",
+                "option3": "Sumak",
+                "option4": "Sunride"
+            },
+            "showResults": "Afficher les résultats"
+        },
+        "sortBy": {
+            "title": "Trier par",
+            "option1": "Mis en avant",
+            "option2": "Meilleures ventes",
+            "option3": "Alphabétique A-Z",
+            "option4": "Alphabétique Z-A",
+            "option5": "Prix croissant",
+            "option6": "Prix décroissant",
+            "option7": "Date ancienne à récente",
+            "option8": "Date récente à ancienne"
+        },
+        "points": {
+            "point1": "Retour sous 7 jours",
+            "point2": "Livraison gratuite",
+            "point3": "Transaction sécurisée",
+            "point4": "Marque la mieux notée",
+            "point5": "Livré par NBS"
+        }
+    }
+}

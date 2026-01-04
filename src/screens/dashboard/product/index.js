@@ -104,23 +104,23 @@ export default function product({ navigation }) {
         >
           {[
             {
-              text: '7 Days Return',
+              text: t('points.point1'),
               uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-returns._CB562506492.png?v=1766558585',
             },
             {
-              text: 'Free Delivery',
+              text: t('points.point2'),
               uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/trust_icon_free_shipping_81px._CB630870460.png?v=1766558614',
             },
             {
-              text: 'Secure Transaction',
+              text: t('points.point3'),
               uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/Secure-payment._CB650126890.png?v=1766558647',
             },
             {
-              text: 'Top Rated Brand',
+              text: t('points.point4'),
               uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-top-brand._CB562506657.png?v=1766558680',
             },
             {
-              text: 'NBS Delivered',
+              text: t('points.point5'),
               uri: 'https://cdn.shopify.com/s/files/1/0760/7743/3044/files/icon-amazon-delivered._CB432973688.png?v=1766558766',
             },
           ].map((item, index) => (

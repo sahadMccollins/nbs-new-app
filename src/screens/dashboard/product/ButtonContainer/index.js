@@ -267,7 +267,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default buttonContainer = (props) => {
   const { t, colors, visibleLoginModal } = props;
-  const { viewRTLStyle } = useValues();
+  const { viewRTLStyle, isRTL } = useValues();
 
   const { toggleProduct, isInWishlist } = useShopifyWishlist();
   const {
@@ -370,7 +370,7 @@ export default buttonContainer = (props) => {
         ) : !isAvailable ? (
           <>
             <Cart color={colors.text} />
-            <Text style={[styles.cartText, { color: colors.text }]}>
+            <Text style={[styles.cartText, { color: colors.text, minWidth: '50' }]}>
               {t('products.outOfStock') || 'Out of Stock'}
             </Text>
           </>
@@ -387,14 +387,13 @@ export default buttonContainer = (props) => {
         ) : (
           // QUANTITY CONTROLS
           <View style={[styles.pillContainer, { flexDirection: viewRTLStyle }]}>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               activeOpacity={1}
               style={[styles.leftMainView, { borderColor: props.colors.text }]}
               onPress={() => decreaseQuantity(product.id)}>
               <Icon name={'minus'} size={18} color={appColors.primary} />
             </TouchableOpacity>
 
-            {/* QUANTITY */}
             <Text style={styles.text}>{quantity}</Text>
 
             <TouchableOpacity
@@ -402,7 +401,36 @@ export default buttonContainer = (props) => {
               style={[styles.rightMainView, { borderColor: props.colors.text }]}
               onPress={() => increaseQuantity(product.id)}>
               <Icon name={'plus'} size={18} color={appColors.primary} />
+            </TouchableOpacity> */}
+
+
+            {/* MINUS */}
+            <TouchableOpacity
+              activeOpacity={1}
+              style={[
+                isRTL ? styles.rightMainView : styles.leftMainView,
+                { borderColor: props.colors.text },
+              ]}
+              onPress={() => decreaseQuantity(product.id)}
+            >
+              <Icon name="minus" size={18} color={appColors.primary} />
             </TouchableOpacity>
+
+            {/* QUANTITY */}
+            <Text style={styles.text}>{quantity}</Text>
+
+            {/* PLUS */}
+            <TouchableOpacity
+              activeOpacity={1}
+              style={[
+                isRTL ? styles.leftMainView : styles.rightMainView,
+                { borderColor: props.colors.text },
+              ]}
+              onPress={() => increaseQuantity(product.id)}
+            >
+              <Icon name="plus" size={18} color={appColors.primary} />
+            </TouchableOpacity>
+
           </View>
         )}
       </View>

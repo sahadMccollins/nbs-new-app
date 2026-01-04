@@ -17,8 +17,9 @@ export default brandStyles = StyleSheet.create({
     marginLeft: windowWidth(14),
   },
   name: {
-    fontSize: fontSizes.FONT19,
+    fontSize: fontSizes.FONT16,
     fontFamily: appFonts.LatoMedium,
+    textAlign: 'center',
   },
   brandsSeperator: {
     height: windowHeight(10),

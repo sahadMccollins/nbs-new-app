@@ -1,27 +1,22 @@
-import React, {useState} from 'react';
-import {View, Text, ScrollView} from 'react-native';
-import {FilterModal} from '@otherComponent';
+import React, { useState } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import { FilterModal } from '@otherComponent';
 import styles from './styles';
 import DropDown from '@commonComponents/dropdown';
 import Data from '@utils/json';
 import Brands from './brands';
-import {windowHeight} from '@theme/appConstant';
+import ProductTypes from './productTypes';
+import { windowHeight } from '@theme/appConstant';
 import Sizes from './sizes';
 import ButtonContainer from '@commonComponents/buttonContainer';
 import FilterOptions from './filterOptions';
-import {useTheme} from '@react-navigation/native';
-import {useValues} from '@App';
+import { useTheme } from '@react-navigation/native';
+import { useValues } from '@App';
 
-export default function filter({modalVisible, setModalVisible, t}) {
-  const sortBy = Data.sortBy;
-  const [selectedItem, setSelectedItem] = useState();
-  const brands = Data.brands;
-  const {colors} = useTheme();
-  const {textRTLStyle} = useValues();
+export default function filter({ modalVisible, setModalVisible, t, productTypes, selectedTypes, selectedBrands, onToggleCheckbox, resetFilters, onShowResults }) {
+  const { colors } = useTheme();
+  const { textRTLStyle } = useValues();
 
-  const SelectedItem = val => {
-    setSelectedItem(val);
-  };
   return (
     <View>
       <FilterModal
@@ -34,12 +29,12 @@ export default function filter({modalVisible, setModalVisible, t}) {
             <ScrollView
               showsVerticalScrollIndicator={false}
               contentContainerStyle={styles.scrollView}>
-              <View
+              {/* <View
                 style={[
                   styles.seperator,
                   {backgroundColor: colors.brandsBg},
-                ]}></View>
-              <Text
+                ]}></View> */}
+              {/* <Text
                 style={[
                   styles.title,
                   {color: colors.text, textAlign: textRTLStyle},
@@ -52,7 +47,7 @@ export default function filter({modalVisible, setModalVisible, t}) {
                 selectedItem={selectedItem}
                 height={windowHeight(45)}
                 top={windowHeight(-2)}
-              />
+              /> */}
               <Text
                 style={[
                   styles.title,
@@ -62,16 +57,11 @@ export default function filter({modalVisible, setModalVisible, t}) {
                     textAlign: textRTLStyle,
                   },
                 ]}>
-                {t('shopPage.brand')}
+                {t('filters.byBrands')}
               </Text>
-              <Brands t={t} brands={brands} colors={colors} />
+              <Brands t={t} colors={colors} selectedBrands={selectedBrands} onToggleCheckbox={onToggleCheckbox} />
               <View style={styles.blankView}></View>
-              <Sizes
-                title={t('orderSuccess.size')}
-                sizes={Data.size}
-                t={t}
-                colors={colors}
-              />
+
               <Text
                 style={[
                   styles.title,
@@ -81,18 +71,25 @@ export default function filter({modalVisible, setModalVisible, t}) {
                     textAlign: textRTLStyle,
                   },
                 ]}>
-                {t('shopPage.price')}
+                {t('filters.byProductType')}
               </Text>
-              <FilterOptions t={t} colors={colors} />
+              <ProductTypes t={t} colors={colors} productsTypes={productTypes} selectedTypes={selectedTypes} onToggleCheckbox={onToggleCheckbox} />
+              {/* <View style={styles.blankView}></View> */}
+
             </ScrollView>
             <ButtonContainer
               t={t}
               colors={colors}
               btnTitle={t('shopPage.applyFilters')}
               text={t('addNewAddress.reset')}
-              btnClick={() => {
-                setModalVisible(false);
+              secondaryClick={() => {
+                console.log("Reset Filters Clicked");
+                resetFilters()
               }}
+              btnClick={() => {
+                onShowResults();
+              }}
+              bottom={30}
             />
           </View>
         }

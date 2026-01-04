@@ -1,8 +1,9 @@
 import React from 'react';
-import {Modal, Text, TouchableOpacity, View} from 'react-native';
-import {styles} from './styles';
-import {CloseSquare} from '@assets/icons/closeSquare';
-import {useValues} from '@App';
+import { Modal, Text, TouchableOpacity, View } from 'react-native';
+import { styles } from './styles';
+import { CloseSquare } from '@assets/icons/closeSquare';
+import Icon from 'react-native-vector-icons/Feather';
+import { useValues } from '@App';
 
 export function FilterModal({
   modalVisible,
@@ -11,7 +12,7 @@ export function FilterModal({
   content,
   colors,
 }) {
-  const {viewRTLStyle} = useValues();
+  const { viewRTLStyle } = useValues();
   return (
     <View>
       <Modal
@@ -22,17 +23,22 @@ export function FilterModal({
           setModalVisible(!modalVisible);
         }}>
         <View
-          style={[styles.centeredView, {backgroundColor: colors.background}]}>
+          style={[styles.centeredView, { backgroundColor: colors.background }]}>
           <View style={styles.modalView}>
-            <View style={[styles.row, {flexDirection: viewRTLStyle}]}>
-              <Text style={[styles.heading, {color: colors.text}]}>
+            <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
+              <Text style={[styles.heading, { color: colors.text }]}>
                 {title}
               </Text>
               <TouchableOpacity
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}>
-                <CloseSquare />
+                {/* <CloseSquare /> */}
+                <Icon
+                  name="x"
+                  size={22}
+                  color={colors.text}
+                />
               </TouchableOpacity>
             </View>
             {content}

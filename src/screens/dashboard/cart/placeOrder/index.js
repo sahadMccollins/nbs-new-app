@@ -126,16 +126,38 @@ export default placeOrder = (props) => {
   const [loading, setLoading] = useState(false);
 
   // ✅ Calculate total price
+  // const totalAmount = useMemo(() => {
+  //   if (!cart || !Array.isArray(cart)) return 0;
+  //   let total = 0;
+  //   cart.forEach(item => {
+  //     const price = Number(item?.price) || 0;
+  //     const qty = Number(item?.quantity) || 1;
+  //     total += price * qty;
+  //   });
+  //   return total;
+  // }, [cart]);
+
   const totalAmount = useMemo(() => {
     if (!cart || !Array.isArray(cart)) return 0;
+
     let total = 0;
+
     cart.forEach(item => {
       const price = Number(item?.price) || 0;
       const qty = Number(item?.quantity) || 1;
+
+      // Always add full price
       total += price * qty;
+
+      // 🎁 Free gift → subtract price of ONE unit
+      if (item.isFreeGift) {
+        total -= price;
+      }
     });
+
     return total;
   }, [cart]);
+
 
   // ✅ Check if user is logged in
   const isLoggedIn = !!customer?.accessToken;

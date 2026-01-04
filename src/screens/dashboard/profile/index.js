@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Share, Platform } from 'react-native';
 import { Header, Button } from '@commonComponents';
 import { useTranslation } from 'react-i18next';
 import { fontSizes } from '@theme/appConstant';
@@ -54,7 +54,32 @@ export function profile({ navigation }) {
   //   }
   // };
 
+  const onShareApp = async () => {
+    try {
+      const iosLink = 'https://apps.apple.com/us/app/nbs-group/id6749219738';
+      const androidLink =
+        'https://play.google.com/store/apps/details?id=com.sahadmccollins.NBS';
+
+      const appLink = Platform.OS === 'ios' ? iosLink : androidLink;
+
+      await Share.share({
+        title: 'Share App',
+        message: `Hey, check out the NBS Groups app to explore a wide range of products.!\n\n${appLink}`,
+        url: appLink, // Important for iOS
+      });
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    }
+  };
+
+
   const goToScreen = (path) => {
+
+    if (path === 'ShareApp') {
+      onShareApp();
+      return;
+    }
+
     if (path === 'visibleModal') {
       setShowModal(!showModal);
       return; // Stop execution here
@@ -117,8 +142,8 @@ export function profile({ navigation }) {
             <MenuItem
               icon={items.icons}
               text={items.name}
-              show={key == 11 ? true : false}
-              showLine={key == 13 ? false : true}
+              show={key == 12 ? true : false}
+              showLine={key == 12 ? false : true}
               description={items.description}
               showSwitch={items.showSwitch}
               onPress={() => goToScreen(items.path)}

@@ -10,7 +10,7 @@ export default category = props => {
   return (
     <ScrollView
       horizontal
-      contentContainerStyle={[styles.scrollView, { flexDirection: viewRTLStyle }]}
+      contentContainerStyle={[styles.scrollView,]}
       showsHorizontalScrollIndicator={false}>
       {category.map(
         (item, key) =>

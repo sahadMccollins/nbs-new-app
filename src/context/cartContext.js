@@ -204,6 +204,7 @@ export const CartProvider = ({ children }) => {
             oldPrice: product.oldPrice || variant.oldPrice || "0",
             available: product.available ?? variant.available ?? true,
             quantity: 1,
+            isFreeGift: product.isFreeGift ?? false
         };
     };
 
@@ -213,7 +214,8 @@ export const CartProvider = ({ children }) => {
         const normalized = normalizeProduct(product);
 
         setCart((prev) => {
-            const exists = prev.find((p) => p.id === normalized.id);
+            const exists = prev.find((p) => p.id === normalized.id && p.isFreeGift === normalized.isFreeGift);
+            // const exists = prev.find((p) => p.id === normalized.id);
 
             if (exists) {
                 return prev.map((p) =>
@@ -225,21 +227,64 @@ export const CartProvider = ({ children }) => {
         });
     };
 
+    // const updateProduct = (productId, updates) => {
+    //     setCart((prev) =>
+    //         prev.map((p) =>
+    //             p.id === productId ? { ...p, ...updates } : p
+    //         )
+    //     );
+    // };
+
+    const updateProduct = (productId, updates) => {
+        setCart((prev) =>
+            prev.map((p) =>
+                p.id === productId && !p.isFreeGift ? { ...p, ...updates } : p
+            )
+        );
+    };
+
 
     //
     // 📌 Remove product completely
     //
+    // const removeProduct = (productId) => {
+    //     setCart((prev) => prev.filter((p) => p.id !== productId));
+    // };
+
+    // const removeProduct = (productId) => {
+    //     setCart((prev) => prev.filter((p) => p.id !== productId && !p.isFreeGift));
+    // };
+
+    // const removeFreeProduct = (productId) => {
+    //     setCart((prev) => prev.filter((p) => p.id !== productId && p.isFreeGift));
+    // };
+
+
+    // ✅ FIXED: Remove only the specified product (not free gifts)
     const removeProduct = (productId) => {
-        setCart((prev) => prev.filter((p) => p.id !== productId));
+        setCart((prev) => prev.filter((p) => !(p.id === productId && !p.isFreeGift)));
+    };
+
+    // ✅ FIXED: Remove only free gifts with the specified ID
+    const removeFreeProduct = (productId) => {
+        setCart((prev) => prev.filter((p) => !(p.id === productId && p.isFreeGift)));
     };
 
     //
     // 📌 Increase quantity
     //
+    // const increaseQuantity = (productId) => {
+    //     setCart((prev) =>
+    //         prev.map((p) =>
+    //             p.id === productId ? { ...p, quantity: p.quantity + 1 } : p
+    //         )
+    //     );
+    // };
+
     const increaseQuantity = (productId) => {
         setCart((prev) =>
             prev.map((p) =>
-                p.id === productId ? { ...p, quantity: p.quantity + 1 } : p
+                p.id === productId && !p.isFreeGift ? { ...p, quantity: p.quantity + 1 } : p
             )
         );
     };
@@ -247,17 +292,78 @@ export const CartProvider = ({ children }) => {
     //
     // 📌 Decrease quantity (auto-remove if goes to 0)
     //
+    // const decreaseQuantity = (productId) => {
+    //     setCart((prev) =>
+    //         prev
+    //             .map((p) =>
+    //                 p.id === productId
+    //                     ? { ...p, quantity: Math.max(0, p.quantity - 1) }
+    //                     : p
+    //             )
+    //             .filter((p) => p.quantity > 0)
+    //     );
+    // };
+
+    // const decreaseQuantity = (productId) => {
+    //     setCart((prev) =>
+    //         prev
+    //             .map((p) =>
+    //                 p.id === productId && !p.isFreeGift
+    //                     ? { ...p, quantity: Math.max(0, p.quantity - 1) }
+    //                     : p
+    //             )
+    //             .filter((p) => p.quantity > 0)
+    //     );
+    // };
+
     const decreaseQuantity = (productId) => {
-        setCart((prev) =>
-            prev
-                .map((p) =>
-                    p.id === productId
-                        ? { ...p, quantity: Math.max(0, p.quantity - 1) }
-                        : p
-                )
-                .filter((p) => p.quantity > 0)
-        );
+        console.log('➡️ decreaseQuantity called with productId:', productId);
+
+        setCart((prev) => {
+            console.log('🛒 Previous cart:', prev);
+
+            const mappedCart = prev.map((p) => {
+                console.log('🔍 Checking product:', p.id, p);
+
+                // Only decrease if NOT a free gift
+                if (p.id === productId && !p.isFreeGift) {
+                    const newQty = Math.max(0, p.quantity - 1);
+
+                    console.log(
+                        '➖ Decreasing quantity for:',
+                        p.id,
+                        'Old qty:',
+                        p.quantity,
+                        'New qty:',
+                        newQty
+                    );
+
+                    return { ...p, quantity: newQty };
+                }
+
+                console.log('⏭️ No change for product:', p.id);
+                return p;
+            });
+
+            console.log('🧾 Cart after map:', mappedCart);
+
+            const filteredCart = mappedCart.filter((p) => {
+                const keep = p.quantity > 0;
+                console.log(
+                    keep ? '✅ Keeping product:' : '🗑️ Removing product:',
+                    p.id,
+                    'Qty:',
+                    p.quantity
+                );
+                return keep;
+            });
+
+            console.log('🛍️ Final cart after filter:', filteredCart);
+
+            return filteredCart;
+        });
     };
+
 
     //
     // 📌 Set exact quantity
@@ -290,6 +396,8 @@ export const CartProvider = ({ children }) => {
                 loading,
                 addProduct,
                 removeProduct,
+                removeFreeProduct,
+                updateProduct,
                 increaseQuantity,
                 decreaseQuantity,
                 setQuantity,

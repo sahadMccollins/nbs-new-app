@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Button } from '@commonComponents';
 import { fontSizes, windowHeight } from '@theme/appConstant';
 import styles from './styles';
@@ -15,6 +15,7 @@ export default buttonContainer = props => {
     subTextColor,
     bottom,
     curruncyIcon,
+    secondaryClick
   } = props;
   // const val = bottom == 0 ? 0 : 60;
   const val = bottom == 0 ? 0 : bottom;
@@ -38,7 +39,17 @@ export default buttonContainer = props => {
           <Text style={[styles.text, { color: colors.text }]}>
             {curruncyIcon}
           </Text>
-          <Text style={[styles.text, { color: colors.text }]}>{text}</Text>
+          {/* <Text style={[styles.text, { color: colors.text }]}>{text}</Text> */}
+
+          {text && (
+            secondaryClick ? (
+              <TouchableOpacity onPress={secondaryClick}>
+                <Text style={[styles.text, { color: colors.text }]}>{text}</Text>
+              </TouchableOpacity>
+            ) : (
+              <Text style={[styles.text, { color: colors.text }]}>{text}</Text>
+            )
+          )}
         </View>
         {subText && (
           <Text

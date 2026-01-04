@@ -237,7 +237,7 @@
 
 
 import React, { useState } from 'react';
-import { View, ScrollView, TouchableOpacity, Text, TextInput, Alert, ActivityIndicator } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Text, TextInput, Alert, ActivityIndicator, KeyboardAvoidingView, Platform, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Header } from '@commonComponents';
 import { useTranslation } from 'react-i18next';
 import { windowWidth, windowHeight, fontSizes } from '@theme/appConstant';
@@ -250,7 +250,7 @@ import { Input, Button, TextArea } from '@commonComponents';
 export default function BulkOrder({ navigation }) {
     const { t } = useTranslation();
     const { colors } = useTheme();
-    const { isDark } = useValues();
+    const { isDark, isRTL, viewRTLStyle } = useValues();
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [submitting, setSubmitting] = useState(false);
@@ -350,123 +350,145 @@ export default function BulkOrder({ navigation }) {
         }
     };
 
-    const SectionTitle = ({ title }) => (
-        <Text style={{
-            fontSize: fontSizes.FONT19,
-            fontWeight: '600',
-            color: colors.text,
-            marginTop: windowHeight(25),
-        }}>
-            {title}
-        </Text>
+    const SectionTitle = ({ title, right }) => (
+        <View style={{ flexDirection: viewRTLStyle }} >
+            <Text
+                style={[
+                    {
+                        fontSize: fontSizes.FONT19,
+                        fontWeight: '600',
+                        color: colors.text,
+                        marginTop: windowHeight(25),
+                    },
+                    isRTL && {
+                        right: right ?? 0,
+                        // position: 'absolute',
+                    },
+                ]}
+            >
+                {title}
+            </Text>
+        </View>
     );
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: isDark ? colors.card : null }}>
             <Header text={t('bulkOrder.title')} navigation={navigation} />
-            <ScrollView contentContainerStyle={{ paddingBottom: windowHeight(20) }} showsVerticalScrollIndicator={false}>
+            <KeyboardAvoidingView
+                // style={{ flex: 1 }}
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                keyboardVerticalOffset={Platform.OS === 'ios' ? 80 : 0} // adjust if header exists
+            >
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-                <View style={{ paddingHorizontal: windowWidth(30) }}>
-                    {/* Contact Information Section */}
-                    <SectionTitle title="Contact Information" />
 
-                    <Input
-                        placeholder="Name"
-                        value={form.name}
-                        onChangeText={value => {
-                            onChange({ name: 'name', value });
-                        }}
-                        error={errors.name}
-                    />
+                    <ScrollView contentContainerStyle={{ paddingBottom: windowHeight(20) }} showsVerticalScrollIndicator={false}>
 
-                    <Input
-                        placeholder="Email"
-                        value={form.email}
-                        onChangeText={value => {
-                            onChange({ name: 'email', value });
-                        }}
-                        error={errors.email}
-                    />
+                        <View style={{ paddingHorizontal: windowWidth(30) }}>
+                            {/* Contact Information Section */}
+                            <SectionTitle title={t('bulkOrder.contactInformation')} />
 
-                    <Input
-                        placeholder="Phone Number"
-                        value={form.phoneNumber}
-                        onChangeText={value => {
-                            onChange({ name: 'phoneNumber', value });
-                        }}
-                        error={errors.phoneNumber}
-                    />
+                            <Input
+                                placeholder={t('bulkOrder.name')}
+                                value={form.name}
+                                onChangeText={value => {
+                                    onChange({ name: 'name', value });
+                                }}
+                                error={errors.name}
+                            />
 
-                    {/* Business Details Section */}
-                    <SectionTitle title="Business Details" />
+                            <Input
+                                placeholder={t('bulkOrder.email')}
+                                value={form.email}
+                                onChangeText={value => {
+                                    onChange({ name: 'email', value });
+                                }}
+                                error={errors.email}
+                            />
 
-                    <Input
-                        placeholder="Company Name"
-                        value={form.company}
-                        onChangeText={value => {
-                            onChange({ name: 'company', value });
-                        }}
-                        error={errors.company}
-                    />
+                            <Input
+                                placeholder={t('bulkOrder.phoneNumber')}
+                                value={form.phoneNumber}
+                                onChangeText={value => {
+                                    onChange({ name: 'phoneNumber', value });
+                                }}
+                                error={errors.phoneNumber}
+                            />
 
-                    <Input
-                        placeholder="TRN Number"
-                        value={form.trnNumber}
-                        onChangeText={value => {
-                            onChange({ name: 'trnNumber', value });
-                        }}
-                        error={errors.trnNumber}
-                    />
+                            {/* Business Details Section */}
+                            <SectionTitle title={t('bulkOrder.businessDetails')} />
 
-                    <SectionTitle title="Order Details" />
+                            <Input
+                                placeholder={t('bulkOrder.companyName')}
+                                value={form.company}
+                                onChangeText={value => {
+                                    onChange({ name: 'company', value });
+                                }}
+                                error={errors.company}
+                            />
 
-                    <Input
-                        placeholder="Subject"
-                        value={form.subject}
-                        onChangeText={value => {
-                            onChange({ name: 'subject', value });
-                        }}
-                        error={errors.subject}
-                    />
+                            <Input
+                                placeholder={t('bulkOrder.trnNumber')}
+                                value={form.trnNumber}
+                                onChangeText={value => {
+                                    onChange({ name: 'trnNumber', value });
+                                }}
+                                error={errors.trnNumber}
+                            />
 
-                    <TextArea
-                        placeholder="Additional Details"
-                        value={form.message}
-                        onChangeText={value => {
-                            onChange({ name: 'message', value });
-                        }}
-                        error={errors.message}
-                    />
+                            <SectionTitle title={t('bulkOrder.orderDetails')} />
 
-                    {/* Submit Button */}
-                    <TouchableOpacity
-                        onPress={submitQuoteForm}
-                        disabled={submitting}
-                        style={{
-                            backgroundColor: appColors.primary,
-                            borderRadius: 8,
-                            paddingVertical: windowHeight(15),
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexDirection: 'row',
-                            marginTop: windowHeight(40),
-                        }}
-                    >
-                        {submitting ? (
-                            <ActivityIndicator size="small" color={appColors.white} />
-                        ) : (
-                            <Text style={{
-                                fontSize: fontSizes.FONT19,
-                                fontWeight: '600',
-                                color: appColors.white,
-                                marginLeft: windowWidth(8)
-                            }}>
-                                Submit Request
-                            </Text>
-                        )}
-                    </TouchableOpacity>
-                </View>
-            </ScrollView>
+                            <Input
+                                placeholder={t('bulkOrder.subject')}
+                                value={form.subject}
+                                onChangeText={value => {
+                                    onChange({ name: 'subject', value });
+                                }}
+                                error={errors.subject}
+                            />
+
+                            <TextArea
+                                placeholder={t('bulkOrder.additionalDetails')}
+                                value={form.message}
+                                onChangeText={value => {
+                                    onChange({ name: 'message', value });
+                                }}
+                                error={errors.message}
+                            />
+
+                            {/* Submit Button */}
+                            <TouchableOpacity
+                                onPress={submitQuoteForm}
+                                disabled={submitting}
+                                style={{
+                                    backgroundColor: appColors.primary,
+                                    borderRadius: 8,
+                                    paddingVertical: windowHeight(15),
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexDirection: 'row',
+                                    marginTop: windowHeight(40),
+                                }}
+                            >
+                                {submitting ? (
+                                    <ActivityIndicator size="small" color={appColors.white} />
+                                ) : (
+                                    <Text style={{
+                                        fontSize: fontSizes.FONT19,
+                                        fontWeight: '600',
+                                        color: appColors.white,
+                                        marginLeft: windowWidth(8)
+                                    }}>
+                                        {t('bulkOrder.submit')}
+                                    </Text>
+                                )}
+                            </TouchableOpacity>
+                        </View>
+                    </ScrollView>
+
+                </TouchableWithoutFeedback>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }

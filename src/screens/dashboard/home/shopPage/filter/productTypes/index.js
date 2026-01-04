@@ -6,16 +6,15 @@ import { useTheme } from '@react-navigation/native';
 import { useValues } from '@App';
 import Data from '@utils/json';
 
-export default function brands(props) {
-  const { t, selectedBrands, onToggleCheckbox } = props;
-  const brands = Data.brands;
+export default function productTypes(props) {
+  const { t, productsTypes, selectedTypes, onToggleCheckbox } = props;
   const { colors } = useTheme();
   const { isRTL } = useValues()
 
   return (
     <View>
       <FlatList
-        data={brands}
+        data={productsTypes}
         style={styles.mainStyle}
         inverted={isRTL ? true : false}
         numColumns={3}
@@ -24,13 +23,13 @@ export default function brands(props) {
           <TouchableOpacity
             activeOpacity={0.7}
             onPress={() => {
-              onToggleCheckbox(item.name, 'brands');
+              onToggleCheckbox(item, 'productType');
             }}
             style={[
               styles.brand,
               {
                 backgroundColor:
-                  selectedBrands.includes(item.name)
+                  selectedTypes.includes(item)
                     ? appColors.primary
                     : colors.cuponsbg,
               },
@@ -40,10 +39,10 @@ export default function brands(props) {
                 styles.name,
                 {
                   color:
-                    selectedBrands.includes(item.name) ? appColors.white : colors.text,
+                    selectedTypes.includes(item) ? appColors.white : colors.text,
                 },
               ]}>
-              {t(item.name)}
+              {t(item)}
             </Text>
           </TouchableOpacity>
         )}

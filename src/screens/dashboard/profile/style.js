@@ -28,7 +28,7 @@ export default profileStyles = StyleSheet.create({
     fontFamily: appFonts.LatoBold,
   },
   userEmail: {
-    fontSize: fontSizes.FONT20,
+    fontSize: fontSizes.FONT17,
     color: appColors.grey,
     fontFamily: appFonts.LatoMedium,
   },

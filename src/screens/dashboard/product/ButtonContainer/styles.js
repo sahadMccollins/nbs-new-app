@@ -39,7 +39,7 @@ export default buttonContainerStyles = StyleSheet.create({
   cartText: {
     color: appColors.primary,
     fontFamily: appFonts.LatoMedium,
-    fontSize: fontSizes.FONT17,
+    fontSize: fontSizes.FONT16,
     marginHorizontal: windowHeight(10),
     marginTop: windowHeight(3),
     top: windowHeight(5),

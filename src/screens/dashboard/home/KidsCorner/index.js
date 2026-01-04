@@ -20,7 +20,7 @@ export default kidsCorner = props => {
         ]}>
         {props.t('homePage.newArrivals')}
       </Text>
-      <View style={{ flexDirection: 'row', justifyContent: "space-between" }} >
+      <View style={{ justifyContent: "space-between", flexDirection: viewRTLStyle }} >
         <Text style={[styles.clothing, { textAlign: textRTLStyle }]}>
           {props.t('homePage.newArrivalsDesc')}
         </Text>

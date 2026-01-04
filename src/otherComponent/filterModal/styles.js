@@ -6,6 +6,7 @@ import appFonts from '@theme/appFonts';
 export const styles = StyleSheet.create({
   centeredView: {
     backgroundColor: appColors.white,
+    flex: 1,
   },
   modalView: {
     marginVertical: windowWidth(12),

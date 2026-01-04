@@ -11,7 +11,7 @@ import { useShopifyCart } from '../../hooks/useShopifyCart';
 
 export function Header(props) {
   const { colors } = useTheme();
-  const { viewRTLStyle, imageRTLStyle, isDark } = useValues();
+  const { viewRTLStyle, imageRTLStyle, isDark, textRTLStyle } = useValues();
   const { getCount } = useShopifyCart();
   const cartCount = getCount();
 
@@ -45,7 +45,7 @@ export function Header(props) {
             ]}>
             {props.text}
           </Text>
-          {props.showText && <Text style={styles.text2}>{props.subText}</Text>}
+          {props.showText && <Text style={[styles.text2, { textAlign: textRTLStyle }]}>{props.subText}</Text>}
         </View>
       </View>
       <View style={[styles.cart, { flexDirection: viewRTLStyle }]}>

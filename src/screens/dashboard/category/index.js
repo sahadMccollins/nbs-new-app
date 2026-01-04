@@ -19,7 +19,7 @@ export function category({ navigation }) {
   const { t } = useTranslation();
   const category = Data.category;
   const { colors } = useTheme();
-  const { isDark } = useValues();
+  const { isDark, textRTLStyle } = useValues();
 
   const goToScreen = () => {
     navigation.navigate('cart');
@@ -64,7 +64,7 @@ export function category({ navigation }) {
               <Text style={[styles.categoryName, { color: colors.text }]}>
                 {t(item.name).toUpperCase()}
               </Text>
-              <Text style={styles.categorySub}>{t(item.categorySubTxt)}</Text>
+              <Text style={[styles.categorySub]}>{t(item.categorySubTxt)}</Text>
             </View>
             <Image style={styles.categoryImg} source={item.categoryImg} />
           </TouchableOpacity>

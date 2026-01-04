@@ -165,7 +165,7 @@ export default findYourStyle = props => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={[
           styles.scrollView,
-          { flexDirection: viewRTLStyle },
+          // { flexDirection: viewRTLStyle },
         ]}>
         {collectionFilters.map((item, key) => (
           <TouchableOpacity

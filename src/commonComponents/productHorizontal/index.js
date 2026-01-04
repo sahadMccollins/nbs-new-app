@@ -19,7 +19,7 @@ export function ProductHorizontal(props) {
   const { addToWishlist, removeFromWishlist, toggleProduct, isInWishlist } = useShopifyWishlist();
   const { addToCart, loading, removeFromCart, isInCart } = useShopifyCart();
   const { colors } = useTheme();
-  const { isRTL, viewRTLStyle, isDark } = useValues();
+  const { isRTL, viewRTLStyle, isDark, textRTLStyle } = useValues();
 
   // console.log('props',props.)
   return (
@@ -50,7 +50,7 @@ export function ProductHorizontal(props) {
                   { flexDirection: viewRTLStyle, width: isRTL ? '60%' : '70%' },
                 ]}>
                 <View>
-                  <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title, { color: props.colors.text }]}>
+                  <Text numberOfLines={2} ellipsizeMode='tail' style={[styles.title, { textAlign: textRTLStyle, color: props.colors.text }]}>
                     {props.t(item.title)}
                   </Text>
                   {props.showPrice && (

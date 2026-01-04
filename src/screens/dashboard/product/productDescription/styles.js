@@ -63,7 +63,7 @@ export default productDescriptionStyles = StyleSheet.create({
   },
   bullet: {
     color: "#d00",
-    marginRight: 8,
+    // marginRight: 8,
     fontSize: fontSizes.FONT20,
   },
   highlightText: {

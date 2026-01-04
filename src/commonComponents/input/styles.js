@@ -31,6 +31,7 @@ export default inputStyles = StyleSheet.create({
     borderRadius: windowHeight(6),
     borderWidth: 1.5,
     borderColor: appColors.border,
+    // borderColor: 'red',
     alignSelf: 'center',
     fontSize: fontSizes.FONT19,
     fontFamily: appFonts.LatoRegular,

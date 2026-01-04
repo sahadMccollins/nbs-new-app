@@ -9,12 +9,14 @@ import {
   Notification,
   Orders,
   Profile,
+  Share,
   Settings,
   Lock,
   Hindi,
   Language,
   CurrencyConverter,
   Korea,
+  France,
   Arabic,
   Rupees,
   Dollar,
@@ -29,7 +31,8 @@ import {
   Delivery,
   ReturnOrder,
   Return,
-  BulkOrder
+  BulkOrder,
+  LanguageIcon
 } from '@utils/icons';
 import images from '../images/images';
 import { windowHeight, windowWidth } from '@theme/appConstant';
@@ -408,14 +411,15 @@ module.exports = {
   ],
 
   langauges: [
-    { key: 'hi', name: 'langaugesArr.hindi', icons: <Hindi /> },
+    // { key: 'hi', name: 'langaugesArr.hindi', icons: <Hindi /> },
     {
       key: 'en',
       name: 'langaugesArr.english',
       icons: <Language width={windowWidth(34)} height={windowHeight(34)} />,
     },
-    { key: 'kr', name: 'langaugesArr.korean', icons: <Korea /> },
+    // { key: 'kr', name: 'langaugesArr.korean', icons: <Korea /> },
     { key: 'ar', name: 'langaugesArr.arabic', icons: <Arabic /> },
+     { key: 'fr', name: 'langaugesArr.french', icons: <France /> },
   ],
 
   currencys: [
@@ -713,13 +717,13 @@ module.exports = {
       showSwitch: false,
       path: 'SavedAddress'
     },
-    // {
-    //   name: 'drawerArr.language',
-    //   icons: <Language />,
-    //   description: 'drawerArr.languageDrawer',
-    //   showSwitch: false,
-    //   path: 'visibleModal'
-    // },
+    {
+      name: 'drawerArr.language',
+      icons: <LanguageIcon />,
+      description: 'drawerArr.languageDrawer',
+      showSwitch: false,
+      path: 'visibleModal'
+    },
     // {
     //   name: 'drawerArr.currencyConverter',
     //   icons: <CurrencyConverter />,
@@ -786,6 +790,13 @@ module.exports = {
       description: 'profile.deliveryPolicyDesc',
       showSwitch: false,
       path: 'DeliveryPolicy'
+    },
+    {
+      name: 'profile.shareApp',
+      icons: <Share />,
+      description: 'profile.shareAppDesc',
+      showSwitch: false,
+      path: 'ShareApp'
     },
     {
       name: 'drawerArr.help',
@@ -1473,28 +1484,62 @@ module.exports = {
   brands: [
     {
       id: 0,
-      name: 'shopPage.here&Now',
+      name: 'Bluetti',
     },
     {
       id: 1,
-      name: 'shopPage.zara',
+      name: 'Daewoo',
     },
     {
       id: 2,
-      name: 'shopPage.mast&harbour',
+      name: 'Dewalt',
     },
     {
       id: 3,
-      name: 'shopPage.tokyoTalkies',
+      name: 'Honda',
     },
     {
       id: 4,
-      name: 'shopPage.vogue',
+      name: 'NBS Solar',
     },
     {
       id: 5,
-      name: 'shopPage.gucci',
+      name: 'Perkins',
     },
+
+    {
+      id: 6,
+      name: 'Saer',
+    },
+    {
+      id: 7,
+      name: 'Samsun Solar',
+    },
+    {
+      id: 8,
+      name: 'Silver',
+    },
+    {
+      id: 9,
+      name: 'Solis',
+    },
+    {
+      id: 10,
+      name: 'Su-Kam',
+    },
+    {
+      id: 11,
+      name: 'Su-mak Solar',
+    },
+    {
+      id: 12,
+      name: 'Sunride Solar',
+    },
+    {
+      id: 13,
+      name: 'Yanmar',
+    },
+    
   ],
   size: [
     {

@@ -10,7 +10,7 @@ import appFonts from '@theme/appFonts';
 
 export default productDetail = props => {
   const { t, productDescription, specifications } = props;
-  const { viewRTLStyle, textRTLStyle } = useValues();
+  const { viewRTLStyle, textRTLStyle, isRTL } = useValues();
 
   const parseSpecifications = (specValues) => {
     // Handle null, undefined, or empty string cases
@@ -65,7 +65,8 @@ export default productDetail = props => {
           marginVertical: windowHeight(6),
           fontSize: fontSizes.FONT17,
           fontFamily: appFonts.LatoMidum,
-          lineHeight: windowHeight(18)
+          lineHeight: windowHeight(18),
+          textAlign: textRTLStyle,
         }}
 
         tagsStyles={{
@@ -79,9 +80,13 @@ export default productDetail = props => {
             fontWeight: '500',
           },
           ul: {
-            paddingLeft: windowWidth(15),
+            // paddingLeft: windowWidth(15),
             // marginVertical: 3,
-            lineHeight: windowHeight(18)
+            lineHeight: windowHeight(18),
+
+            paddingLeft: isRTL ? 0 : windowWidth(15),
+            paddingRight: isRTL ? windowWidth(15) : 0,
+            // alignSelf: isRTL ? 'flex-end' : 'flex-start',
           },
           li: {
             // marginBottom: 4,
@@ -104,9 +109,19 @@ export default productDetail = props => {
             <Text style={[styles.keyText, {
               color: props.colors.subText
             }]}>{spec.key}</Text>
-            <Text style={[styles.valueText, {
+            {/* <Text style={[styles.valueText, {
               color: props.colors.subText
-            }]}>: {spec.value}</Text>
+            }]}>: {spec.value}</Text> */}
+
+            <Text
+              style={[
+                styles.valueText,
+                { color: props.colors.subText },
+              ]}
+            >
+              {isRTL ? `${spec.value} :` : `: ${spec.value}`}
+            </Text>
+
           </View>
         ))}
       </View>

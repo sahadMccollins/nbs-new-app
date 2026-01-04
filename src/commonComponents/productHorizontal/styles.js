@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -12,6 +12,7 @@ export default productHorizontalStyles = StyleSheet.create({
     marginHorizontal: windowWidth(14),
     borderRadius: windowWidth(10),
     marginVertical: windowHeight(6),
+    gap: windowWidth(14),
   },
   image: {
     height: windowHeight(90),
@@ -19,7 +20,8 @@ export default productHorizontalStyles = StyleSheet.create({
     borderRadius: windowWidth(6),
   },
   txtView: {
-    marginLeft: windowWidth(14),
+    // marginLeft: windowWidth(14),
+    // marginStart: windowWidth(14),
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '70%',
@@ -70,6 +72,7 @@ export default productHorizontalStyles = StyleSheet.create({
   },
   likeView: {
     top: windowHeight(-10),
-    right: windowWidth(10)
+    // right: windowWidth(10)
+    marginStart: windowWidth(10),
   },
 });

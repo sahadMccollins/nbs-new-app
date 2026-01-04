@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getValue } from '../utils/localStorage';
 
 // utils/fetchGraphQL.js
 const API_URL = "https://7194k2-01.myshopify.com/api/2025-04/graphql.json";
@@ -9,9 +10,11 @@ const HEADERS = {
 
 // JavaScript version
 export const fetchGraphQL = async (query, variables) => {
-    // const language = (await AsyncStorage.getItem('language')) || 'en';
+    const language = (await getValue('language')) || 'en';
 
-    const language = 'en';
+    console.log("Selected language:", language);
+
+    // const language = 'en';
 
     try {
         const response = await fetch(API_URL, {

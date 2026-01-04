@@ -10,6 +10,8 @@ import { DrawerArrow } from '@utils/icons';
 import LogOut from '../logoutButton';
 import { useCustomer } from '../../context/customerContext';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
+import { useValues } from '@App';
 
 export default drawerComponent = props => {
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +19,9 @@ export default drawerComponent = props => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const { customer } = useCustomer();
   const { colors } = useTheme();
-  const t = props.t;
+  const { viewRTLStyle } = useValues();
+  // const t = props.t;
+  const { t } = useTranslation();
 
   const insets = useSafeAreaInsets();
 
@@ -127,7 +131,7 @@ export default drawerComponent = props => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: insets.bottom, }}
         style={[styles.mainView, { backgroundColor: colors.brandsBg }]}>
-        <View style={[styles.imageView, { borderBottomColor: colors.line }]}>
+        <View style={[styles.imageView, { borderBottomColor: colors.line, flexDirection: viewRTLStyle }]}>
           <Image source={Images.user} resizeMode="contain" style={styles.img} />
           <Text style={[styles.name, { color: colors.text }]}>
             {customer ? `${customer.firstName} ${customer.lastName}` : t('drawerArr.name')}

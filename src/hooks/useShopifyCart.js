@@ -109,6 +109,8 @@ export const useShopifyCart = () => {
         cart,
         addProduct,
         removeProduct,
+        removeFreeProduct,
+        updateProduct,
         increaseQuantity,
         decreaseQuantity,
         setQuantity,
@@ -137,6 +139,19 @@ export const useShopifyCart = () => {
         }
     };
 
+    const updateCart = (productId, updates) => {
+        try {
+            setLoading(true);
+            updateProduct(productId, updates);
+            return { success: true };
+        } catch (e) {
+            setError(e.message);
+            return { success: false };
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const createShopifyCheckoutUrl = useCallback(async (cartDetail) => {
         return await shopifyCheckoutService.createCheckoutUrl(cartDetail);
     }, []);
@@ -150,7 +165,9 @@ export const useShopifyCart = () => {
         loading,
         error,
         addToCart,
+        updateCart,
         removeFromCart: removeProduct,
+        removeFreeFromCart: removeFreeProduct,
         increaseQuantity,
         decreaseQuantity,
         setQuantity,

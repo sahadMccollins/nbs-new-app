@@ -1,5 +1,6 @@
 export * from './tabComponents';
 export * from './multiLangaugeModal';
+export * from './sortByModal';
 export * from './currencyConverterModal';
 export * from './notLoggedInModal';
 export * from './priceOnRequestModal';
