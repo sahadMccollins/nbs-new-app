@@ -26,7 +26,7 @@ const savedAddress = ({ navigation }) => {
           text={t('profile.savedAddress')}
           navigation={navigation}
         />
-        <AddressDetails address={addresses} t={t} colors={colors} deleteAddress={deleteAddress} />
+        <AddressDetails address={addresses} t={t} colors={colors} deleteAddress={deleteAddress} hideSelect={true} />
         <BtnContainer t={t} navigation={navigation} colors={colors} />
       </ScrollView>
     </SafeAreaView>

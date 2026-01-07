@@ -4,165 +4,92 @@ import styles from './styles';
 import { windowHeight } from '@theme/appConstant';
 import { useValues } from '@App';
 
-export default contentSection = props => {
-  const { t, termsconditons, colors } = props;
+export default function ContentSection(props) {
+  const { t, colors, policyKey } = props;
   const { viewRTLStyle, textRTLStyle } = useValues();
+
   return (
     <View style={styles.container}>
 
       {/* Intro */}
-      <Text
-        style={[
-          styles.content,
-          { color: colors.subText, textAlign: textRTLStyle },
-        ]}
-      >
-        {t('termsCondition.introContent')}
+      <Text style={[styles.content, { color: colors.subText, textAlign: textRTLStyle }]}>
+        {t(`${policyKey}.intro`)}
       </Text>
 
-      {/* Section 1 */}
+      {/* Highlights */}
       <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
-        {t('termsCondition.section1Title')}
-      </Text>
-      <Text
-        style={[
-          styles.content,
-          { color: colors.subText, textAlign: textRTLStyle },
-        ]}
-      >
-        {t('termsCondition.section1Content')}
+        {t(`${policyKey}.highlightsTitle`, { defaultValue: 'Highlights' })}
       </Text>
 
-      {/* Helper function for bullet lists */}
-      {[
-        'section2',
-        'section3',
-        'section4',
-        'section5',
-        'section6',
-        'section8',
-      ].map(section => (
-        <View key={section}>
-          <Text
-            style={[
-              styles.title,
-              { color: colors.text, textAlign: textRTLStyle, marginBottom: 7 },
-            ]}
-          >
-            {t(`termsCondition.${section}Title`)}
-          </Text>
-
-          <FlatList
-            data={t(`termsCondition.${section}List`, { returnObjects: true })}
-            keyExtractor={(_, i) => `${section}-${i}`}
-            renderItem={({ item }) => (
-              <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
-                <View
-                  style={[
-                    styles.circle,
-                    { backgroundColor: colors.subText },
-                  ]}
-                />
-                <Text
-                  style={[
-                    styles.discription,
-                    { color: colors.subText, textAlign: textRTLStyle },
-                  ]}
-                >
-                  {item}
-                </Text>
-              </View>
-            )}
-          />
-        </View>
-      ))}
-
-      {/* Section 7 – Nested List */}
-      <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle, marginBottom: 10 }]}>
-        {t('termsCondition.section7Title')}
-      </Text>
-
-      {t('termsCondition.section7List', { returnObjects: true }).map(
-        (block, idx) => (
-          <View key={idx}>
-            <Text
-              style={[
-                // styles.content,
-                {
-                  color: colors.subText,
-                  fontWeight: '600',
-                  textAlign: textRTLStyle,
-                  marginBottom: 7
-                },
-              ]}
-            >
-              {block.title}
+      <FlatList
+        data={t(`${policyKey}.highlights`, { returnObjects: true })}
+        keyExtractor={(_, i) => `highlight-${i}`}
+        renderItem={({ item }) => (
+          <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
+            <View style={[styles.circle, { backgroundColor: colors.subText }]} />
+            <Text style={[styles.discription, { color: colors.subText, textAlign: textRTLStyle }]}>
+              {item}
             </Text>
-
-            {block.items.map((item, i) => (
-              <View
-                key={i}
-                style={[styles.row, { flexDirection: viewRTLStyle }]}
-              >
-                <View
-                  style={[
-                    styles.circle,
-                    { backgroundColor: colors.subText },
-                  ]}
-                />
-                <Text
-                  style={[
-                    styles.discription,
-                    { color: colors.subText, textAlign: textRTLStyle },
-                  ]}
-                >
-                  {item}
-                </Text>
-              </View>
-            ))}
           </View>
-        )
-      )}
+        )}
+      />
 
-      {/* Section 9 */}
+      {/* UAE Shipping */}
       <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
-        {t('termsCondition.section9Title')}
-      </Text>
-      <Text
-        style={[
-          styles.content,
-          { color: colors.subText, textAlign: textRTLStyle },
-        ]}
-      >
-        {t('termsCondition.section9Content')}
+        {t(`${policyKey}.uaeShippingTitle`, { defaultValue: 'UAE Shipping' })}
       </Text>
 
-      {/* Section 10 – Contact */}
+      <Text style={[styles.content, { color: colors.subText, textAlign: textRTLStyle }]}>
+        {t(`${policyKey}.uaeShipping.cost`)}
+      </Text>
+
+      <FlatList
+        data={[
+          t(`${policyKey}.uaeShipping.sameDayCutoff.before`),
+          t(`${policyKey}.uaeShipping.sameDayCutoff.after`),
+          t(`${policyKey}.uaeShipping.businessDays`)
+        ]}
+        keyExtractor={(_, i) => `uae-${i}`}
+        renderItem={({ item }) => (
+          <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
+            <View style={[styles.circle, { backgroundColor: colors.subText }]} />
+            <Text style={[styles.discription, { color: colors.subText, textAlign: textRTLStyle }]}>
+              {item}
+            </Text>
+          </View>
+        )}
+      />
+
+      {/* International Shipping */}
       <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
-        {t('termsCondition.section10Title')}
+        {t(`${policyKey}.internationalShippingTitle`, { defaultValue: 'International Shipping' })}
       </Text>
 
-      <Text
-        style={[
-          styles.content,
-          { color: colors.subText, textAlign: textRTLStyle },
-        ]}
-      >
-        {t('termsCondition.section10Content')}
+      <FlatList
+        data={t(`${policyKey}.internationalShipping.process`, { returnObjects: true })}
+        keyExtractor={(_, i) => `intl-${i}`}
+        renderItem={({ item }) => (
+          <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
+            <View style={[styles.circle, { backgroundColor: colors.subText }]} />
+            <Text style={[styles.discription, { color: colors.subText, textAlign: textRTLStyle }]}>
+              {item}
+            </Text>
+          </View>
+        )}
+      />
+
+      {/* Contact */}
+      <Text style={[styles.title, { color: colors.text, textAlign: textRTLStyle }]}>
+        {t(`${policyKey}.contactTitle`, { defaultValue: 'Contact' })}
       </Text>
 
-      {['email', 'phone', 'address'].map(key => (
-        <Text
-          key={key}
-          style={[
-            styles.content,
-            { color: colors.subText, textAlign: textRTLStyle },
-          ]}
-        >
-          {t(`termsCondition.section10List.${key}`)}
-        </Text>
-      ))}
+      <Text style={[styles.content, { color: colors.subText, textAlign: textRTLStyle }]}>
+        {t(`${policyKey}.contact.email`)}
+      </Text>
+      <Text style={[styles.content, { color: colors.subText, textAlign: textRTLStyle }]}>
+        {t(`${policyKey}.contact.phone`)}
+      </Text>
+
     </View>
-
   );
-};
+}

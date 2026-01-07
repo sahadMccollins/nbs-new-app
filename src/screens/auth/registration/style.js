@@ -58,6 +58,7 @@ export default authStyles = StyleSheet.create({
   },
   subView: {
     height: '80%',
+    // paddingBottom: windowHeight(50),
     // height: '98%',
   },
   loaderStyle: {

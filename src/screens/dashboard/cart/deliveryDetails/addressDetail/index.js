@@ -7,7 +7,7 @@ import { useValues } from '@App';
 export default function addressDetails(props) {
   const { viewRTLStyle, textRTLStyle } = useValues()
   // const address = props.address;
-  const { colors, address, deleteAddress, selectedAddress, setSelectedAddress } = props;
+  const { colors, address, deleteAddress, selectedAddress, setSelectedAddress, hideSelect = false } = props;
   // const [selectedAddress, setSelectedAddress] = useState(null);
   const t = props.t;
 
@@ -24,15 +24,34 @@ export default function addressDetails(props) {
         data={address}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <View style={styles.seperator} />}
-        renderItem={({ item, index }) => (
+        ListEmptyComponent={() => (
           <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingHorizontal: 20,
+              marginTop: windowHeight(200),
+            }}
+          >
+            <Text style={{ fontSize: 16, fontWeight: '600' }}>
+              {t('addNewAddress.emptyAddress')}
+            </Text>
+            <Text style={{ marginTop: 6, textAlign: 'center' }}>
+              {t('addNewAddress.emptyAddressDesc')}
+            </Text>
+          </View>
+        )}
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            onPress={() => setSelectedAddress(item)}
             style={[
               styles.rowContainer,
               {
-                borderColor: selectedAddress && item.id === selectedAddress.id ? appColors.primary : '',
+                borderColor: selectedAddress && item.id === selectedAddress.id ? "#28A745" : '',
                 borderWidth: selectedAddress && item.id === selectedAddress.id ? 1 : 0,
                 backgroundColor: selectedAddress && item.id === selectedAddress.id
-                  ? appColors.bgHighlight
+                  ? appColors.bgHighlightGreen
                   : colors.cuponsbg,
 
                 flexDirection: viewRTLStyle
@@ -40,19 +59,24 @@ export default function addressDetails(props) {
             ]}>
             <View>
               <View style={[styles.row, { flexDirection: viewRTLStyle }]}>
-                <TouchableOpacity
-                  onPress={() => setSelectedAddress(item)}
-                  style={[
-                    styles.radioButton,
-                    { backgroundColor: colors.styleBackground },
-                  ]}
-                >
-                  {selectedAddress && item.id === selectedAddress.id && (
-                    <View style={styles.radioButtonIcon} />
-                  )}
-                </TouchableOpacity>
+                {!hideSelect && (
+                  <TouchableOpacity
+                    onPress={() => setSelectedAddress(item)}
+                    style={[
+                      styles.radioButton,
+                      { backgroundColor: colors.styleBackground },
+                      // { backgroundColor: '#28A745' },
+                    ]}
+                  >
+                    {selectedAddress && item.id === selectedAddress.id && (
+                      <View style={[styles.radioButtonIcon,
+                      { backgroundColor: '#28A745' }
+                      ]} />
+                    )}
+                  </TouchableOpacity>
+                )}
 
-                <Text style={[styles.area, { color: colors.text, textAlign: 'left' }]}>
+                <Text style={[styles.area, { color: colors.text, textAlign: 'left', marginLeft: hideSelect ? 0 : windowWidth(20) }]}>
                   {item.firstName + " " + item.lastName}
                 </Text>
               </View>
@@ -91,7 +115,6 @@ export default function addressDetails(props) {
                     {
                       marginTop: windowHeight(8),
                       flexDirection: viewRTLStyle,
-
                     },
                   ]}>
                   <Text
@@ -99,8 +122,9 @@ export default function addressDetails(props) {
                     style={[
                       styles.textStyle,
                       {
-                        backgroundColor: item.id == selectedAddress ? colors.card : colors.product
-                        ,
+                        backgroundColor: item.id == selectedAddress ? colors.card : colors.product,
+                        borderWidth: 0.5,
+                        borderColor: colors.subText,
                         color: colors.subText,
                       },
                     ]}>
@@ -124,7 +148,7 @@ export default function addressDetails(props) {
             {/* <View style={styles.serViceView}>
               <Text style={styles.service}>{t(item.deliveryService)}</Text>
             </View> */}
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>

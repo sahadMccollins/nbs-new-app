@@ -37,11 +37,11 @@ export default addressDetailStyles = StyleSheet.create({
     fontSize: fontSizes.FONT22,
     fontFamily: appFonts.LatoBold,
     color: appColors.black,
-    marginHorizontal: windowWidth(20),
+    // marginHorizontal: windowWidth(20),
   },
   addressView: {
-    marginHorizontal: windowWidth(20),
-    paddingHorizontal: windowWidth(20),
+    // marginHorizontal: windowWidth(20),
+    // paddingHorizontal: windowWidth(20),
   },
   address: {
     fontSize: fontSizes.FONT18HALF,

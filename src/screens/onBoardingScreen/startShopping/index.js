@@ -12,7 +12,7 @@ export default startShopping = props => {
   return (
     <View style={styles.customContainer} >
       <Button
-        text={'onBoarding.startShopping'}
+        text="START SHOPPING"
         style={styles.buttonStyle}
         fontSize={fontSizes.FONT20}
         onPress={goToHome}
@@ -20,12 +20,12 @@ export default startShopping = props => {
       />
       <View style={styles.createNewMainView}>
         <Text style={styles.createNewText}>
-          {t('authComman.alreadyHaveAccount')}
+          Already have an account?
         </Text>
         <Text
           onPress={() => goToHome()}
           style={[styles.createNewText, styles.createNewUnderlineText]}>
-          {t('authComman.signIn')}
+          Sign In
         </Text>
       </View>
     </View>

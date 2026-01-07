@@ -312,25 +312,26 @@ export default buttonContainer = (props) => {
     >
       {/* ----------- WISHLIST BUTTON ----------- */}
       {isRequestQuote ? (
-        <TouchableOpacity
-          style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}
-          onPress={() => toggleProduct(product)}
-        >
-          {inWishlist ? (
-            <WishlistFilled color={appColors.primary} />
-          ) : (
-            <Wishlist color={colors.text} />
-          )}
+        // <TouchableOpacity
+        //   style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}
+        //   onPress={() => toggleProduct(product)}
+        // >
+        //   {inWishlist ? (
+        //     <WishlistFilled color={appColors.primary} />
+        //   ) : (
+        //     <Wishlist color={colors.text} />
+        //   )}
 
-          <Text
-            style={[
-              styles.text,
-              { color: inWishlist ? appColors.primary : colors.text },
-            ]}
-          >
-            {t('tabBar.wishList')}
-          </Text>
-        </TouchableOpacity>
+        //   <Text
+        //     style={[
+        //       styles.text,
+        //       { color: inWishlist ? appColors.primary : colors.text },
+        //     ]}
+        //   >
+        //     {t('tabBar.wishList')}
+        //   </Text>
+        // </TouchableOpacity>
+        null
       ) : (
         <View style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}>
           <TouchableOpacity style={{ flexDirection: 'row' }} onPress={visibleLoginModal} >
@@ -343,15 +344,16 @@ export default buttonContainer = (props) => {
         </View>
       )}
 
-      {/* DIVIDER */}
-      <View>
-        <View
-          style={[
-            styles.verticleLine,
-            { backgroundColor: colors.divider },
-          ]}
-        />
-      </View>
+      {isRequestQuote ? null : (
+        < View >
+          <View
+            style={[
+              styles.verticleLine,
+              { backgroundColor: colors.divider },
+            ]}
+          />
+        </View>
+      )}
 
       {/* ----------- CART BUTTON / QTY CONTROL / OUT OF STOCK / REQUEST QUOTE ----------- */}
       <View style={[styles.rowContainer, { flexDirection: viewRTLStyle }]}>
@@ -434,6 +436,6 @@ export default buttonContainer = (props) => {
           </View>
         )}
       </View>
-    </View>
+    </View >
   );
 };

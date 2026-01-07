@@ -42,18 +42,18 @@ import Check from '../../assets/icons/check';
 module.exports = {
   data: [
     {
-      title: 'onBoarding.sliderText1',
-      body: 'onBoarding.sliderDescription1',
+      title: 'Welcome to NBS Energy Store',
+      body: 'Explore solar panels, inverters, batteries and power systems at NBS. Find new energy solutions, top brands and reliable products every week.',
       imgUrl: images.onBoarding1,
     },
     {
-      title: 'onBoarding.sliderText2',
-      body: 'onBoarding.sliderDescription2',
+      title: 'Energy Solutions for Every Need',
+      body: '20+ trusted brands and over 2,000+ energy products. Discover the best power solution for your needs with easy support and return options.',
       imgUrl: images.onBoarding2,
     },
     {
-      title: 'onBoarding.sliderText3',
-      body: 'onBoarding.sliderDescription3',
+      title: 'Sustainable. Reliable. Affordable.',
+      body: 'Latest solar systems, power backups and water pumps every week. Premium quality. Fast delivery available. Hassle-free installation and secure service.',
       imgUrl: images.onBoarding3,
     },
   ],
@@ -119,13 +119,13 @@ module.exports = {
       showSwitch: false,
       path: 'Bulk Order'
     },
-    // {
-    //   name: 'drawerArr.language',
-    //   icons: <Language />,
-    //   description: 'drawerArr.languageDrawer',
-    //   showSwitch: false,
-    //   path: 'visibleModal'
-    // },
+    {
+      name: 'drawerArr.language',
+      icons: <LanguageIcon />,
+      description: 'drawerArr.languageDrawer',
+      showSwitch: false,
+      path: 'visibleModal'
+    },
     // {
     //   name: 'drawerArr.currencyConverter',
     //   icons: <CurrencyConverter />,
@@ -144,6 +144,13 @@ module.exports = {
       description: 'drawerArr.settingsDrawer',
       showSwitch: false,
       path: 'Settings'
+    },
+    {
+      name: 'profile.shareApp',
+      icons: <Share />,
+      description: 'profile.shareAppDesc',
+      showSwitch: false,
+      path: 'ShareApp'
     },
     // {
     //   name: 'drawerArr.aboutUs',
@@ -419,7 +426,7 @@ module.exports = {
     },
     // { key: 'kr', name: 'langaugesArr.korean', icons: <Korea /> },
     { key: 'ar', name: 'langaugesArr.arabic', icons: <Arabic /> },
-     { key: 'fr', name: 'langaugesArr.french', icons: <France /> },
+    { key: 'fr', name: 'langaugesArr.french', icons: <France /> },
   ],
 
   currencys: [
@@ -1539,7 +1546,7 @@ module.exports = {
       id: 13,
       name: 'Yanmar',
     },
-    
+
   ],
   size: [
     {

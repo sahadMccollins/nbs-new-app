@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import StarRating from '@commonComponents/starRating';
 import { Wishlist, WishlistFilled } from '@utils/icons';
 import appColors from '@theme/appColors';
+import { fontSizes } from '@theme/appConstant';
 import styles from './styles';
 import { useValues } from '@App';
 import { useShopifyWishlist } from '../../../../hooks/useShopifyWishlist';
@@ -109,7 +110,7 @@ export default productDescription = props => {
             <Text
               style={[
                 styles.discription,
-                { color: props.colors.subText, textAlign: textRTLStyle },
+                { color: props.colors.subText, textAlign: textRTLStyle, fontSize: fontSizes.FONT17 },
               ]}>
               {item}
             </Text>

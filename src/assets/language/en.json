@@ -297,7 +297,7 @@
       "refundPolicy": "Refund & Cancellation Policy",
       "deliveryPolicy": "Delivery Policy",
       "shareApp": "Share App",
-      "shareAppDesc": "Send app links via text, email, or social media",
+      "shareAppDesc": "Send app links via text",
       "privacyPolicyDesc": "Policy for handling user data",
       "shippingPolicyDesc": "Terms for order shipping",
       "refundPolicyDesc": "Terms for refunds and cancellations",
@@ -365,6 +365,8 @@
       "2xl": "2XL"
     },
     "orderHistory": {
+      "emptyOrderHistory": " Empty Order History",
+      "emptyOrderHistoryDesc": "You haven't placed any orders yet. Start shopping to see your order history here.",
       "orderHistory": "Order History",
       "openOrders": "Open Orders",
       "ongoing": "ongoing",
@@ -513,6 +515,8 @@
       "cardFree": "CardFree"
     },
     "addNewAddress": {
+      "emptyAddress": " No Address Found",
+      "emptyAddressDesc": "You have not added any addresses yet. Add a new address to proceed with your order.",
       "addNewAddress": "Add  a new address ",
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -780,6 +784,56 @@
         "email": "sales@nbsgroups.com",
         "phone": "+971 4 2243543",
         "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, PO Box: 379670, Deira, Dubai, U.A.E."
+      }
+    },
+    "shippingPolicy": {
+      "title": "Shipping Policy – NBS Group",
+      "effectiveDate": "19 December 2025",
+      "intro": "NBS Group aims to deliver every order quickly, safely, and with clear communication. This Shipping Policy explains delivery timelines, charges, and shipping for orders within and outside the UAE.",
+      "highlights": [
+        "Free shipping across the UAE",
+        "Same-day delivery for orders placed before 12:00 PM (UAE time), Monday to Saturday, on in-stock items",
+        "Orders outside the UAE are supported; shipping is quoted based on destination country and shipment details"
+      ],
+      "coverage": {
+        "uae": "Shipping is available across all Emirates.",
+        "international": "Shipping is available to selected countries. Charges are quoted based on destination country or location, package size or weight, and courier fees."
+      },
+      "uaeShipping": {
+        "cost": "Free shipping applies to all UAE deliveries.",
+        "sameDayCutoff": {
+          "before": "Orders placed and paid before 12:00 PM (UAE time) are eligible for same-day delivery on in-stock items.",
+          "after": "Orders placed after 12:00 PM will be delivered on the next business day, subject to courier routing and address accessibility."
+        },
+        "businessDays": "Shipping timelines exclude Sundays and UAE public holidays. Orders placed after business hours may be processed the next business day.",
+        "exceptions": "Oversized, heavy, bulk, or special-handling items may require scheduling. If any exception applies, the customer will be contacted before dispatch."
+      },
+      "internationalShipping": {
+        "process": [
+          "Place the order or request a shipping quote before placing the order",
+          "Receive a shipping quotation based on destination country, shipment weight or volume, and courier options",
+          "Dispatch begins after shipping approval and payment of shipping charges if applicable"
+        ],
+        "customsAndDuties": "All customs duties, taxes, clearance fees, and import restrictions are the responsibility of the customer and vary by country."
+      },
+      "tracking": "Once an order is dispatched, tracking details are shared via email or SMS where available.",
+      "deliveryIssues": {
+        "delays": "Delivery timelines are estimates and may vary due to courier operations, weather conditions, road restrictions, customs clearance, or other unforeseen events.",
+        "addressAccuracy": "Customers must ensure the shipping address and contact details are accurate at checkout.",
+        "failedDelivery": "If delivery fails due to incorrect details or customer unavailability, re-delivery or re-shipping charges may apply."
+      },
+      "damagedOrIncorrectItems": {
+        "reportWithin": "48 hours of delivery",
+        "requirements": [
+          "Clear photos of the product",
+          "Unboxing video if available"
+        ],
+        "resolution": "Issues are resolved in accordance with the applicable return and refund policy."
+      },
+      "productRestrictions": "Some products may be subject to courier, safety, or cross-border shipping restrictions. If an item cannot be shipped to the selected destination, the order may be cancelled and refunded accordingly.",
+      "contact": {
+        "email": "sales@nbsgroups.com",
+        "phone": "+971 4 2243543"
       }
     },
     "shopPage": {

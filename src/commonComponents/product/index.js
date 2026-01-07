@@ -176,53 +176,56 @@ export function Product(props) {
         </Animated.View>
       </TouchableOpacity> */}
 
-      <View
-        // activeOpacity={0.7}
-        style={[
-          styles.wishlist,
-          { backgroundColor: isDark ? "#2B2B2B" : "white" },
-        ]}
-      >
+      {product.productTags?.includes("request-a-qoute") ||
+        product.productTags?.includes("request-a-quote") ? null : (
         <View
-          style={{
-            borderWidth: 1,
-            borderColor: '#d6d6d6',
-            padding: 4,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          {loading ? (
-            <ActivityIndicator size="small" color={colors.primary} />
-          ) : isInCart(product.id) ? (
-            <TouchableOpacity onPress={() => removeFromCart(product.id)}>
-              <Image
-                source={isDark ? images.addedToCartWhite : images.addedToCart}
-                style={{ width: 20, height: 20 }}
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-          ) : (
-            !product.available ? (
-              <TouchableOpacity disabled onPress={null}>
+          // activeOpacity={0.7}
+          style={[
+            styles.wishlist,
+            { backgroundColor: isDark ? "#2B2B2B" : "white" },
+          ]}
+        >
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: '#d6d6d6',
+              padding: 4,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            {loading ? (
+              <ActivityIndicator size="small" color={colors.primary} />
+            ) : isInCart(product.id) ? (
+              <TouchableOpacity onPress={() => removeFromCart(product.id)}>
                 <Image
-                  source={isDark ? images.addToCartWhite : images.addToCart}
-                  style={{ width: 20, height: 20, opacity:  0.5 }}
-                  resizeMode="contain"
-                />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity onPress={() => addToCart(product)}>
-                <Image
-                  source={isDark ? images.addToCartWhite : images.addToCart}
+                  source={isDark ? images.addedToCartWhite : images.addedToCart}
                   style={{ width: 20, height: 20 }}
                   resizeMode="contain"
                 />
               </TouchableOpacity>
-            )
+            ) : (
+              !product.available ? (
+                <TouchableOpacity disabled onPress={null}>
+                  <Image
+                    source={isDark ? images.addToCartWhite : images.addToCart}
+                    style={{ width: 20, height: 20, opacity: 0.5 }}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => addToCart(product)}>
+                  <Image
+                    source={isDark ? images.addToCartWhite : images.addToCart}
+                    style={{ width: 20, height: 20 }}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+              )
 
-          )}
+            )}
+          </View>
         </View>
-      </View>
+      )}
     </TouchableOpacity>
   );
 }

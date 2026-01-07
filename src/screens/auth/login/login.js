@@ -202,6 +202,7 @@ export default function LoginScreen(props) {
   const { colors } = useTheme();
   const { login, loading } = useShopifyAuth();
   const { customer } = useCustomer();
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const onChange = ({ name, value }) => {
     setForm({ ...form, [name]: value });
@@ -296,13 +297,15 @@ export default function LoginScreen(props) {
           errors={errors}
           form={form}
           loading={loading}
+          setGoogleLoading={setGoogleLoading}
         />
       </View>
-      {loading && (
+      {(loading || googleLoading) && (
         <View style={styles.loaderStyle}>
           <ActivityIndicator color={appColors.primary} />
         </View>
       )}
+
     </SafeAreaView>
   );
 }

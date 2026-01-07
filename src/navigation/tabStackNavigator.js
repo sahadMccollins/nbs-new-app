@@ -25,7 +25,7 @@ export default TabStackScreen = props => {
         component={HomeStackScreen}
         options={{
           tabBarLabel: t('tabBar.home'),
-          tabBarIcon: ({ tintColor }) => <Home color={tintColor} />,
+          tabBarIcon: ({ tintColor }) => <Home height={29} width={20} color={tintColor} />,
           headerShown: false,
         }}
         initialParams={{ t }}
@@ -35,7 +35,7 @@ export default TabStackScreen = props => {
         component={CategoryStackScreen}
         options={{
           tabBarLabel: t('tabBar.category'),
-          tabBarIcon: ({ tintColor }) => <Category color={tintColor} />,
+          tabBarIcon: ({ tintColor }) => <Category height={29} width={20} color={tintColor} />,
           headerShown: false,
         }}
       />

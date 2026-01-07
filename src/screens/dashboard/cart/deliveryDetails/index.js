@@ -175,7 +175,7 @@
 
 
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, ActivityIndicator, View } from 'react-native';
 import { Header, Divider } from '@commonComponents';
 import { useTranslation } from 'react-i18next';
@@ -184,14 +184,15 @@ import BtnContainer from './btnContainer';
 import ButtonContainer from '@commonComponents/buttonContainer';
 import appColors from '@theme/appColors';
 import { windowHeight } from '@theme/appConstant';
-import { useTheme } from '@react-navigation/native';
+import { useFocusEffect, useTheme } from '@react-navigation/native';
 import { useValues } from '@App';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useShopifyAddress } from '../../../../hooks/useShopifyAddress';
 import { useCart } from '../../../../context/cartContext';
 import { useCustomer } from '../../../../context/customerContext';
 import { WebView } from 'react-native-webview';
 import { useShopifyCart } from '../../../../hooks/useShopifyCart';
+
 
 export default function DeliveryDetails({ route, navigation }) {
   const { currSymbol, currValue } = useValues();
@@ -201,6 +202,7 @@ export default function DeliveryDetails({ route, navigation }) {
   const { customer } = useCustomer();
   const { addresses, fetchAddresses, deleteAddress } = useShopifyAddress();
   const { createShopifyCheckoutUrl, clearCart } = useShopifyCart();
+  const insets = useSafeAreaInsets();
 
   // ✅ Get guest checkout info from route params
   const isGuestCheckout = route?.params?.isGuestCheckout || false;
@@ -216,11 +218,20 @@ export default function DeliveryDetails({ route, navigation }) {
   const [loading, setLoading] = useState(false);
 
   // ✅ Fetch user addresses only for logged-in users
-  useEffect(() => {
-    if (!isGuestCheckout) {
-      fetchAddresses();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!isGuestCheckout) {
+  //     fetchAddresses();
+  //   }
+  // }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!isGuestCheckout) {
+        fetchAddresses();
+      }
+    }, [isGuestCheckout])
+  );
+
 
   // Default to first address (logged-in users only)
   useEffect(() => {
@@ -230,9 +241,20 @@ export default function DeliveryDetails({ route, navigation }) {
   }, [addresses]);
 
   // Calculate Cart Total
+  // const totalAmount = useMemo(() => {
+  //   if (!cart?.length) return 0;
+  //   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  // }, [cart]);
+
   const totalAmount = useMemo(() => {
-    if (!cart?.length) return 0;
-    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    if (!Array.isArray(cart)) return 0;
+
+    return cart.reduce((sum, item) => {
+      if (item.isFreeGift) return sum; // ⛔ ignore free gifts
+      const price = Number(item?.price) || 0;
+      const qty = Number(item?.quantity) || 1;
+      return sum + price * qty;
+    }, 0);
   }, [cart]);
 
   // ✅ Logged-in user checkout
@@ -322,8 +344,8 @@ export default function DeliveryDetails({ route, navigation }) {
             showText
             subText={t('deliveryDetails.steps')}
             navigation={navigation}
-            searchIcon
-            showWishListIcon
+            // searchIcon
+            // showWishListIcon
           />
 
           <ScrollView contentContainerStyle={{ paddingBottom: windowHeight(100) }}>
@@ -337,7 +359,7 @@ export default function DeliveryDetails({ route, navigation }) {
             />
 
             <BtnContainer t={t} navigation={navigation} colors={colors} />
-            <Divider />
+            {/* <Divider /> */}
           </ScrollView>
 
           <ButtonContainer
@@ -349,7 +371,7 @@ export default function DeliveryDetails({ route, navigation }) {
             subText={t('cart.viewDetails')}
             subTextColor={appColors.primary}
             btnClick={beginCheckout}
-            bottom={5}
+            bottom={insets.bottom - 13}
             disabled={loading}
           />
         </>

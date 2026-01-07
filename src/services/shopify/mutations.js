@@ -38,7 +38,7 @@ export const CUSTOMER_DETAILS = `
       firstName
       lastName
       addresses(first: 10) {
-        edge {
+        edges {
           node {
             id
             firstName

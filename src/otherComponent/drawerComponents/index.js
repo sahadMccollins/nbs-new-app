@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Share, Alert } from 'react-native';
 import Images from '@utils/images/images';
 import MenuItem from './menuItem';
 import Data from '@utils/json';
@@ -63,7 +63,31 @@ export default drawerComponent = props => {
   //   }
   // };
 
+  const onShareApp = async () => {
+    try {
+      const iosLink = 'https://apps.apple.com/us/app/nbs-group/id6749219738';
+      const androidLink =
+        'https://play.google.com/store/apps/details?id=com.sahadmccollins.NBS';
+
+      const appLink = Platform.OS === 'ios' ? iosLink : androidLink;
+
+      await Share.share({
+        title: 'Share App',
+        message: `Hey, check out the NBS Groups app to explore a wide range of products.!\n\n${appLink}`,
+        url: appLink, // Important for iOS
+      });
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    }
+  };
+
   const goToScreen = (path) => {
+
+    if (path === 'ShareApp') {
+      onShareApp();
+      return;
+    }
+
     if (path === 'visibleModal') {
       setShowModal(!showModal);
       return; // Stop execution here

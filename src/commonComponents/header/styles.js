@@ -9,8 +9,9 @@ export default headerStyle = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     // height: windowHeight(60),
-    height: windowHeight(40),
+    height: windowHeight(50),
     paddingHorizontal: windowWidth(20),
+    paddingTop: windowHeight(10),
   },
   first: {
     flexDirection: 'row',

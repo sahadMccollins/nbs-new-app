@@ -297,7 +297,7 @@
             "refundPolicy": "Politique de remboursement et d'annulation",
             "deliveryPolicy": "Politique de livraison",
             "shareApp": "Partager l'application",
-            "shareAppDesc": "Envoyez des liens d'application par SMS, e-mail ou réseaux sociaux",
+            "shareAppDesc": "Envoyez des liens d'application",
             "privacyPolicyDesc": "Politique de traitement des données utilisateur",
             "shippingPolicyDesc": "Conditions d'expédition de la commande",
             "refundPolicyDesc": "Conditions de remboursement et d'annulation",
@@ -365,6 +365,8 @@
             "2xl": "2XL"
         },
         "orderHistory": {
+            "emptyOrderHistory": "Historique des commandes vide",
+            "emptyOrderHistoryDesc": "Vous n’avez encore passé aucune commande. Commencez vos achats pour voir votre historique de commandes ici.",
             "orderHistory": "Historique des commandes",
             "openOrders": "Commandes ouvertes",
             "ongoing": "en cours",
@@ -513,6 +515,8 @@
             "cardFree": "CardFree"
         },
         "addNewAddress": {
+            "emptyAddress": "Aucune adresse trouvée",
+            "emptyAddressDesc": "Vous n’avez encore ajouté aucune adresse. Ajoutez une nouvelle adresse pour poursuivre votre commande.",
             "addNewAddress": "Ajouter une nouvelle adresse",
             "firstName": "Prénom",
             "lastName": "Nom de famille",
@@ -780,6 +784,56 @@
                 "email": "sales@nbsgroups.com",
                 "phone": "+971 4 2243543",
                 "address": "Nazeer Basha Syed Mech. & Eng. Equp. Trdg. LLC, BP: 379670, Deira, Dubaï, Émirats Arabes Unis."
+            }
+        },
+        "shippingPolicy": {
+            "title": "Politique d’expédition – Groupe NBS",
+            "effectiveDate": "19 décembre 2025",
+            "intro": "Le groupe NBS s’engage à livrer chaque commande rapidement, en toute sécurité et avec une communication claire. Cette politique d’expédition explique les délais de livraison, les frais et les options d’expédition aux Émirats arabes unis et à l’international.",
+            "highlights": [
+                "Livraison gratuite dans tous les Émirats arabes unis",
+                "Livraison le jour même pour les commandes passées avant 12h00 (heure des EAU), du lundi au samedi, pour les articles en stock",
+                "Les commandes en dehors des Émirats arabes unis sont prises en charge avec des frais calculés selon le pays de destination et les détails de l’expédition"
+            ],
+            "coverage": {
+                "uae": "La livraison est disponible dans tous les Émirats.",
+                "international": "La livraison est disponible vers certains pays. Les frais sont calculés en fonction du pays ou de la localisation, du poids ou du volume du colis et des frais du transporteur."
+            },
+            "uaeShipping": {
+                "cost": "La livraison est gratuite pour toutes les commandes aux Émirats arabes unis.",
+                "sameDayCutoff": {
+                    "before": "Les commandes passées et payées avant 12h00 (heure des EAU) sont éligibles à la livraison le jour même pour les articles en stock.",
+                    "after": "Les commandes passées après 12h00 seront livrées le jour ouvrable suivant, selon l’itinéraire du transporteur et l’accessibilité de l’adresse."
+                },
+                "businessDays": "Les délais de livraison n’incluent pas les dimanches ni les jours fériés aux Émirats arabes unis. Les commandes passées après les heures ouvrables peuvent être traitées le jour ouvrable suivant.",
+                "exceptions": "Les articles volumineux, lourds, en gros ou nécessitant une manipulation spéciale peuvent nécessiter une planification préalable. Le client sera contacté avant l’expédition si une exception s’applique."
+            },
+            "internationalShipping": {
+                "process": [
+                    "Passer la commande ou demander un devis d’expédition avant de confirmer la commande",
+                    "Recevoir un devis basé sur le pays de destination, le poids ou le volume de l’envoi et les options du transporteur",
+                    "L’expédition commence après l’approbation du devis et le paiement des frais d’expédition le cas échéant"
+                ],
+                "customsAndDuties": "Tous les droits de douane, taxes, frais de dédouanement et restrictions d’importation sont à la charge du client et varient selon le pays."
+            },
+            "tracking": "Une fois la commande expédiée, les informations de suivi sont partagées par e-mail ou SMS lorsque cela est disponible.",
+            "deliveryIssues": {
+                "delays": "Les délais de livraison sont estimatifs et peuvent varier en raison des opérations des transporteurs, des conditions météorologiques, des restrictions routières, du dédouanement ou d’autres événements imprévus.",
+                "addressAccuracy": "Les clients doivent s’assurer que l’adresse de livraison et les coordonnées sont exactes lors de la commande.",
+                "failedDelivery": "En cas d’échec de livraison dû à des informations incorrectes ou à l’indisponibilité du client, des frais de nouvelle livraison ou de réexpédition peuvent s’appliquer."
+            },
+            "damagedOrIncorrectItems": {
+                "reportWithin": "Dans les 48 heures suivant la livraison",
+                "requirements": [
+                    "Photos claires du produit",
+                    "Vidéo de déballage si disponible"
+                ],
+                "resolution": "Les problèmes sont traités conformément à la politique de retour et de remboursement applicable."
+            },
+            "productRestrictions": "Certains produits peuvent être soumis à des restrictions de transport, de sécurité ou d’expédition internationale. Si un article ne peut pas être expédié vers la destination sélectionnée, la commande peut être annulée et remboursée en conséquence.",
+            "contact": {
+                "email": "sales@nbsgroups.com",
+                "phone": "+971 4 2243543"
             }
         },
         "shopPage": {

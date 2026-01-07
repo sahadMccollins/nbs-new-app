@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import styles from './style';
 import { Input, Button } from '@commonComponents';
-import { fontSizes } from '@theme/appConstant';
+import { fontSizes, windowHeight } from '@theme/appConstant';
 import SocialLogin from '../login/socialLogin';
 import { useValues } from '@App';
 const input = ({
@@ -20,8 +20,9 @@ const input = ({
   goToRegistration,
   onSignUp,
   errors,
-  setLoading,
+  setGoogleLoading,
   form,
+  navigation
 }) => {
   const { textRTLStyle, viewRTLStyle } = useValues();
   return (
@@ -104,11 +105,11 @@ const input = ({
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView
-        // contentContainerStyle={{ flex: 1 }}
-        keyboardShouldPersistTaps="handled"
-        showsVerticalScrollIndicator={false}
+          // contentContainerStyle={{ flex: 1 }}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
         >
-          <View style={styles.subView}>
+          <View style={[styles.subView]}>
             <Text
               style={[
                 styles.titleText,
@@ -172,10 +173,19 @@ const input = ({
               onPress={onSignUp}
             />
 
+            <SocialLogin
+              t={t}
+              setGoogleLoading={setGoogleLoading}
+              colors={colors}
+              navigation={navigation}
+              from="RegistrationScreen"
+            />
+
             <View
               style={[
                 styles.createNewMainView,
                 { flexDirection: viewRTLStyle },
+                { marginBottom: windowHeight(30) }
               ]}>
               <Text style={styles.createNewText}>
                 {t('authComman.alreadyHaveAccount')}

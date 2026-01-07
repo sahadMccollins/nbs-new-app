@@ -19,7 +19,7 @@ export default tabComponents = ({ state, descriptors, navigation }) => {
     <View
       style={[
         styles.mainView,
-        { flexDirection: viewRTLStyle, backgroundColor: colors.card, height: windowHeight(50) + insets.bottom, },
+        { flexDirection: viewRTLStyle, backgroundColor: colors.card, height: windowHeight(58) + insets.bottom, },
         // {backgroundColor: "red"}
       ]}>
       {state.routes.map((route, index, key) => {

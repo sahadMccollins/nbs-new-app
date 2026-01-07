@@ -102,6 +102,7 @@ import { useCustomer } from '../../../context/customerContext';
 export default function RegistrationScreen(props) {
   const [errors, setErrors] = useState({});
   const { register, loading } = useShopifyAuth();
+  const [googleLoading, setGoogleLoading] = useState(false);
   const { customer } = useCustomer();
   const [form, setForm] = useState({
     firstName: '',
@@ -192,10 +193,10 @@ export default function RegistrationScreen(props) {
   };
 
   useEffect(() => {
-      if (customer && customer.accessToken) {
-        props.navigation.replace("Drawer");
-      }
-    }, [customer]);
+    if (customer && customer.accessToken) {
+      props.navigation.replace("Drawer");
+    }
+  }, [customer]);
 
   return (
     <SafeAreaView>
@@ -214,11 +215,12 @@ export default function RegistrationScreen(props) {
           goToRegistration={goToLogin}
           onSignUp={onSignUp}
           errors={errors}
-          setLoading={loading}
+          setGoogleLoading={setGoogleLoading}
           form={form}
+          navigation={props.navigation}
         />
       </View>
-      {loading && (
+      {(loading || googleLoading) && (
         <View style={styles.loaderStyle}>
           <ActivityIndicator color={appColors.primary} />
         </View>

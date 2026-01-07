@@ -27,7 +27,7 @@ export default function onBoarding(props) {
     <SafeAreaView>
       <UnAuthHeader
         style={styles.header}
-        text={'authComman.skip'}
+        text="SKIP"
         // image={isDark ? images.darkLogo : images.logo}
         image={images.logo2}
         t={t}

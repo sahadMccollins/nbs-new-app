@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View } from 'react-native';
 import styles from './style';
-import {Input, Button} from '@commonComponents';
-import {fontSizes} from '@theme/appConstant';
+import { Input, Button } from '@commonComponents';
+import { fontSizes } from '@theme/appConstant';
 import SocialLogin from '../login/socialLogin';
-import {useValues} from '@App';
+import { useValues } from '@App';
 
 const input = ({
   t,
@@ -12,11 +12,11 @@ const input = ({
   onChange,
   goToHome,
   errors,
-  setLoading,
+  setGoogleLoading,
   form,
   navigation,
 }) => {
-  const {textRTLStyle, viewRTLStyle} = useValues();
+  const { textRTLStyle, viewRTLStyle } = useValues();
   const goToForgotPassword = () => {
     navigation.replace('ForgotPasswordScreen');
   };
@@ -28,14 +28,14 @@ const input = ({
       <Text
         style={[
           styles.titleText,
-          {color: colors.text, textAlign: textRTLStyle},
+          { color: colors.text, textAlign: textRTLStyle },
         ]}>
         {t('authComman.hey')}
       </Text>
       <Text
         style={[
           styles.titleText,
-          {color: colors.text, textAlign: textRTLStyle},
+          { color: colors.text, textAlign: textRTLStyle },
         ]}>
         {t('login.loginNow')}
       </Text>
@@ -43,7 +43,7 @@ const input = ({
         placeholder={t('login.usernameOrEmail')}
         value={form.email}
         onChangeText={value => {
-          onChange({name: 'email', value});
+          onChange({ name: 'email', value });
         }}
         error={errors.email}
       />
@@ -52,7 +52,7 @@ const input = ({
         value={form.password}
         error={errors.password}
         onChangeText={value => {
-          onChange({name: 'password', value});
+          onChange({ name: 'password', value });
         }}
         hidePassword
       />
@@ -68,20 +68,21 @@ const input = ({
         fontSize={fontSizes.FONT22}
         onPress={goToHome}
       />
-      {/* <SocialLogin
+      <SocialLogin
         t={t}
-        setLoading={setLoading}
+        setGoogleLoading={setGoogleLoading}
         colors={colors}
         navigation={navigation}
-      /> */}
-      <View style={[styles.createNewMainView, {flexDirection: viewRTLStyle}]}>
+        from="LoginScreen"
+      />
+      <View style={[styles.createNewMainView, { flexDirection: viewRTLStyle }]}>
         <Text style={styles.createNewText}>{t('login.ifNew')}</Text>
         <Text
           onPress={() => goToRegistration()}
           style={[
             styles.createNewText,
             styles.createNewUnderlineText,
-            {color: colors.subText},
+            { color: colors.subText },
           ]}>
           {t('login.createNow')}
         </Text>

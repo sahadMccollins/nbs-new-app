@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {fontSizes, windowHeight, windowWidth} from '@theme/appConstant';
+import { StyleSheet } from 'react-native';
+import { fontSizes, windowHeight, windowWidth } from '@theme/appConstant';
 import appColors from '@theme/appColors';
 import appFonts from '@theme/appFonts';
 
@@ -27,5 +27,18 @@ export default authStyles = StyleSheet.create({
   createNewUnderlineText: {
     marginStart: windowWidth(5),
     textDecorationLine: 'underline',
+  },
+  socialLoginView: {
+    height: windowHeight(40),
+    width: windowWidth(60),
+    marginStart: windowWidth(10),
+    backgroundColor: appColors.line,
+    justifyContent: 'center',
+    borderRadius: windowWidth(10),
+  },
+  socialLoginImageView: {
+    height: windowHeight(20),
+    width: windowWidth(26),
+    alignSelf: 'center',
   },
 });

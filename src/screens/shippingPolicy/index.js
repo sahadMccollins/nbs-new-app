@@ -18,7 +18,11 @@ export default function shippingPolicy({ navigation }) {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: windowWidth(90) }}>
-        <ContentSection t={t} termsconditons={Termsconditons} colors={colors} />
+        <ContentSection
+          t={t}
+          colors={colors}
+          policyKey="shippingPolicy"
+        />
       </ScrollView>
     </SafeAreaView>
   );

@@ -29,6 +29,7 @@ export default colors = {
   search: '#909090',
   rating: '#FFBA49',
   bgHighlight: 'rgba(255, 76, 59, 0.05)',
+  bgHighlightGreen: 'rgba(40, 167, 69, 0.12)',
   productDarkColor: '#232323',
   subTextDark: '#BABABA',
   dropdown: '#edeff473',
