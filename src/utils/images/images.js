@@ -47,7 +47,7 @@ module.exports = {
   banner3Image: require('@assets/images/home/home_banner/banner3.jpg'),
   banner4Image: require('@assets/images/home/home_banner/banner4.jpg'),
   banner5Image: require('@assets/images/home/home_banner/banner5.jpg'),
-  banner6Image: require('@assets/images/home/home_banner/banner6.jpg'),
+  banner6Image: require('@assets/images/home/home_banner/banner6.png'),
 
   addToCart: require('@assets/images/add-to-cart-black.png'),
   addedToCart: require('@assets/images/added-to-cart-black.png'),

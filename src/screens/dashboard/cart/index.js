@@ -21,7 +21,7 @@ import { useShopifyCart } from '../../../hooks/useShopifyCart';
 
 const FREE_PRODUCT_RULES = [
   {
-    minTotal: 600, product: {
+    minTotal: 1000, product: {
       id: 'gid://shopify/Product/9005749993684',
       merchandiseId: 'gid://shopify/ProductVariant/47316202881236',
       title: 'Su-Kam Line Interactive 600VA UPS',
@@ -39,7 +39,7 @@ const FREE_PRODUCT_RULES = [
     }
   },
   {
-    minTotal: 2000, product: {
+    minTotal: 3500, product: {
       id: 'gid://shopify/Product/9013536424148',
       merchandiseId: 'gid://shopify/ProductVariant/47344950083796',
       title: 'SUNRIDE PORTABLE POWER STATION AC150 (144WH , 13AH)',
@@ -57,7 +57,7 @@ const FREE_PRODUCT_RULES = [
     }
   },
   {
-    minTotal: 3500, product: {
+    minTotal: 5500, product: {
       id: 'gid://shopify/Product/9013533376724',
       merchandiseId: 'gid://shopify/ProductVariant/47344931995860',
       title: 'SUNRIDE PORTABLE POWER STATION AC300 (166WH, 15AH)',
